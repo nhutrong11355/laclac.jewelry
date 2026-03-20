@@ -1,0 +1,223 @@
+<%- include('../layouts/main', { body: `
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content container">
+    <div class="hero-badge">✦ Handcrafted in Saigon ✦</div>
+    <h1 class="hero-title">Where Every Gem<br>Tells <em>Your</em> Story</h1>
+    <p class="hero-subtitle">Custom lab-grown diamonds & moissanite jewelry, crafted with intention and care. Each piece is as unique as the person who wears it.</p>
+    <div class="hero-actions">
+      <a href="#collections" class="btn btn-primary">Explore Collections</a>
+      <a href="#contact" class="btn btn-outline">Contact Us</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- Brand Story Section -->
+<section class="story-section" id="story">
+  <div class="container">
+    <div class="story-grid">
+      <div class="story-visual" data-aos="fade-right">
+        <div class="story-image-frame">
+          <div class="story-placeholder">
+            <img src="/images/laclac-logo.jpg" alt="LacLac Jewelry Craftsmanship" class="story-logo-img">
+          </div>
+        </div>
+        <div class="story-accent"></div>
+      </div>
+      <div class="story-content" data-aos="fade-left">
+        <span class="section-label">Our Story</span>
+        <h2 class="section-title">Born from Passion,<br>Crafted with Purpose</h2>
+        <p class="story-text">LacLac Jewelry began with a simple belief: that beautiful jewelry should be accessible, ethical, and deeply personal. Every piece in our collection starts with a conversation — your story, your style, your moment.</p>
+        <p class="story-text">We work exclusively with lab-grown diamonds and moissanite, offering the same breathtaking brilliance as mined stones — without the environmental cost. Paired with 18K gold and sterling silver, each creation is a testament to modern craftsmanship.</p>
+        <p class="story-text">From our studio in Thao Dien, Ho Chi Minh City, we pour heart and soul into every custom piece. Because jewelry isn't just an accessory — it's a memory you carry with you.</p>
+        <div class="story-values">
+          <div class="value-item">
+            <div class="value-icon">◇</div>
+            <div>
+              <h4>Ethical Sourcing</h4>
+              <p>Lab-grown gems with zero mining impact</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon">✧</div>
+            <div>
+              <h4>Custom Design</h4>
+              <p>Every piece tailored to your vision</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon">♡</div>
+            <div>
+              <h4>Made with Love</h4>
+              <p>Handcrafted in Saigon with care</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Materials Banner -->
+<section class="materials-banner">
+  <div class="container">
+    <div class="materials-grid">
+      <div class="material-item" data-aos="fade-up" data-aos-delay="0">
+        <div class="material-icon">💎</div>
+        <h3>Lab-Grown Diamonds</h3>
+        <p>Identical to mined diamonds in every way — same brilliance, same hardness, but with a clear conscience.</p>
+      </div>
+      <div class="material-item" data-aos="fade-up" data-aos-delay="100">
+        <div class="material-icon">✨</div>
+        <h3>Moissanite</h3>
+        <p>With even more fire and brilliance than diamond, moissanite offers extraordinary sparkle at exceptional value.</p>
+      </div>
+      <div class="material-item" data-aos="fade-up" data-aos-delay="200">
+        <div class="material-icon">🥇</div>
+        <h3>18K Gold & Silver</h3>
+        <p>Premium metals in yellow, white, and rose gold — plus rhodium-plated sterling silver for timeless elegance.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Collections Section -->
+<section class="collections-section" id="collections">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-label">Collections</span>
+      <h2 class="section-title">Discover Our Pieces</h2>
+      <p class="section-desc">Each piece is handcrafted with precision and love. Browse our collections or contact us for a custom design.</p>
+    </div>
+
+    <div class="collection-filter" data-aos="fade-up">
+      <button class="filter-btn active" data-filter="all">All</button>
+      ${collections.map(c => '<button class="filter-btn" data-filter="' + c + '">' + c + '</button>').join('')}
+    </div>
+
+    <div class="products-grid">
+      ${products.map(p => `
+        <a href="/product/${p.slug}" class="product-card" data-collection="${p.collection}" data-aos="fade-up">
+          <div class="product-card-image">
+            <div class="product-placeholder">
+              <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="100" height="100" fill="#F5E6E0"/>
+                <path d="M50 25L58 42H42L50 25Z" stroke="#C9A96E" stroke-width="1.5" fill="none"/>
+                <circle cx="50" cy="55" r="15" stroke="#C9A96E" stroke-width="1.5" fill="none"/>
+              </svg>
+              <span class="placeholder-text">${p.name}</span>
+            </div>
+            <div class="product-card-overlay">
+              <span>View Details</span>
+            </div>
+          </div>
+          <div class="product-card-info">
+            <span class="product-card-collection">${p.collection}</span>
+            <h3 class="product-card-name">${p.name}</h3>
+            <p class="product-card-material">${p.material} · ${p.stone}</p>
+          </div>
+        </a>
+      `).join('')}
+    </div>
+  </div>
+</section>
+
+<!-- Instagram Section -->
+<section class="instagram-section" id="instagram">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-label">Gallery</span>
+      <h2 class="section-title">Follow Our Journey</h2>
+      <p class="section-desc">See our latest creations and behind-the-scenes moments on Instagram</p>
+    </div>
+    <div class="instagram-grid" data-aos="fade-up">
+      <div class="insta-item">
+        <div class="insta-placeholder">
+          <span>✦</span>
+          <p>Ring Collection</p>
+        </div>
+      </div>
+      <div class="insta-item">
+        <div class="insta-placeholder">
+          <span>◇</span>
+          <p>Custom Designs</p>
+        </div>
+      </div>
+      <div class="insta-item">
+        <div class="insta-placeholder">
+          <span>✧</span>
+          <p>Behind the Scenes</p>
+        </div>
+      </div>
+      <div class="insta-item">
+        <div class="insta-placeholder">
+          <span>♡</span>
+          <p>Happy Customers</p>
+        </div>
+      </div>
+      <div class="insta-item">
+        <div class="insta-placeholder">
+          <span>💎</span>
+          <p>Gem Selection</p>
+        </div>
+      </div>
+      <div class="insta-item">
+        <div class="insta-placeholder">
+          <span>✨</span>
+          <p>New Arrivals</p>
+        </div>
+      </div>
+    </div>
+    <div class="instagram-cta" data-aos="fade-up">
+      <a href="https://www.instagram.com/laclac.jewelry/" target="_blank" rel="noopener" class="btn btn-outline">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
+        Follow @laclac.jewelry
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact-section" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info" data-aos="fade-right">
+        <span class="section-label">Contact</span>
+        <h2 class="section-title">Let's Create<br>Something Beautiful</h2>
+        <p>Ready to design your dream piece? Have questions about our collections? We'd love to hear from you.</p>
+        <p>Reach out via Instagram or Facebook — we respond within 24 hours.</p>
+        <div class="contact-buttons">
+          <a href="https://www.instagram.com/laclac.jewelry/" target="_blank" rel="noopener" class="btn btn-primary btn-contact">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
+            Message on Instagram
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61579703409647" target="_blank" rel="noopener" class="btn btn-outline btn-contact">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            Message on Facebook
+          </a>
+        </div>
+      </div>
+      <div class="contact-visual" data-aos="fade-left">
+        <div class="contact-card">
+          <div class="contact-card-inner">
+            <img src="/images/laclac-logo.jpg" alt="LacLac Jewelry" class="contact-logo">
+            <h3>LẠC LẠC - Lab Fine Jewelry</h3>
+            <p class="contact-tagline">CUSTOM LAB-GROWN DIAMOND | MOISSANITE | GOLD | SILVER</p>
+            <div class="contact-detail">
+              <p>📍 Thao Dien, Ho Chi Minh City</p>
+              <p>📷 @laclac.jewelry</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+` }) %>
