@@ -128,52 +128,60 @@
   </div>
 </section>
 
-<!-- Instagram Section -->
-<section class="instagram-section" id="instagram">
+<!-- Gallery Section -->
+<section class="gallery-section" id="gallery">
   <div class="container">
     <div class="section-header" data-aos="fade-up">
       <span class="section-label">Gallery</span>
-      <h2 class="section-title">Follow Our Journey</h2>
-      <p class="section-desc">See our latest creations and behind-the-scenes moments on Instagram</p>
+      <h2 class="section-title">Explore Our World</h2>
+      <p class="section-desc">Browse our curated collections — from sparkling rings to rare gemstones, each category tells its own story.</p>
     </div>
-    <div class="instagram-grid" data-aos="fade-up">
-      <div class="insta-item">
-        <div class="insta-placeholder">
-          <span>✦</span>
-          <p>Ring Collection</p>
+
+    <!-- Collection Category Cards -->
+    <div class="gallery-categories" data-aos="fade-up">
+      <a href="/#collections" class="gallery-cat-card" data-filter-target="Rings" onclick="filterCollection('Rings')">
+        <div class="cat-card-icon">
+          <svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="28" stroke="#C9A96E" stroke-width="2" fill="none"/><path d="M40 12L46 24H34L40 12Z" stroke="#C9A96E" stroke-width="1.5" fill="none"/><circle cx="40" cy="40" r="18" stroke="#C9A96E" stroke-width="1" fill="none" opacity="0.4"/></svg>
         </div>
-      </div>
-      <div class="insta-item">
-        <div class="insta-placeholder">
-          <span>◇</span>
-          <p>Custom Designs</p>
+        <h3>Ring Collection</h3>
+        <p>Solitaires, halos & custom engagement rings</p>
+        <span class="cat-card-count">${products.filter(p => p.collection === 'Rings').length} pieces</span>
+      </a>
+      <a href="/#collections" class="gallery-cat-card" data-filter-target="Necklaces" onclick="filterCollection('Necklaces')">
+        <div class="cat-card-icon">
+          <svg viewBox="0 0 80 80" fill="none"><path d="M20 30C20 30 30 50 40 50C50 50 60 30 60 30" stroke="#C9A96E" stroke-width="2" fill="none"/><circle cx="40" cy="52" r="6" stroke="#C9A96E" stroke-width="1.5" fill="none"/><path d="M40 58V64" stroke="#C9A96E" stroke-width="1.5"/></svg>
         </div>
-      </div>
-      <div class="insta-item">
-        <div class="insta-placeholder">
-          <span>✧</span>
-          <p>Behind the Scenes</p>
+        <h3>Necklace Collection</h3>
+        <p>Pendants, chains & statement necklaces</p>
+        <span class="cat-card-count">${products.filter(p => p.collection === 'Necklaces').length} pieces</span>
+      </a>
+      <a href="/#collections" class="gallery-cat-card" data-filter-target="Earrings" onclick="filterCollection('Earrings')">
+        <div class="cat-card-icon">
+          <svg viewBox="0 0 80 80" fill="none"><path d="M35 20V45" stroke="#C9A96E" stroke-width="2"/><circle cx="35" cy="50" r="6" stroke="#C9A96E" stroke-width="1.5" fill="none"/><path d="M45 20V45" stroke="#C9A96E" stroke-width="2"/><circle cx="45" cy="50" r="6" stroke="#C9A96E" stroke-width="1.5" fill="none"/></svg>
         </div>
-      </div>
-      <div class="insta-item">
-        <div class="insta-placeholder">
-          <span>♡</span>
-          <p>Happy Customers</p>
+        <h3>Earring Collection</h3>
+        <p>Studs, huggies & elegant drop earrings</p>
+        <span class="cat-card-count">${products.filter(p => p.collection === 'Earrings').length} pieces</span>
+      </a>
+      <a href="/#collections" class="gallery-cat-card" data-filter-target="Bracelets" onclick="filterCollection('Bracelets')">
+        <div class="cat-card-icon">
+          <svg viewBox="0 0 80 80" fill="none"><ellipse cx="40" cy="40" rx="26" ry="16" stroke="#C9A96E" stroke-width="2" fill="none"/><circle cx="20" cy="36" r="3" stroke="#C9A96E" stroke-width="1" fill="none"/><circle cx="40" cy="25" r="3" stroke="#C9A96E" stroke-width="1" fill="none"/><circle cx="60" cy="36" r="3" stroke="#C9A96E" stroke-width="1" fill="none"/></svg>
         </div>
-      </div>
-      <div class="insta-item">
-        <div class="insta-placeholder">
-          <span>💎</span>
-          <p>Gem Selection</p>
+        <h3>Bracelet Collection</h3>
+        <p>Delicate chains & gemstone bracelets</p>
+        <span class="cat-card-count">${products.filter(p => p.collection === 'Bracelets').length} pieces</span>
+      </a>
+      <a href="/gemstones" class="gallery-cat-card gallery-cat-gemstone">
+        <div class="cat-card-icon">
+          <svg viewBox="0 0 80 80" fill="none"><polygon points="40,10 55,30 50,55 30,55 25,30" stroke="#C9A96E" stroke-width="2" fill="none"/><line x1="25" y1="30" x2="55" y2="30" stroke="#C9A96E" stroke-width="1.5"/><line x1="40" y1="10" x2="30" y2="30" stroke="#C9A96E" stroke-width="1" opacity="0.5"/><line x1="40" y1="10" x2="50" y2="30" stroke="#C9A96E" stroke-width="1" opacity="0.5"/><line x1="30" y1="30" x2="40" y2="55" stroke="#C9A96E" stroke-width="1" opacity="0.5"/><line x1="50" y1="30" x2="40" y2="55" stroke="#C9A96E" stroke-width="1" opacity="0.5"/></svg>
         </div>
-      </div>
-      <div class="insta-item">
-        <div class="insta-placeholder">
-          <span>✨</span>
-          <p>New Arrivals</p>
-        </div>
-      </div>
+        <h3>Gemstone Collection</h3>
+        <p>Discover our lab-grown diamonds, moissanite & more</p>
+        <span class="cat-card-count">Explore Gems →</span>
+      </a>
     </div>
+
+    <!-- Instagram CTA -->
     <div class="instagram-cta" data-aos="fade-up">
       <a href="https://www.instagram.com/laclac.jewelry/" target="_blank" rel="noopener" class="btn btn-outline">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>

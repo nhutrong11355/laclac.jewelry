@@ -102,3 +102,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+// Global function for gallery category cards to filter collections
+function filterCollection(collection) {
+  setTimeout(() => {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const productCards = document.querySelectorAll('.product-card[data-collection]');
+    filterBtns.forEach(btn => {
+      btn.classList.remove('active');
+      if (btn.getAttribute('data-filter') === collection) {
+        btn.classList.add('active');
+      }
+    });
+    productCards.forEach(card => {
+      if (card.getAttribute('data-collection') === collection) {
+        card.style.display = '';
+        card.style.animation = 'fadeInUp 0.5s ease forwards';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }, 500);
+}

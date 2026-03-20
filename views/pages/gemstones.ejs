@@ -1,0 +1,140 @@
+<%- include('../layouts/main', { body: `
+
+<!-- Gemstone Hero -->
+<section class="gem-hero">
+  <div class="container">
+    <div class="gem-hero-content" data-aos="fade-up">
+      <span class="section-label">Gemstone Collection</span>
+      <h1 class="gem-hero-title">The Science of<br><em>Brilliance</em></h1>
+      <p class="gem-hero-subtitle">Discover the extraordinary world of lab-grown gemstones. Each stone is created with cutting-edge technology, delivering the same beauty and durability as natural gems — ethically and sustainably.</p>
+    </div>
+    <div class="gem-hero-logo">
+      <img src="/images/laclac-logo.jpg" alt="LacLac Jewelry" class="gem-logo-img">
+    </div>
+  </div>
+</section>
+
+<!-- Gemstone of the Month -->
+${gemstones.filter(g => g.gemstoneOfMonth).map(g => `
+<section class="gem-of-month">
+  <div class="container">
+    <div class="gem-month-grid">
+      <div class="gem-month-visual" data-aos="fade-right">
+        <div class="gem-month-image">
+          <img src="${g.image}" alt="${g.name}" class="gem-month-real-img">
+          <div class="gem-month-badge">✦ Gem of the Month — ${g.monthFeatured}</div>
+        </div>
+      </div>
+      <div class="gem-month-info" data-aos="fade-left">
+        <span class="section-label">✦ Gemstone of the Month</span>
+        <h2 class="section-title">${g.name}</h2>
+        <p class="gem-tagline">${g.tagline}</p>
+        <p class="gem-text">${g.description}</p>
+        <div class="gem-month-stats">
+          <div class="gem-stat">
+            <span class="gem-stat-label">Origin</span>
+            <p>${g.origin}</p>
+          </div>
+          <div class="gem-stat">
+            <span class="gem-stat-label">Symbolism</span>
+            <p>${g.meaning}</p>
+          </div>
+        </div>
+        <div class="gem-month-colors">
+          <span class="gem-stat-label">Available Colors</span>
+          <div class="gem-color-tags">
+            ${g.colors.map(c => '<span class="gem-color-tag">' + c + '</span>').join('')}
+          </div>
+        </div>
+        ${g.relatedProducts.length > 0 ? `
+          <div class="gem-month-cta">
+            <a href="/product/${g.relatedProducts[0]}" class="btn btn-primary">Shop ${g.name} Jewelry</a>
+          </div>
+        ` : ''}
+      </div>
+    </div>
+  </div>
+</section>
+`).join('')}
+
+<!-- All Gemstones Grid -->
+<section class="gemstones-grid-section">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-label">Our Gemstones</span>
+      <h2 class="section-title">Explore Every Stone</h2>
+      <p class="section-desc">From the timeless brilliance of diamonds to the fiery sparkle of rubies — learn about the gems we work with.</p>
+    </div>
+
+    <div class="gemstones-grid">
+      ${gemstones.map(g => `
+        <div class="gem-card" data-aos="fade-up" id="${g.slug}">
+          <div class="gem-card-image">
+            <img src="${g.image}" alt="${g.name}" class="gem-card-real-img">
+            ${g.featured ? '<div class="gem-featured-tag">Popular Choice</div>' : ''}
+          </div>
+          <div class="gem-card-body">
+            <h3 class="gem-card-name">${g.name}</h3>
+            <p class="gem-card-tagline">${g.tagline}</p>
+            <p class="gem-card-desc">${g.description}</p>
+
+            <div class="gem-card-details">
+              <div class="gem-detail-row">
+                <span class="gem-detail-label">Characteristics</span>
+                <p>${g.characteristics}</p>
+              </div>
+              <div class="gem-detail-row">
+                <span class="gem-detail-label">Origin</span>
+                <p>${g.origin}</p>
+              </div>
+              <div class="gem-detail-row">
+                <span class="gem-detail-label">Meaning</span>
+                <p>${g.meaning}</p>
+              </div>
+              <div class="gem-detail-row">
+                <span class="gem-detail-label">Care Instructions</span>
+                <p>${g.care}</p>
+              </div>
+            </div>
+
+            <div class="gem-card-colors">
+              ${g.colors.map(c => '<span class="gem-color-tag">' + c + '</span>').join('')}
+            </div>
+
+            ${g.relatedProducts.length > 0 ? `
+              <div class="gem-card-products">
+                <span class="gem-detail-label">Shop This Gem</span>
+                <div class="gem-product-links">
+                  ${g.relatedProducts.map(slug => {
+                    const prod = products.find(p => p.slug === slug);
+                    return prod ? '<a href="/product/' + prod.slug + '" class="gem-product-link">' + prod.name + ' →</a>' : '';
+                  }).join('')}
+                </div>
+              </div>
+            ` : ''}
+          </div>
+        </div>
+      `).join('')}
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="gem-cta-section">
+  <div class="container">
+    <div class="gem-cta-content" data-aos="fade-up">
+      <img src="/images/laclac-logo.jpg" alt="LacLac Jewelry" class="gem-cta-logo">
+      <h2>Can't Find Your Perfect Stone?</h2>
+      <p>We source a wide variety of lab-grown gemstones. Tell us your vision and we'll find the perfect gem for your custom piece.</p>
+      <div class="gem-cta-buttons">
+        <a href="https://www.instagram.com/laclac.jewelry/" target="_blank" rel="noopener" class="btn btn-primary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
+          Contact on Instagram
+        </a>
+        <a href="/" class="btn btn-outline">← Back to Collections</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+`, pageTitle: 'Gemstone Collection' }) %>

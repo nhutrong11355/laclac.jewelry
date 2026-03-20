@@ -2,6 +2,7 @@ const ejs = require('ejs');
 const fs = require('fs');
 const path = require('path');
 const products = require('./data/products.json');
+const gemstones = require('./data/gemstones.json');
 
 const DIST = path.join(__dirname, 'dist');
 const VIEWS = path.join(__dirname, 'views');
@@ -68,6 +69,16 @@ async function build() {
     fs.writeFileSync(path.join(productPageDir, 'index.html'), html);
     console.log(`  ✓ Built product/${product.slug}/index.html`);
   }
+
+  // Render gemstones page
+  const gemstonesDir = path.join(DIST, 'gemstones');
+  fs.mkdirSync(gemstonesDir, { recursive: true });
+  const gemstonesHtml = renderTemplate(
+    path.join(VIEWS, 'pages', 'gemstones.ejs'),
+    { gemstones, products, pageTitle: 'Gemstone Collection' }
+  );
+  fs.writeFileSync(path.join(gemstonesDir, 'index.html'), gemstonesHtml);
+  console.log('  ✓ Built gemstones/index.html');
 
   console.log('\n✅ Build complete! Output in ./dist/');
 }

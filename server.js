@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const products = require('./data/products.json');
+const gemstones = require('./data/gemstones.json');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -20,6 +21,10 @@ app.get('/product/:slug', (req, res) => {
   if (!product) return res.status(404).send('Product not found');
   const related = products.filter(p => p.collection === product.collection && p.slug !== product.slug).slice(0, 4);
   res.render('pages/product', { product, related });
+});
+
+app.get('/gemstones', (req, res) => {
+  res.render('pages/gemstones', { gemstones, products });
 });
 
 app.get('/collections', (req, res) => {

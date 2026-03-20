@@ -651,58 +651,579 @@ h1, h2, h3, h4 {
 }
 
 /* ============================================
-   INSTAGRAM SECTION
+   GALLERY SECTION (Homepage)
    ============================================ */
-.instagram-section {
+.gallery-section {
   padding: 120px 0;
   background: var(--white);
 }
 
-.instagram-grid {
+.gallery-categories {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 8px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  margin-bottom: 80px;
+}
+
+.gallery-cat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 32px 20px;
+  background: var(--cream);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(201, 169, 110, 0.15);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.gallery-cat-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--gold);
+}
+
+.gallery-cat-gemstone {
+  background: linear-gradient(135deg, var(--blush) 0%, var(--cream) 100%);
+}
+
+.cat-card-icon {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 16px;
+}
+
+.cat-card-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.gallery-cat-card h3 {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.gallery-cat-card p {
+  font-size: 12px;
+  color: var(--charcoal-light);
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.cat-card-count {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* Featured Collection */
+.featured-collection {
+  margin-bottom: 80px;
+}
+
+.featured-header,
+.favorites-header {
+  text-align: center;
   margin-bottom: 40px;
 }
 
-.insta-item {
-  aspect-ratio: 1;
-  border-radius: var(--radius);
+.subsection-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  color: var(--black);
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 28px;
+}
+
+.featured-card {
+  display: block;
+  background: var(--cream);
+  border-radius: var(--radius-lg);
   overflow: hidden;
-  cursor: pointer;
+  transition: var(--transition);
+  border: 1px solid rgba(201, 169, 110, 0.12);
+}
+
+.featured-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+.featured-card-image {
+  position: relative;
+}
+
+.featured-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--gold);
+  color: var(--white);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 20px;
+}
+
+.featured-card-info {
+  padding: 20px 24px 24px;
+}
+
+.featured-view-link {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--gold);
   transition: var(--transition);
 }
 
-.insta-item:hover {
-  transform: scale(1.03);
+.featured-card:hover .featured-view-link {
+  color: var(--gold-dark);
 }
 
-.insta-placeholder {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, var(--blush) 0%, var(--cream-dark) 100%);
+/* Customer Favorites */
+.customer-favorites {
+  margin-bottom: 60px;
+}
+
+.favorites-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.favorite-item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 24px;
+  background: var(--cream);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(201, 169, 110, 0.12);
+  transition: var(--transition);
+}
+
+.favorite-item:hover {
+  border-color: var(--gold);
+  box-shadow: var(--shadow-sm);
+}
+
+.favorite-rank {
+  font-family: var(--font-heading);
+  font-size: 36px;
+  font-weight: 300;
+  color: var(--gold);
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.favorite-content h4 {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.favorite-content p {
+  font-size: 12px;
+  color: var(--charcoal-light);
+  margin-bottom: 8px;
+}
+
+.favorite-stars {
+  font-size: 12px;
+  color: var(--gold);
+}
+
+.favorite-stars span {
+  font-size: 11px;
+  color: var(--charcoal-light);
+  margin-left: 6px;
+}
+
+/* ============================================
+   GEMSTONE PAGE
+   ============================================ */
+.gem-hero {
+  padding: 140px 0 80px;
+  background: linear-gradient(135deg, var(--cream) 0%, var(--blush) 50%, var(--cream-dark) 100%);
+  text-align: center;
+  position: relative;
+}
+
+.gem-hero-title {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 300;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.gem-hero-title em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.gem-hero-subtitle {
+  font-size: 16px;
+  color: var(--charcoal-light);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+.gem-hero-logo {
+  margin-top: 40px;
+}
+
+.gem-logo-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto;
+  border: 2px solid var(--gold);
+  opacity: 0.7;
+}
+
+/* Gemstone of the Month */
+.gem-of-month {
+  padding: 100px 0;
+  background: var(--white);
+}
+
+.gem-month-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.gem-month-image {
+  position: relative;
+}
+
+.gem-placeholder-large {
+  aspect-ratio: 1;
+  background: linear-gradient(135deg, var(--blush) 0%, var(--cream) 100%);
+  border-radius: var(--radius-lg);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
 }
 
-.insta-placeholder span {
+.gem-placeholder-large svg {
+  width: 60%;
+  opacity: 0.5;
+}
+
+.gem-placeholder-label {
+  position: absolute;
+  bottom: 30px;
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-style: italic;
+  color: var(--gold-dark);
+  opacity: 0.7;
+}
+
+.gem-month-real-img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.gem-month-badge {
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--charcoal);
+  color: var(--gold-light);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 10px 24px;
+  border-radius: 30px;
+  white-space: nowrap;
+}
+
+.gem-tagline {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-style: italic;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+
+.gem-text {
+  font-size: 15px;
+  color: var(--charcoal-light);
+  line-height: 1.8;
+  margin-bottom: 32px;
+}
+
+.gem-month-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.gem-stat-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+
+.gem-stat p {
+  font-size: 14px;
+  color: var(--charcoal-light);
+  line-height: 1.7;
+}
+
+.gem-month-colors {
+  margin-bottom: 28px;
+}
+
+.gem-color-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.gem-color-tag {
+  font-size: 11px;
+  font-weight: 500;
+  padding: 6px 14px;
+  background: var(--blush);
+  border-radius: 20px;
+  color: var(--charcoal);
+  border: 1px solid rgba(201, 169, 110, 0.2);
+}
+
+.gem-month-cta {
+  margin-top: 8px;
+}
+
+/* Gemstones Grid */
+.gemstones-grid-section {
+  padding: 100px 0;
+  background: var(--cream);
+}
+
+.gemstones-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 32px;
+}
+
+.gem-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.gem-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.gem-card-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.gem-card-real-img {
+  width: 100%;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+  display: block;
+  transition: var(--transition);
+}
+
+.gem-card:hover .gem-card-real-img {
+  transform: scale(1.05);
+}
+
+.gem-featured-tag {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--gold);
+  color: var(--white);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 20px;
+}
+
+.gem-card-body {
+  padding: 28px;
+}
+
+.gem-card-name {
+  font-family: var(--font-heading);
   font-size: 24px;
+  margin-bottom: 4px;
+}
+
+.gem-card-tagline {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-style: italic;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+
+.gem-card-desc {
+  font-size: 14px;
+  color: var(--charcoal-light);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.gem-card-details {
+  margin-bottom: 20px;
+}
+
+.gem-detail-row {
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(201, 169, 110, 0.12);
+}
+
+.gem-detail-label {
+  display: block;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+
+.gem-detail-row p {
+  font-size: 13px;
+  color: var(--charcoal-light);
+  line-height: 1.6;
+}
+
+.gem-card-colors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.gem-card-products {
+  padding-top: 16px;
+  border-top: 1px solid rgba(201, 169, 110, 0.12);
+}
+
+.gem-product-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.gem-product-link {
+  font-size: 13px;
+  color: var(--charcoal);
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.gem-product-link:hover {
   color: var(--gold);
 }
 
-.insta-placeholder p {
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 1px;
-  color: var(--charcoal-light);
-  text-transform: uppercase;
+/* Gemstone CTA */
+.gem-cta-section {
+  padding: 100px 0;
+  background: var(--charcoal);
+  text-align: center;
 }
 
-.instagram-cta {
-  text-align: center;
+.gem-cta-content h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  color: var(--white);
+  margin-bottom: 16px;
+}
+
+.gem-cta-content p {
+  font-size: 15px;
+  color: rgba(255,255,255,0.7);
+  max-width: 500px;
+  margin: 0 auto 32px;
+  line-height: 1.7;
+}
+
+.gem-cta-logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--gold);
+  margin-bottom: 24px;
+}
+
+.gem-cta-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.gem-cta-section .btn-outline {
+  color: rgba(255,255,255,0.8);
+  border-color: rgba(255,255,255,0.3);
+}
+
+.gem-cta-section .btn-outline:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.6);
+  color: var(--white);
+}
+
+.gem-cta-section .btn-primary {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+
+.gem-cta-section .btn-primary:hover {
+  background: var(--gold-light);
+  border-color: var(--gold-light);
 }
 
 /* ============================================
@@ -1202,6 +1723,23 @@ h1, h2, h3, h4 {
     grid-template-columns: 1fr;
     gap: 40px;
   }
+
+  .gallery-categories {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .favorites-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gem-month-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .gemstones-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1254,6 +1792,18 @@ h1, h2, h3, h4 {
 
   .instagram-grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .gallery-categories {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-cat-card:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .featured-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .products-grid {
