@@ -2,18 +2,18 @@
   {
     "id": 1,
     "slug": "eternal-spark-ring",
-    "name": "Eternal Spark Ring",
+    "name": "Nhẫn Eternal Spark",
     "collection": "Rings",
-    "price": "Contact for price",
-    "material": "18K Gold",
-    "stone": "Lab-Grown Diamond 1.0ct",
-    "description": "A timeless solitaire ring featuring a brilliant lab-grown diamond, set in polished 18K gold. Each stone is carefully selected for its fire and clarity, making this piece a symbol of everlasting love.",
-    "details": "This exquisite ring showcases a 1.0 carat lab-grown diamond with VS1 clarity and F color grade. The classic four-prong setting allows maximum light to enter the stone, creating breathtaking brilliance. Crafted in 18K gold, the band features a comfort-fit design perfect for everyday wear.",
+    "price": "Liên hệ báo giá",
+    "material": "Vàng 18K",
+    "stone": "Kim Cương Nhân Tạo 1.0ct",
+    "description": "Nhẫn solitaire vượt thời gian với viên kim cương nhân tạo rực rỡ, đặt trên vàng 18K bóng mịn. Mỗi viên đá được chọn lọc kỹ lưỡng về độ lửa và độ trong, biến sản phẩm này thành biểu tượng của tình yêu vĩnh cửu.",
+    "details": "Chiếc nhẫn tinh xảo này nổi bật với viên kim cương nhân tạo 1.0 carat, độ trong VS1, màu F. Kiểu đính bốn chấu cổ điển cho phép ánh sáng tối đa xuyên qua viên đá, tạo nên độ rực rỡ ngoạn mục. Chế tác bằng vàng 18K, thân nhẫn thiết kế ôm vừa vặn, hoàn hảo để đeo hàng ngày.",
     "specs": {
-      "Stone": "Lab-Grown Diamond, 1.0ct, VS1 Clarity, F Color",
-      "Metal": "18K Yellow Gold",
-      "Band Width": "2.0mm",
-      "Setting": "Four-Prong Solitaire"
+      "Đá": "Kim Cương Nhân Tạo, 1.0ct, Độ Trong VS1, Màu F",
+      "Kim Loại": "Vàng Vàng 18K",
+      "Bề Rộng Thân": "2.0mm",
+      "Kiểu Đính": "Solitaire Bốn Chấu"
     },
     "images": ["/images/products/ring-1.jpg", "/images/products/ring-1-side.jpg"],
     "featured": true
@@ -21,18 +21,18 @@
   {
     "id": 2,
     "slug": "moonlit-halo-ring",
-    "name": "Moonlit Halo Ring",
+    "name": "Nhẫn Moonlit Halo",
     "collection": "Rings",
-    "price": "Contact for price",
-    "material": "18K White Gold",
+    "price": "Liên hệ báo giá",
+    "material": "Vàng Trắng 18K",
     "stone": "Moissanite 1.5ct",
-    "description": "A stunning halo ring where a radiant moissanite center stone is embraced by a circle of delicate accent stones. The perfect balance of brilliance and sophistication.",
-    "details": "Featuring a 1.5 carat round brilliant moissanite center stone surrounded by a halo of micro-pavé accent stones. The 18K white gold setting enhances the stone's icy brilliance, while the split shank adds a modern twist to this classic design.",
+    "description": "Nhẫn halo lộng lẫy với viên moissanite rực rỡ ở trung tâm được bao quanh bởi vòng đá phụ tinh tế. Sự cân bằng hoàn hảo giữa độ sáng và sự tinh tế.",
+    "details": "Nổi bật với viên moissanite tròn brilliant 1.5 carat ở trung tâm, bao quanh bởi vòng halo đá micro-pavé. Kiểu đính vàng trắng 18K làm tăng độ lấp lánh của viên đá, trong khi thân nhẫn tách đôi mang đến nét hiện đại cho thiết kế cổ điển này.",
     "specs": {
-      "Stone": "Moissanite, 1.5ct, DEF Color",
-      "Metal": "18K White Gold",
-      "Band Width": "2.2mm",
-      "Setting": "Halo with Micro-Pavé"
+      "Đá": "Moissanite, 1.5ct, Màu DEF",
+      "Kim Loại": "Vàng Trắng 18K",
+      "Bề Rộng Thân": "2.2mm",
+      "Kiểu Đính": "Halo với Micro-Pavé"
     },
     "images": ["/images/products/ring-2.jpg", "/images/products/ring-2-side.jpg"],
     "featured": true
@@ -40,18 +40,18 @@
   {
     "id": 3,
     "slug": "whisper-chain-necklace",
-    "name": "Whisper Chain Necklace",
+    "name": "Dây Chuyền Whisper Chain",
     "collection": "Necklaces",
-    "price": "Contact for price",
-    "material": "925 Sterling Silver",
-    "stone": "Lab-Grown Diamond 0.3ct",
-    "description": "An elegant pendant necklace featuring a delicate lab-grown diamond suspended on a fine silver chain. Minimalist beauty that speaks volumes.",
-    "details": "This pendant features a 0.3 carat lab-grown diamond in a bezel setting, hanging from a 45cm fine cable chain in 925 sterling silver with rhodium plating for lasting shine. The adjustable chain length makes it perfect for layering or wearing alone.",
+    "price": "Liên hệ báo giá",
+    "material": "Bạc Sterling 925",
+    "stone": "Kim Cương Nhân Tạo 0.3ct",
+    "description": "Dây chuyền mặt dây thanh lịch với viên kim cương nhân tạo tinh tế treo trên sợi dây bạc mảnh. Vẻ đẹp tối giản nhưng đầy ý nghĩa.",
+    "details": "Mặt dây chuyền này có viên kim cương nhân tạo 0.3 carat trong kiểu đính bezel, treo trên sợi dây cable mảnh 45cm bằng bạc sterling 925 mạ rhodium cho độ bóng bền lâu. Độ dài dây có thể điều chỉnh, hoàn hảo để đeo xếp lớp hoặc đeo đơn.",
     "specs": {
-      "Stone": "Lab-Grown Diamond, 0.3ct, VS2 Clarity",
-      "Metal": "925 Sterling Silver, Rhodium Plated",
-      "Chain Length": "45cm (adjustable)",
-      "Setting": "Bezel"
+      "Đá": "Kim Cương Nhân Tạo, 0.3ct, Độ Trong VS2",
+      "Kim Loại": "Bạc Sterling 925, Mạ Rhodium",
+      "Độ Dài Dây": "45cm (có thể điều chỉnh)",
+      "Kiểu Đính": "Bezel"
     },
     "images": ["/images/products/necklace-1.jpg", "/images/products/necklace-1-detail.jpg"],
     "featured": true
@@ -59,18 +59,18 @@
   {
     "id": 4,
     "slug": "golden-embrace-bracelet",
-    "name": "Golden Embrace Bracelet",
+    "name": "Vòng Tay Golden Embrace",
     "collection": "Bracelets",
-    "price": "Contact for price",
-    "material": "18K Gold",
-    "stone": "Moissanite Accent Stones",
-    "description": "A graceful chain bracelet adorned with sparkling moissanite accent stones. Delicate yet impactful, designed for the modern woman.",
-    "details": "This refined bracelet features five station-set moissanite stones along a delicate 18K gold cable chain. The lobster clasp closure with extension chain ensures a perfect fit. Each stone catches the light beautifully, adding subtle sparkle to every gesture.",
+    "price": "Liên hệ báo giá",
+    "material": "Vàng 18K",
+    "stone": "Đá Moissanite Phụ",
+    "description": "Vòng tay dây mảnh thanh lịch điểm xuyết những viên moissanite lấp lánh. Tinh tế nhưng ấn tượng, thiết kế cho phụ nữ hiện đại.",
+    "details": "Vòng tay tinh xảo này có năm viên moissanite đính station dọc theo sợi dây cable vàng 18K mảnh mai. Khóa lobster với dây nối đảm bảo vừa vặn hoàn hảo. Mỗi viên đá bắt sáng tuyệt đẹp, thêm nét lấp lánh tinh tế cho mọi cử chỉ.",
     "specs": {
-      "Stone": "5x Moissanite Accent Stones, 0.1ct each",
-      "Metal": "18K Yellow Gold",
-      "Length": "16cm + 3cm extension",
-      "Closure": "Lobster Clasp"
+      "Đá": "5 viên Moissanite Phụ, 0.1ct mỗi viên",
+      "Kim Loại": "Vàng Vàng 18K",
+      "Độ Dài": "16cm + 3cm nối dài",
+      "Khóa": "Khóa Lobster"
     },
     "images": ["/images/products/bracelet-1.jpg", "/images/products/bracelet-1-detail.jpg"],
     "featured": true
@@ -78,18 +78,18 @@
   {
     "id": 5,
     "slug": "starlight-drop-earrings",
-    "name": "Starlight Drop Earrings",
+    "name": "Bông Tai Starlight Drop",
     "collection": "Earrings",
-    "price": "Contact for price",
-    "material": "18K White Gold",
-    "stone": "Lab-Grown Diamond 0.5ct each",
-    "description": "Elegant drop earrings featuring brilliant lab-grown diamonds that dance with light. A perfect statement piece for any occasion.",
-    "details": "Each earring showcases a 0.5 carat lab-grown diamond in a four-prong drop setting, connected to the ear wire by a delicate gold link. The total diamond weight of 1.0 carat delivers stunning brilliance that frames the face beautifully.",
+    "price": "Liên hệ báo giá",
+    "material": "Vàng Trắng 18K",
+    "stone": "Kim Cương Nhân Tạo 0.5ct mỗi bên",
+    "description": "Bông tai dáng dài thanh lịch với kim cương nhân tạo rực rỡ lung linh trong ánh sáng. Sản phẩm nổi bật hoàn hảo cho mọi dịp.",
+    "details": "Mỗi bông tai nổi bật với viên kim cương nhân tạo 0.5 carat trong kiểu đính bốn chấu dáng drop, nối với tai bằng mắt xích vàng tinh tế. Tổng trọng lượng kim cương 1.0 carat mang đến độ rực rỡ tuyệt đẹp, tôn vinh gương mặt một cách hoàn hảo.",
     "specs": {
-      "Stone": "2x Lab-Grown Diamond, 0.5ct each, VS1 Clarity",
-      "Metal": "18K White Gold",
-      "Length": "2.5cm drop",
-      "Closure": "Push-back"
+      "Đá": "2 viên Kim Cương Nhân Tạo, 0.5ct mỗi viên, Độ Trong VS1",
+      "Kim Loại": "Vàng Trắng 18K",
+      "Độ Dài": "Dáng drop 2.5cm",
+      "Khóa": "Push-back"
     },
     "images": ["/images/products/earring-1.jpg", "/images/products/earring-1-detail.jpg"],
     "featured": false
@@ -97,18 +97,18 @@
   {
     "id": 6,
     "slug": "rose-petal-ring",
-    "name": "Rose Petal Ring",
+    "name": "Nhẫn Rose Petal",
     "collection": "Rings",
-    "price": "Contact for price",
-    "material": "18K Rose Gold",
+    "price": "Liên hệ báo giá",
+    "material": "Vàng Hồng 18K",
     "stone": "Moissanite 0.8ct",
-    "description": "Inspired by the soft curves of rose petals, this ring features a moissanite centerpiece in warm rose gold. Romantic and distinctive.",
-    "details": "A 0.8 carat oval moissanite sits in a unique petal-inspired setting crafted in 18K rose gold. The organic design flows gracefully around the stone, creating a one-of-a-kind piece that celebrates nature's beauty.",
+    "description": "Lấy cảm hứng từ những đường cong mềm mại của cánh hồng, chiếc nhẫn này có viên moissanite trung tâm trên nền vàng hồng ấm áp. Lãng mạn và độc đáo.",
+    "details": "Viên moissanite hình oval 0.8 carat nằm trong kiểu đính lấy cảm hứng từ cánh hoa, chế tác bằng vàng hồng 18K. Thiết kế hữu cơ ôm lấy viên đá một cách duyên dáng, tạo nên sản phẩm độc nhất tôn vinh vẻ đẹp thiên nhiên.",
     "specs": {
-      "Stone": "Moissanite, 0.8ct Oval, DEF Color",
-      "Metal": "18K Rose Gold",
-      "Band Width": "2.5mm",
-      "Setting": "Petal-Inspired Prong"
+      "Đá": "Moissanite, 0.8ct Oval, Màu DEF",
+      "Kim Loại": "Vàng Hồng 18K",
+      "Bề Rộng Thân": "2.5mm",
+      "Kiểu Đính": "Chấu Cánh Hoa"
     },
     "images": ["/images/products/ring-3.jpg", "/images/products/ring-3-detail.jpg"],
     "featured": false
@@ -116,18 +116,18 @@
   {
     "id": 7,
     "slug": "infinity-love-necklace",
-    "name": "Infinity Love Necklace",
+    "name": "Dây Chuyền Infinity Love",
     "collection": "Necklaces",
-    "price": "Contact for price",
-    "material": "18K Gold",
-    "stone": "Lab-Grown Diamond 0.5ct",
-    "description": "An infinity-inspired pendant symbolizing endless love, featuring a stunning lab-grown diamond at its heart. A meaningful gift for someone special.",
-    "details": "The infinity symbol pendant is crafted in 18K gold and set with a 0.5 carat lab-grown diamond at the crossing point. Suspended from a 50cm adjustable chain, this piece carries deep symbolism and exceptional craftsmanship.",
+    "price": "Liên hệ báo giá",
+    "material": "Vàng 18K",
+    "stone": "Kim Cương Nhân Tạo 0.5ct",
+    "description": "Mặt dây chuyền biểu tượng vô cực tượng trưng cho tình yêu bất tận, nổi bật với viên kim cương nhân tạo rực rỡ ở trung tâm. Món quà ý nghĩa cho người đặc biệt.",
+    "details": "Mặt dây biểu tượng vô cực được chế tác bằng vàng 18K và đính viên kim cương nhân tạo 0.5 carat tại điểm giao nhau. Treo trên sợi dây 50cm có thể điều chỉnh, sản phẩm mang ý nghĩa sâu sắc và tay nghề chế tác xuất sắc.",
     "specs": {
-      "Stone": "Lab-Grown Diamond, 0.5ct, VS1 Clarity, E Color",
-      "Metal": "18K Yellow Gold",
-      "Chain Length": "50cm (adjustable)",
-      "Pendant Size": "1.8cm x 0.8cm"
+      "Đá": "Kim Cương Nhân Tạo, 0.5ct, Độ Trong VS1, Màu E",
+      "Kim Loại": "Vàng Vàng 18K",
+      "Độ Dài Dây": "50cm (có thể điều chỉnh)",
+      "Kích Thước Mặt": "1.8cm x 0.8cm"
     },
     "images": ["/images/products/necklace-2.jpg", "/images/products/necklace-2-detail.jpg"],
     "featured": false
@@ -135,18 +135,18 @@
   {
     "id": 8,
     "slug": "celestial-huggie-earrings",
-    "name": "Celestial Huggie Earrings",
+    "name": "Bông Tai Celestial Huggie",
     "collection": "Earrings",
-    "price": "Contact for price",
-    "material": "925 Sterling Silver",
-    "stone": "Moissanite Accent",
-    "description": "Chic huggie hoop earrings with sparkling moissanite accents. Perfect for everyday elegance.",
-    "details": "These huggie hoops feature channel-set moissanite stones around the outer edge, crafted in 925 sterling silver with rhodium plating. The hinged closure makes them easy to put on and comfortable to wear all day.",
+    "price": "Liên hệ báo giá",
+    "material": "Bạc Sterling 925",
+    "stone": "Moissanite Phụ",
+    "description": "Bông tai huggie hoop thời thượng với điểm nhấn moissanite lấp lánh. Hoàn hảo cho vẻ thanh lịch hàng ngày.",
+    "details": "Đôi huggie hoop này có đá moissanite đính channel quanh viền ngoài, chế tác bằng bạc sterling 925 mạ rhodium. Khóa bản lề giúp dễ đeo và thoải mái suốt cả ngày.",
     "specs": {
-      "Stone": "Moissanite Channel-Set Accents",
-      "Metal": "925 Sterling Silver, Rhodium Plated",
-      "Diameter": "1.2cm",
-      "Closure": "Hinged"
+      "Đá": "Moissanite Đính Channel",
+      "Kim Loại": "Bạc Sterling 925, Mạ Rhodium",
+      "Đường Kính": "1.2cm",
+      "Khóa": "Bản Lề"
     },
     "images": ["/images/products/earring-2.jpg", "/images/products/earring-2-detail.jpg"],
     "featured": false

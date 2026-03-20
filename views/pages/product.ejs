@@ -4,7 +4,7 @@
 <section class="breadcrumb-section">
   <div class="container">
     <nav class="breadcrumb">
-      <a href="/">Home</a>
+      <a href="/">Trang Chủ</a>
       <span class="breadcrumb-sep">›</span>
       <a href="/#collections">${product.collection}</a>
       <span class="breadcrumb-sep">›</span>
@@ -54,12 +54,12 @@
         </div>
 
         <div class="product-details-section">
-          <h3>Details</h3>
+          <h3>Chi Tiết</h3>
           <p>${product.details}</p>
         </div>
 
         <div class="product-specs">
-          <h3>Specifications</h3>
+          <h3>Thông Số Kỹ Thuật</h3>
           <table class="specs-table">
             ${Object.entries(product.specs).map(([key, val]) => `
               <tr><td class="spec-label">${key}</td><td class="spec-value">${val}</td></tr>
@@ -69,15 +69,15 @@
 
         <!-- Contact to Order -->
         <div class="product-cta">
-          <p class="cta-text">Interested in this piece? Contact us to discuss customization options and place your order.</p>
+          <p class="cta-text">Bạn yêu thích sản phẩm này? Liên hệ với chúng tôi để thảo luận về tùy chọn cá nhân hóa và đặt hàng.</p>
           <div class="cta-buttons">
             <a href="https://www.instagram.com/laclac.jewelry/" target="_blank" rel="noopener" class="btn btn-primary btn-order">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
-              Contact to Order — Instagram
+              Đặt Hàng — Instagram
             </a>
             <a href="https://www.facebook.com/profile.php?id=61579703409647" target="_blank" rel="noopener" class="btn btn-outline btn-order">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
-              Contact to Order — Facebook
+              Đặt Hàng — Facebook
             </a>
           </div>
         </div>
@@ -91,8 +91,8 @@ ${related.length > 0 ? `
 <section class="related-section">
   <div class="container">
     <div class="section-header">
-      <span class="section-label">You May Also Like</span>
-      <h2 class="section-title">Related Pieces</h2>
+      <span class="section-label">Có Thể Bạn Cũng Thích</span>
+      <h2 class="section-title">Sản Phẩm Liên Quan</h2>
     </div>
     <div class="products-grid products-grid-4">
       ${related.map(p => `
@@ -102,7 +102,7 @@ ${related.length > 0 ? `
               <svg viewBox="0 0 100 100" fill="none"><rect width="100" height="100" fill="#F5E6E0"/><path d="M50 25L58 42H42L50 25Z" stroke="#C9A96E" stroke-width="1.5" fill="none"/><circle cx="50" cy="55" r="15" stroke="#C9A96E" stroke-width="1.5" fill="none"/></svg>
               <span class="placeholder-text">${p.name}</span>
             </div>
-            <div class="product-card-overlay"><span>View Details</span></div>
+            <div class="product-card-overlay"><span>Xem Chi Tiết</span></div>
           </div>
           <div class="product-card-info">
             <span class="product-card-collection">${p.collection}</span>
