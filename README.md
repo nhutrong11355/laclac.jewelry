@@ -1,6 +1,6 @@
 # LẠC LẠC - Lab Fine Jewelry 💎
 
-Website trang sức cao cấp cho thương hiệu LacLac Jewelry — Kim cương nhân tạo, Moissanite, Vàng & Bạc theo yêu cầu. Chế tác thủ công tại Thảo Điền, TP.HCM.
+Website trang sức cao cấp cho thương hiệu LacLac Jewelry — Kim cương nhân tạo, Moissanite, Vàng & Bạc theo yêu cầu. Chế tác thủ công tại Thủ Đức, TP.HCM.
 
 🌐 **Live:** [https://laclacjewelry.com](https://laclacjewelry.com)
 
@@ -95,4 +95,4 @@ laclac.jewelry/
 
 - 📷 Instagram: [@laclac.jewelry](https://www.instagram.com/laclac.jewelry/)
 - 📘 Facebook: [LacLac Jewelry](https://www.facebook.com/profile.php?id=61579703409647)
-- 📍 Thảo Điền, TP. Hồ Chí Minh
+- 📍 Thủ Đức, TP. Hồ Chí Minh

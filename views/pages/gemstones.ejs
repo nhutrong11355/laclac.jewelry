@@ -22,7 +22,7 @@ ${gemstones.filter(g => g.gemstoneOfMonth).map(g => `
       <div class="gem-month-visual" data-aos="fade-right">
         <div class="gem-month-image">
           <img src="${g.image}" alt="${g.name}" class="gem-month-real-img">
-          <div class="gem-month-badge">✦ Đá Quý Của Tháng — ${g.monthFeatured}</div>
+          <div class="gem-month-badge">✦ Đá Quý Của Tháng${g.monthFeatured ? ' — ' + g.monthFeatured : ''}</div>
         </div>
       </div>
       <div class="gem-month-info" data-aos="fade-left">
@@ -63,7 +63,7 @@ ${gemstones.filter(g => g.gemstoneOfMonth).map(g => `
     <div class="section-header" data-aos="fade-up">
       <span class="section-label">Đá Quý Của Chúng Tôi</span>
       <h2 class="section-title">Khám Phá Từng Viên Đá</h2>
-      <p class="section-desc">Từ độ rực rỡ vĩnh cửu của kim cương đến ánh lửa lấp lánh của ruby — tìm hiểu về những viên đá quý chúng tôi sử dụng.</p>
+      <p class="section-desc">Từ độ rực rỡ vĩnh cửu của kim cương tự nhiên đến ánh lửa lấp lánh của moissanite — tìm hiểu về những viên đá quý chúng tôi sử dụng.</p>
     </div>
 
     <div class="gemstones-grid">

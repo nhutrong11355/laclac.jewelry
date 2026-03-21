@@ -1,6 +1,83 @@
 [
   {
     "id": 1,
+    "slug": "golden-embrace-bracelet-1",
+    "name": "Tennis Bracelet",
+    "collection": "Vòng tay",
+    "price": "Liên hệ báo giá",
+    "material": "Vàng 14K | Bạc S925",
+    "stone": "Đá Moissanite | Kim Cương Nhân Tạo",
+    "description": "",
+    "details": "Lấy cảm hứng từ vẻ đẹp vượt thời gian, Tennis Bracelet tượng trưng cho sự tỏa sáng và sức mạnh nội tại của mỗi người phụ nữ. Những viên đá được sắp xếp liên tục, đại diện cho dòng chảy bất tận của sự tự tin, tình yêu và cá tính riêng. Phù hợp làm quà tặng: sinh nhật, kỷ niệm, Valentine, hoặc đơn giản là một món quà đặc biệt để tự thưởng cho bản thân.",
+    "specs": {
+      "Đá": "Đá Moissanite | Kim Cương Nhân Tạo",
+      "Kim Loại": "Vàng 14K | Bạc S925",
+      "Kích thước đá": "2.00 - 5.00 carat tổng trọng lượng",
+      "Đối tượng": "Phụ nữ yêu thích trang sức thanh lịch, tối giản. Nhân viên văn phòng, có gu thời trang tinh tế. Những ai muốn một món phụ kiện sang trọng để đeo hằng ngày."
+    },
+    "images": ["/products/bracelets/tennis_bracelet_1.jpg", "/products/bracelets/tennis_bracelet_2.jpg", "/products/bracelets/tennis_bracelet_3.jpg", "/products/bracelets/tennis_bracelet_4.jpg"],
+    "featured": true
+  },
+  {
+    "id": 2,
+    "slug": "rose-petal-ring-1",
+    "name": "Oval de Lumière - Engagement Ring",
+    "collection": "Nhẫn",
+    "price": "Liên hệ báo giá",
+    "material": "Vàng 10K-14K-18K",
+    "stone": "Kim Cương Nhân Tạo",
+    "description": "",
+    "details": "Oval de Lumière không chỉ là một chiếc nhẫn cầu hôn, mà là lời hứa được thắp sáng, một tình yêu luôn rực rỡ, dịu dàng và bền bỉ theo năm tháng.",
+    "specs": {
+      "Đá": "Kim Cương Nhân Tạo",
+      "Kim Loại": "Vàng 10K-14K-18K",
+      "Kích thước đá": "3.0 carat",
+      "Đối tượng": "",
+      "Kiểu Đính": "Four Prong Setting - Đá được giữ chắc chắn bằng 4 chấu, giúp viên đá nổi bật và thu hút ánh nhìn từ mọi góc độ."
+    },
+    "images": ["/products/rings/oval_de_lumiere_engagement_ring_1.jpg", "/products/rings/oval_de_lumiere_engagement_ring_2.jpg", "/products/rings/oval_de_lumiere_engagement_ring_3.jpg"],
+    "featured": false
+  },
+  {
+    "id": 3,
+    "slug": "rose-petal-ring-2",
+    "name": "Circle Of Love - Wedding Ring",
+    "collection": "Nhẫn",
+    "price": "Liên hệ báo giá",
+    "material": "Vàng 10K-14K-18K",
+    "stone": "Kim cương tự nhiên",
+    "description": "",
+    "details": "Circle Of Love - Wedding Ring là biểu tượng của tình yêu vĩnh cửu, với thiết kế hình tròn không có điểm bắt đầu hay kết thúc, tượng trưng cho sự gắn kết bền chặt và mãi mãi. Viên kim cương tự nhiên được đính tinh tế, tạo nên vẻ đẹp sang trọng và ý nghĩa sâu sắc cho những cặp đôi đang tìm kiếm một chiếc nhẫn cưới độc đáo và đầy cảm xúc.",
+    "specs": {
+      "Đá": "Kim cương tự nhiên",
+      "Kim Loại": "Vàng 10K-14K-18K",
+      "Kích thước đá": "0.6 carat",
+      "Đối tượng": "Dành cho các cặp đôi đang tìm kiếm nhẫn cưới với thiết kế tinh tế, sang trọng và ý nghĩa sâu sắc. Phù hợp với những người yêu thích phong cách cổ điển nhưng vẫn muốn có điểm nhấn hiện đại trong thiết kế.",
+      "Kiểu Đính": "Channel Setting - Đá được đính sát nhau tạo thành một dải liên tục, mang lại vẻ đẹp liền mạch và sang trọng."
+    },
+    "images": ["/products/rings/circle_of_love_wedding_ring_1.jpg", "/products/rings/circle_of_love_wedding_ring_2.jpg", "/products/rings/circle_of_love_wedding_ring_3.jpg"],
+    "featured": false
+  },
+  {
+    "id": 4,
+    "slug": "rose-petal-ring-3",
+    "name": "Emerald Promise Ring",
+    "collection": "Nhẫn",
+    "material": "Vàng 14K | Bạc S925",
+    "stone": "Đá Moissanite | Kim Cương Nhân Tạo",
+    "description": "",
+    "details": "Emerald Promise Ring là biểu tượng của sự rõ ràng, vững bền và lời hứa lâu dài. Chiếc nhẫn mang thông điệp về một tình yêu bền vững, tỏa sáng theo năm tháng và luôn đồng hành qua mọi chặng đường của cuộc sống.",
+    "specs": {
+      "Đá": "Đá Moissanite | Kim Cương Nhân Tạo",
+      "Kim Loại": "Vàng 14K | Bạc S925",
+      "Kích thước đá": "2.00 - 3.00 carat tổng trọng lượng",
+      "Đối tượng": "Các cặp đôi (đính hôn, kỷ niệm, quà tặng)"
+    },
+    "images": ["/products/rings/emerald_promise_ring_1.jpg", "/products/rings/emerald_promise_ring_2.jpg", "/products/rings/emerald_promise_ring_3.jpg"],
+    "featured": false
+  },
+  {
+    "id": 5,
     "slug": "starlight-drop-earrings",
     "name": "Drop Earrings",
     "collection": "Bông tai",
@@ -12,14 +89,14 @@
     "specs": {
       "Đá": "Đá Moissanite | Kim Cương Nhân Tạo",
       "Kim Loại": "Vàng 14K | Bạc S925",
-      "Kích thước đá": "1.0-2.0ct",
+      "Kích thước đá": "1.0 - 2.0 carat",
       "Đối tượng": "Phù hợp với nữ giới yêu thích phong cách tối giản nhưng tinh tế."
     },
     "images": ["/products/earrings/oval_earing_1.jpg", "/products/earrings/oval_earing_2.jpg"],
     "featured": true
   },
   {
-    "id": 2,
+    "id": 6,
     "slug": "whisper-chain-necklace-1",
     "name": "Teardrop Double Stone Necklace",
     "collection": "Dây chuyền",
@@ -27,18 +104,18 @@
     "material": "Vàng 14K | Bạc S925",
     "stone": "Đá Moissanite | Kim Cương Nhân Tạo",
     "description": "",
-    "details": "Minimalist - phù hợp sử dụng hằng ngày hoặc trong các dịp trang trọng nhẹ.",
+    "details": "Teardrop Double Stone Necklace là sự kết hợp tinh tế giữa hai viên đá, một viên hình giọt nước, tượng trưng cho sự cân bằng giữa cảm xúc và lý trí. Thiết kế này mang đến vẻ đẹp nhẹ nhàng, nữ tính nhưng vẫn đầy sức hút, phù hợp với những người yêu thích phong cách trang sức tinh tế và có điểm nhấn riêng biệt.",
     "specs": {
       "Đá": "Đá Moissanite | Kim Cương Nhân Tạo",
       "Kim Loại": "Vàng 14K | Bạc S925",
-      "Kích thước đá": "1.0ct",
+      "Kích thước đá": "1.0 carat",
       "Đối tượng": "Yêu thích phong cách nhẹ nhàng."
     },
     "images": ["/products/necklaces/teardrop_double_stone_1.jpg", "/products/necklaces/teardrop_double_stone_2.jpg", "/products/necklaces/teardrop_double_stone_3.jpg"],
     "featured": true
   },
   {
-    "id": 3,
+    "id": 7,
     "slug": "whisper-chain-necklace-2",
     "name": "Minimalist One Stone Necklace",
     "collection": "Dây chuyền",
@@ -50,71 +127,14 @@
     "specs": {
       "Đá": "Đá Moissanite | Kim Cương Nhân Tạo",
       "Kim Loại": "Vàng 14K | Bạc S925",
-      "Kích thước đá": "1.0ct",
-      "Đối tượng": "Phụ nữ yêu thích phong cách tối giản, thanh lịch; phù hợp với người thích những món trang sức nhẹ nhàng, dễ đeo hằng ngày nhưng vẫn tinh tế và có điểm nhấn riêng biệt."
+      "Kích thước đá": "1.0 carat",
+      "Đối tượng": "Phụ nữ yêu thích phong cách tối giản, thanh lịch. Phù hợp với người thích những món trang sức nhẹ nhàng, dễ đeo hằng ngày nhưng vẫn tinh tế và có điểm nhấn riêng biệt."
     },
     "images": ["/products/necklaces/minimalist_one_stone_1.jpg", "/products/necklaces/minimalist_one_stone_2.jpg", "/products/necklaces/minimalist_one_stone_3.jpg"],
     "featured": true
   },
   {
-    "id": 4,
-    "slug": "golden-embrace-bracelet",
-    "name": "Vòng Tay Golden Embrace",
-    "collection": "Vòng tay",
-    "price": "Liên hệ báo giá",
-    "material": "Vàng 18K",
-    "stone": "Đá Moissanite Phụ",
-    "description": "Vòng tay dây mảnh thanh lịch điểm xuyết những viên moissanite lấp lánh. Tinh tế nhưng ấn tượng, thiết kế cho phụ nữ hiện đại.",
-    "details": "Vòng tay tinh xảo này có năm viên moissanite đính station dọc theo sợi dây cable vàng 18K mảnh mai. Khóa lobster với dây nối đảm bảo vừa vặn hoàn hảo. Mỗi viên đá bắt sáng tuyệt đẹp, thêm nét lấp lánh tinh tế cho mọi cử chỉ.",
-    "specs": {
-      "Đá": "5 viên Moissanite Phụ, 0.1ct mỗi viên",
-      "Kim Loại": "Vàng Vàng 18K",
-      "Độ Dài": "16cm + 3cm nối dài",
-      "Khóa": "Khóa Lobster"
-    },
-    "images": ["/images/products/bracelet-1.jpg", "/images/products/bracelet-1-detail.jpg"],
-    "featured": true
-  },
-  {
-    "id": 5,
-    "slug": "starlight-drop-earrings",
-    "name": "Bông Tai Starlight Drop",
-    "collection": "Bông tai",
-    "price": "Liên hệ báo giá",
-    "material": "Vàng Trắng 18K",
-    "stone": "Kim Cương Nhân Tạo 0.5ct mỗi bên",
-    "description": "Bông tai dáng dài thanh lịch với kim cương nhân tạo rực rỡ lung linh trong ánh sáng. Sản phẩm nổi bật hoàn hảo cho mọi dịp.",
-    "details": "Mỗi bông tai nổi bật với viên kim cương nhân tạo 0.5 carat trong kiểu đính bốn chấu dáng drop, nối với tai bằng mắt xích vàng tinh tế. Tổng trọng lượng kim cương 1.0 carat mang đến độ rực rỡ tuyệt đẹp, tôn vinh gương mặt một cách hoàn hảo.",
-    "specs": {
-      "Đá": "2 viên Kim Cương Nhân Tạo, 0.5ct mỗi viên, Độ Trong VS1",
-      "Kim Loại": "Vàng Trắng 18K",
-      "Độ Dài": "Dáng drop 2.5cm",
-      "Khóa": "Push-back"
-    },
-    "images": ["/images/products/earring-1.jpg", "/images/products/earring-1-detail.jpg"],
-    "featured": false
-  },
-  {
-    "id": 6,
-    "slug": "rose-petal-ring",
-    "name": "Nhẫn Rose Petal",
-    "collection": "Nhẫn",
-    "price": "Liên hệ báo giá",
-    "material": "Vàng Hồng 18K",
-    "stone": "Moissanite 0.8ct",
-    "description": "Lấy cảm hứng từ những đường cong mềm mại của cánh hồng, chiếc nhẫn này có viên moissanite trung tâm trên nền vàng hồng ấm áp. Lãng mạn và độc đáo.",
-    "details": "Viên moissanite hình oval 0.8 carat nằm trong kiểu đính lấy cảm hứng từ cánh hoa, chế tác bằng vàng hồng 18K. Thiết kế hữu cơ ôm lấy viên đá một cách duyên dáng, tạo nên sản phẩm độc nhất tôn vinh vẻ đẹp thiên nhiên.",
-    "specs": {
-      "Đá": "Moissanite, 0.8ct Oval, Màu DEF",
-      "Kim Loại": "Vàng Hồng 18K",
-      "Bề Rộng Thân": "2.5mm",
-      "Kiểu Đính": "Chấu Cánh Hoa"
-    },
-    "images": ["/images/products/ring-3.jpg", "/images/products/ring-3-detail.jpg"],
-    "featured": false
-  },
-  {
-    "id": 7,
+    "id": 8,
     "slug": "infinity-love-necklace",
     "name": "Dây Chuyền Infinity Love",
     "collection": "Dây chuyền",
@@ -133,7 +153,7 @@
     "featured": false
   },
   {
-    "id": 8,
+    "id": 9,
     "slug": "celestial-huggie-earrings",
     "name": "Bông Tai Celestial Huggie",
     "collection": "Bông tai",
