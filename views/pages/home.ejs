@@ -93,29 +93,30 @@
     <div class="section-header" data-aos="fade-up">
       <span class="section-label">Bộ Sưu Tập</span>
       <h2 class="section-title">Khám Phá Sản Phẩm</h2>
-      <p class="section-desc">Mỗi sản phẩm được chế tác tỉ mỉ với tình yêu. Duyệt qua bộ sưu tập hoặc liên hệ để thiết kế riêng.</p>
+      <p class="section-desc">Mỗi sản phẩm được chế tác tỉ mỉ với tình yêu. Xem qua bộ sưu tập hoặc liên hệ để thiết kế riêng.</p>
     </div>
 
     <div class="collection-filter" data-aos="fade-up">
       <button class="filter-btn active" data-filter="all">Tất Cả</button>
-      ${(() => {
-        const collectionNames = { 'Rings': 'Nhẫn', 'Necklaces': 'Dây Chuyền', 'Earrings': 'Bông Tai', 'Bracelets': 'Vòng Tay' };
-        return collections.map(c => '<button class="filter-btn" data-filter="' + c + '">' + (collectionNames[c] || c) + '</button>').join('');
-      })()}
+      ${['Nhẫn', 'Dây chuyền', 'Bông tai', 'Vòng tay'].filter(c => collections.includes(c)).map(c => '<button class="filter-btn" data-filter="' + c + '">' + c + '</button>').join('')}
     </div>
 
     <div class="products-grid">
       ${products.map(p => `
         <a href="/product/${p.slug}" class="product-card" data-collection="${p.collection}" data-aos="fade-up">
           <div class="product-card-image">
-            <div class="product-placeholder">
-              <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect width="100" height="100" fill="#F5E6E0"/>
-                <path d="M50 25L58 42H42L50 25Z" stroke="#C9A96E" stroke-width="1.5" fill="none"/>
-                <circle cx="50" cy="55" r="15" stroke="#C9A96E" stroke-width="1.5" fill="none"/>
-              </svg>
-              <span class="placeholder-text">${p.name}</span>
-            </div>
+            ${p.images && p.images[0] && !p.images[0].startsWith('/images/') ? `
+              <img src="${p.images[0]}" alt="${p.name}" class="product-card-real-img">
+            ` : `
+              <div class="product-placeholder">
+                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="100" height="100" fill="#F5E6E0"/>
+                  <path d="M50 25L58 42H42L50 25Z" stroke="#C9A96E" stroke-width="1.5" fill="none"/>
+                  <circle cx="50" cy="55" r="15" stroke="#C9A96E" stroke-width="1.5" fill="none"/>
+                </svg>
+                <span class="placeholder-text">${p.name}</span>
+              </div>
+            `}
             <div class="product-card-overlay">
               <span>Xem Chi Tiết</span>
             </div>
@@ -137,42 +138,42 @@
     <div class="section-header" data-aos="fade-up">
       <span class="section-label">Thư Viện</span>
       <h2 class="section-title">Khám Phá Thế Giới Của Chúng Tôi</h2>
-      <p class="section-desc">Duyệt qua các bộ sưu tập — từ nhẫn lấp lánh đến đá quý quý hiếm, mỗi danh mục kể một câu chuyện riêng.</p>
+      <p class="section-desc">Xem qua các bộ sưu tập — từ nhẫn lấp lánh đến đá quý quý hiếm, mỗi danh mục kể một câu chuyện riêng.</p>
     </div>
 
     <!-- Collection Category Cards -->
     <div class="gallery-categories" data-aos="fade-up">
-      <a href="/#collections" class="gallery-cat-card" data-filter-target="Rings" onclick="filterCollection('Rings')">
+      <a href="/#collections" class="gallery-cat-card" data-filter-target="Nhẫn" onclick="filterCollection('Nhẫn')">
         <div class="cat-card-icon">
           <svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="28" stroke="#C9A96E" stroke-width="2" fill="none"/><path d="M40 12L46 24H34L40 12Z" stroke="#C9A96E" stroke-width="1.5" fill="none"/><circle cx="40" cy="40" r="18" stroke="#C9A96E" stroke-width="1" fill="none" opacity="0.4"/></svg>
         </div>
         <h3>Bộ Sưu Tập Nhẫn</h3>
         <p>Nhẫn solitaire, halo & nhẫn cầu hôn theo yêu cầu</p>
-        <span class="cat-card-count">${products.filter(p => p.collection === 'Rings').length} sản phẩm</span>
+        <span class="cat-card-count">${products.filter(p => p.collection === 'Nhẫn').length} sản phẩm</span>
       </a>
-      <a href="/#collections" class="gallery-cat-card" data-filter-target="Necklaces" onclick="filterCollection('Necklaces')">
+      <a href="/#collections" class="gallery-cat-card" data-filter-target="Dây chuyền" onclick="filterCollection('Dây chuyền')">
         <div class="cat-card-icon">
           <svg viewBox="0 0 80 80" fill="none"><path d="M20 30C20 30 30 50 40 50C50 50 60 30 60 30" stroke="#C9A96E" stroke-width="2" fill="none"/><circle cx="40" cy="52" r="6" stroke="#C9A96E" stroke-width="1.5" fill="none"/><path d="M40 58V64" stroke="#C9A96E" stroke-width="1.5"/></svg>
         </div>
         <h3>Bộ Sưu Tập Dây Chuyền</h3>
-        <p>Mặt dây chuyền, dây chuyền & vòng cổ nổi bật</p>
-        <span class="cat-card-count">${products.filter(p => p.collection === 'Necklaces').length} sản phẩm</span>
+        <p>Mặt dây chuyền, dây chuyền & Dây chuyền nổi bật</p>
+        <span class="cat-card-count">${products.filter(p => p.collection === 'Dây chuyền').length} sản phẩm</span>
       </a>
-      <a href="/#collections" class="gallery-cat-card" data-filter-target="Earrings" onclick="filterCollection('Earrings')">
+      <a href="/#collections" class="gallery-cat-card" data-filter-target="Bông tai" onclick="filterCollection('Bông tai')">
         <div class="cat-card-icon">
           <svg viewBox="0 0 80 80" fill="none"><path d="M35 20V45" stroke="#C9A96E" stroke-width="2"/><circle cx="35" cy="50" r="6" stroke="#C9A96E" stroke-width="1.5" fill="none"/><path d="M45 20V45" stroke="#C9A96E" stroke-width="2"/><circle cx="45" cy="50" r="6" stroke="#C9A96E" stroke-width="1.5" fill="none"/></svg>
         </div>
         <h3>Bộ Sưu Tập Bông Tai</h3>
         <p>Bông tai nụ, huggie & bông tai dáng dài thanh lịch</p>
-        <span class="cat-card-count">${products.filter(p => p.collection === 'Earrings').length} sản phẩm</span>
+        <span class="cat-card-count">${products.filter(p => p.collection === 'Bông tai').length} sản phẩm</span>
       </a>
-      <a href="/#collections" class="gallery-cat-card" data-filter-target="Bracelets" onclick="filterCollection('Bracelets')">
+      <a href="/#collections" class="gallery-cat-card" data-filter-target="Vòng tay" onclick="filterCollection('Vòng tay')">
         <div class="cat-card-icon">
           <svg viewBox="0 0 80 80" fill="none"><ellipse cx="40" cy="40" rx="26" ry="16" stroke="#C9A96E" stroke-width="2" fill="none"/><circle cx="20" cy="36" r="3" stroke="#C9A96E" stroke-width="1" fill="none"/><circle cx="40" cy="25" r="3" stroke="#C9A96E" stroke-width="1" fill="none"/><circle cx="60" cy="36" r="3" stroke="#C9A96E" stroke-width="1" fill="none"/></svg>
         </div>
         <h3>Bộ Sưu Tập Vòng Tay</h3>
         <p>Vòng tay dây mảnh & vòng tay đá quý</p>
-        <span class="cat-card-count">${products.filter(p => p.collection === 'Bracelets').length} sản phẩm</span>
+        <span class="cat-card-count">${products.filter(p => p.collection === 'Vòng tay').length} sản phẩm</span>
       </a>
       <a href="/gemstones" class="gallery-cat-card gallery-cat-gemstone">
         <div class="cat-card-icon">

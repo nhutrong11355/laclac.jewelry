@@ -1,14 +1,18 @@
 <a href="/product/<%= product.slug %>" class="product-card" data-aos="fade-up">
   <div class="product-card-image">
-    <div class="product-placeholder">
-      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="100" height="100" fill="#F5E6E0"/>
-        <path d="M50 25L58 42H42L50 25Z" stroke="#C9A96E" stroke-width="1.5" fill="none"/>
-        <circle cx="50" cy="55" r="15" stroke="#C9A96E" stroke-width="1.5" fill="none"/>
-        <path d="M35 55C35 46.7 41.7 40 50 40" stroke="#C9A96E" stroke-width="1" fill="none" opacity="0.5"/>
-      </svg>
-      <span class="placeholder-text"><%= product.name %></span>
-    </div>
+    <% if (product.images && product.images[0] && !product.images[0].startsWith('/images/')) { %>
+      <img src="<%= product.images[0] %>" alt="<%= product.name %>" class="product-card-real-img">
+    <% } else { %>
+      <div class="product-placeholder">
+        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="100" height="100" fill="#F5E6E0"/>
+          <path d="M50 25L58 42H42L50 25Z" stroke="#C9A96E" stroke-width="1.5" fill="none"/>
+          <circle cx="50" cy="55" r="15" stroke="#C9A96E" stroke-width="1.5" fill="none"/>
+          <path d="M35 55C35 46.7 41.7 40 50 40" stroke="#C9A96E" stroke-width="1" fill="none" opacity="0.5"/>
+        </svg>
+        <span class="placeholder-text"><%= product.name %></span>
+      </div>
+    <% } %>
     <div class="product-card-overlay">
       <span>Xem Chi Tiết</span>
     </div>

@@ -21,23 +21,31 @@
       <!-- Product Images -->
       <div class="product-images" data-aos="fade-right">
         <div class="product-main-image">
-          <div class="product-placeholder-large">
-            <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="400" height="400" fill="#F5E6E0"/>
-              <path d="M200 80L230 150H170L200 80Z" stroke="#C9A96E" stroke-width="2" fill="none"/>
-              <circle cx="200" cy="220" r="70" stroke="#C9A96E" stroke-width="2" fill="none"/>
-              <circle cx="200" cy="220" r="50" stroke="#C9A96E" stroke-width="1" fill="none" opacity="0.4"/>
-              <path d="M130 220C130 181.3 161.3 150 200 150" stroke="#C9A96E" stroke-width="1.5" fill="none" opacity="0.3"/>
-            </svg>
-            <span class="placeholder-text-large">${product.name}</span>
-          </div>
+          ${product.images[0] && !product.images[0].startsWith('/images/') ? `
+            <img src="${product.images[0]}" alt="${product.name}" class="product-real-img" id="mainProductImg">
+          ` : `
+            <div class="product-placeholder-large">
+              <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="400" height="400" fill="#F5E6E0"/>
+                <path d="M200 80L230 150H170L200 80Z" stroke="#C9A96E" stroke-width="2" fill="none"/>
+                <circle cx="200" cy="220" r="70" stroke="#C9A96E" stroke-width="2" fill="none"/>
+                <circle cx="200" cy="220" r="50" stroke="#C9A96E" stroke-width="1" fill="none" opacity="0.4"/>
+                <path d="M130 220C130 181.3 161.3 150 200 150" stroke="#C9A96E" stroke-width="1.5" fill="none" opacity="0.3"/>
+              </svg>
+              <span class="placeholder-text-large">${product.name}</span>
+            </div>
+          `}
         </div>
         <div class="product-thumbnails">
           ${product.images.map((img, i) => `
-            <div class="product-thumb ${i === 0 ? 'active' : ''}">
-              <div class="thumb-placeholder">
-                <svg viewBox="0 0 100 100" fill="none"><rect width="100" height="100" fill="#F5E6E0"/><circle cx="50" cy="50" r="20" stroke="#C9A96E" stroke-width="1" fill="none"/></svg>
-              </div>
+            <div class="product-thumb ${i === 0 ? 'active' : ''}" onclick="if(document.getElementById('mainProductImg')){document.getElementById('mainProductImg').src='${img}'}; document.querySelectorAll('.product-thumb').forEach(t=>t.classList.remove('active')); this.classList.add('active');">
+              ${img && !img.startsWith('/images/') ? `
+                <img src="${img}" alt="${product.name}" class="thumb-real-img">
+              ` : `
+                <div class="thumb-placeholder">
+                  <svg viewBox="0 0 100 100" fill="none"><rect width="100" height="100" fill="#F5E6E0"/><circle cx="50" cy="50" r="20" stroke="#C9A96E" stroke-width="1" fill="none"/></svg>
+                </div>
+              `}
             </div>
           `).join('')}
         </div>
@@ -48,10 +56,6 @@
         <span class="product-collection-tag">${product.collection}</span>
         <h1 class="product-title">${product.name}</h1>
         <p class="product-material-tag">${product.material} · ${product.stone}</p>
-
-        <div class="product-description">
-          <p>${product.description}</p>
-        </div>
 
         <div class="product-details-section">
           <h3>Chi Tiết</h3>
@@ -98,10 +102,14 @@ ${related.length > 0 ? `
       ${related.map(p => `
         <a href="/product/${p.slug}" class="product-card" data-aos="fade-up">
           <div class="product-card-image">
-            <div class="product-placeholder">
-              <svg viewBox="0 0 100 100" fill="none"><rect width="100" height="100" fill="#F5E6E0"/><path d="M50 25L58 42H42L50 25Z" stroke="#C9A96E" stroke-width="1.5" fill="none"/><circle cx="50" cy="55" r="15" stroke="#C9A96E" stroke-width="1.5" fill="none"/></svg>
-              <span class="placeholder-text">${p.name}</span>
-            </div>
+            ${p.images && p.images[0] && !p.images[0].startsWith('/images/') ? `
+              <img src="${p.images[0]}" alt="${p.name}" class="product-card-real-img">
+            ` : `
+              <div class="product-placeholder">
+                <svg viewBox="0 0 100 100" fill="none"><rect width="100" height="100" fill="#F5E6E0"/><path d="M50 25L58 42H42L50 25Z" stroke="#C9A96E" stroke-width="1.5" fill="none"/><circle cx="50" cy="55" r="15" stroke="#C9A96E" stroke-width="1.5" fill="none"/></svg>
+                <span class="placeholder-text">${p.name}</span>
+              </div>
+            `}
             <div class="product-card-overlay"><span>Xem Chi Tiết</span></div>
           </div>
           <div class="product-card-info">

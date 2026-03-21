@@ -1851,3 +1851,34 @@ h1, h2, h3, h4 {
     padding: 12px 20px;
   }
 }
+
+/* Real Product Images */
+.product-card-real-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 1;
+  border-radius: 12px;
+  transition: transform 0.5s ease;
+}
+.product-card:hover .product-card-real-img {
+  transform: scale(1.05);
+}
+.product-real-img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+.thumb-real-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.product-thumb.active .thumb-real-img {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
