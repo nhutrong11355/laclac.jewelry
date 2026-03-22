@@ -80,6 +80,16 @@ async function build() {
   fs.writeFileSync(path.join(gemstonesDir, 'index.html'), gemstonesHtml);
   console.log('  ✓ Built gemstones/index.html');
 
+  // Render instruction page
+  const instructionDir = path.join(DIST, 'instruction');
+  fs.mkdirSync(instructionDir, { recursive: true });
+  const instructionHtml = renderTemplate(
+    path.join(VIEWS, 'pages', 'instruction.ejs'),
+    { pageTitle: 'Hướng Dẫn Chọn Sản Phẩm' }
+  );
+  fs.writeFileSync(path.join(instructionDir, 'index.html'), instructionHtml);
+  console.log('  ✓ Built instruction/index.html');
+
   console.log('\n✅ Build complete! Output in ./dist/');
 }
 

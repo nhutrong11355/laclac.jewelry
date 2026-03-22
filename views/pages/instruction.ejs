@@ -1,0 +1,451 @@
+<%- include('../layouts/main', { body: `
+
+<!-- Instruction Hero -->
+<section class="instruction-hero">
+  <div class="container">
+    <div class="instruction-hero-content" data-aos="fade-up">
+      <span class="section-label">Hướng Dẫn Chọn Sản Phẩm</span>
+      <h1 class="instruction-hero-title">Tìm Món Trang Sức<br><em>Hoàn Hảo</em> Cho Bạn</h1>
+      <p class="instruction-hero-subtitle">Chúng tôi sẽ giúp bạn lựa chọn hình dạng đá, loại kim loại và kích thước phù hợp nhất. Hãy cùng khám phá từng bước nhé!</p>
+    </div>
+  </div>
+</section>
+
+<!-- Section 1: Gem Shapes -->
+<section class="instruction-section" id="gem-shapes">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-label">Bước 1</span>
+      <h2 class="section-title">Hình Dạng Đá Nào Thu Hút Bạn Nhất?</h2>
+      <p class="section-desc">Mỗi hình dạng đá quý mang một vẻ đẹp và phong cách riêng biệt. Hãy tìm hiểu để chọn được viên đá phù hợp với cá tính của bạn.</p>
+    </div>
+
+    <div class="instruction-ref-image" data-aos="fade-up">
+      <img src="/products/instructions/gem.png" alt="Hướng dẫn chọn hình dạng đá quý" class="instruction-full-img">
+    </div>
+
+    <div class="gem-shapes-grid">
+      <!-- Round -->
+      <div class="gem-shape-card" data-aos="fade-up">
+        <div class="gem-shape-icon">
+          <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.2">
+            <circle cx="40" cy="40" r="28"/>
+            <polygon points="40,12 52,18 60,28 62,40 60,52 52,62 40,68 28,62 20,52 18,40 20,28 28,18" stroke-width="0.8"/>
+            <polygon points="40,22 48,26 52,34 52,46 48,54 40,58 32,54 28,46 28,34 32,26" stroke-width="0.6" opacity="0.5"/>
+          </svg>
+        </div>
+        <h3>Round</h3>
+        <p class="gem-shape-style">Cổ điển · Vượt thời gian</p>
+        <p>Hình dạng cổ điển nhất, tượng trưng cho tình yêu vĩnh cửu qua nhiều thế kỷ. Với 58 giác cắt hoàn hảo, đá tròn cho độ lấp lánh tối đa và phù hợp với mọi phong cách.</p>
+      </div>
+      <!-- Oval -->
+      <div class="gem-shape-card" data-aos="fade-up" data-aos-delay="50">
+        <div class="gem-shape-icon">
+          <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.2">
+            <ellipse cx="40" cy="40" rx="18" ry="28"/>
+            <ellipse cx="40" cy="40" rx="10" ry="18" stroke-width="0.6" opacity="0.5"/>
+            <line x1="40" y1="12" x2="22" y2="40" stroke-width="0.8" opacity="0.4"/>
+            <line x1="40" y1="12" x2="58" y2="40" stroke-width="0.8" opacity="0.4"/>
+            <line x1="40" y1="68" x2="22" y2="40" stroke-width="0.8" opacity="0.4"/>
+            <line x1="40" y1="68" x2="58" y2="40" stroke-width="0.8" opacity="0.4"/>
+          </svg>
+        </div>
+        <h3>Oval</h3>
+        <p class="gem-shape-style">Xu hướng · Thanh lịch</p>
+        <p>Hình dạng đang rất được ưa chuộng, với diện tích bề mặt lớn tạo cảm giác viên đá to hơn thực tế. Oval giúp ngón tay trông thon dài và thanh thoát hơn.</p>
+      </div>
+      <!-- Marquise -->
+      <div class="gem-shape-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="gem-shape-icon">
+          <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.2">
+            <path d="M40 8 Q58 24 58 40 Q58 56 40 72 Q22 56 22 40 Q22 24 40 8Z"/>
+            <path d="M40 18 Q50 30 50 40 Q50 50 40 62 Q30 50 30 40 Q30 30 40 18Z" stroke-width="0.6" opacity="0.5"/>
+            <line x1="22" y1="40" x2="58" y2="40" stroke-width="0.8" opacity="0.4"/>
+            <line x1="40" y1="8" x2="40" y2="72" stroke-width="0.8" opacity="0.4"/>
+          </svg>
+        </div>
+        <h3>Marquise</h3>
+        <p class="gem-shape-style">Nổi bật · Độc đáo</p>
+        <p>Hình dạng đặc biệt đang trở lại mạnh mẽ trong xu hướng trang sức. Hai đầu nhọn kéo dài tạo cảm giác viên đá lớn hơn và vô cùng ấn tượng trên tay.</p>
+      </div>
+      <!-- Pear -->
+      <div class="gem-shape-card" data-aos="fade-up" data-aos-delay="150">
+        <div class="gem-shape-icon">
+          <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.2">
+            <path d="M40 10 Q56 26 58 44 Q58 60 40 72 Q22 60 22 44 Q24 26 40 10Z"/>
+            <path d="M40 22 Q50 32 50 44 Q50 56 40 62 Q30 56 30 44 Q30 32 40 22Z" stroke-width="0.6" opacity="0.5"/>
+            <line x1="22" y1="44" x2="58" y2="44" stroke-width="0.8" opacity="0.4"/>
+            <line x1="40" y1="10" x2="40" y2="72" stroke-width="0.8" opacity="0.4"/>
+          </svg>
+        </div>
+        <h3>Pear</h3>
+        <p class="gem-shape-style">Cá tính · Nữ tính</p>
+        <p>Được yêu thích rộng rãi trên mạng xã hội, hình giọt nước kết hợp giữa oval và marquise. Mỗi chiếc nhẫn gắn đá pear đều trở nên đặc biệt và độc đáo.</p>
+      </div>
+      <!-- Heart -->
+      <div class="gem-shape-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="gem-shape-icon">
+          <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.2">
+            <path d="M40 70 C20 52 10 40 10 28 Q10 14 24 14 Q34 14 40 24 Q46 14 56 14 Q70 14 70 28 C70 40 60 52 40 70Z"/>
+            <path d="M40 58 C28 46 22 38 22 30 Q22 22 30 22 Q36 22 40 30 Q44 22 50 22 Q58 22 58 30 C58 38 52 46 40 58Z" stroke-width="0.6" opacity="0.5"/>
+            <line x1="40" y1="24" x2="40" y2="70" stroke-width="0.8" opacity="0.4"/>
+          </svg>
+        </div>
+        <h3>Heart</h3>
+        <p class="gem-shape-style">Lãng mạn · Ý nghĩa</p>
+        <p>Đỉnh cao của sự lãng mạn, được cắt theo tỷ lệ hoàn hảo bởi những nghệ nhân giỏi nhất thế giới. Biểu tượng tình yêu vĩnh cửu và sự chân thành.</p>
+      </div>
+      <!-- Emerald -->
+      <div class="gem-shape-card" data-aos="fade-up" data-aos-delay="250">
+        <div class="gem-shape-icon">
+          <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.2">
+            <polygon points="24,14 56,14 66,24 66,56 56,66 24,66 14,56 14,24"/>
+            <polygon points="30,22 50,22 56,28 56,52 50,58 30,58 24,52 24,28" stroke-width="0.6" opacity="0.5"/>
+            <line x1="14" y1="24" x2="66" y2="24" stroke-width="0.6" opacity="0.3"/>
+            <line x1="14" y1="56" x2="66" y2="56" stroke-width="0.6" opacity="0.3"/>
+            <line x1="14" y1="40" x2="66" y2="40" stroke-width="0.6" opacity="0.3"/>
+          </svg>
+        </div>
+        <h3>Emerald</h3>
+        <p class="gem-shape-style">Sang trọng · Tinh tế</p>
+        <p>Hiện thân của sự thanh lịch và tinh tế. Giác cắt bậc thang (step-cut) tạo nên hiệu ứng "phòng gương" lộng lẫy, là lựa chọn yêu thích của giới thượng lưu.</p>
+      </div>
+      <!-- Princess -->
+      <div class="gem-shape-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="gem-shape-icon">
+          <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.2">
+            <rect x="14" y="14" width="52" height="52"/>
+            <rect x="24" y="24" width="32" height="32" stroke-width="0.6" opacity="0.5"/>
+            <line x1="14" y1="14" x2="24" y2="24" stroke-width="0.8" opacity="0.4"/>
+            <line x1="66" y1="14" x2="56" y2="24" stroke-width="0.8" opacity="0.4"/>
+            <line x1="14" y1="66" x2="24" y2="56" stroke-width="0.8" opacity="0.4"/>
+            <line x1="66" y1="66" x2="56" y2="56" stroke-width="0.8" opacity="0.4"/>
+            <line x1="40" y1="14" x2="40" y2="24" stroke-width="0.8" opacity="0.4"/>
+            <line x1="40" y1="56" x2="40" y2="66" stroke-width="0.8" opacity="0.4"/>
+            <line x1="14" y1="40" x2="24" y2="40" stroke-width="0.8" opacity="0.4"/>
+            <line x1="56" y1="40" x2="66" y2="40" stroke-width="0.8" opacity="0.4"/>
+          </svg>
+        </div>
+        <h3>Princess</h3>
+        <p class="gem-shape-style">Phổ biến · Hiện đại</p>
+        <p>Một trong những hình dạng phổ biến nhất, đẹp rạng rỡ trên nhiều kiểu nhẫn khác nhau. Giác cắt brilliant cho độ lấp lánh tuyệt vời trong hình dạng vuông sắc nét.</p>
+      </div>
+      <!-- Radiant -->
+      <div class="gem-shape-card" data-aos="fade-up" data-aos-delay="350">
+        <div class="gem-shape-icon">
+          <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.2">
+            <polygon points="24,12 56,12 68,24 68,56 56,68 24,68 12,56 12,24"/>
+            <polygon points="32,22 48,22 56,32 56,48 48,58 32,58 24,48 24,32" stroke-width="0.6" opacity="0.5"/>
+            <line x1="24" y1="12" x2="32" y2="22" stroke-width="0.8" opacity="0.4"/>
+            <line x1="56" y1="12" x2="48" y2="22" stroke-width="0.8" opacity="0.4"/>
+            <line x1="68" y1="24" x2="56" y2="32" stroke-width="0.8" opacity="0.4"/>
+            <line x1="68" y1="56" x2="56" y2="48" stroke-width="0.8" opacity="0.4"/>
+            <line x1="56" y1="68" x2="48" y2="58" stroke-width="0.8" opacity="0.4"/>
+            <line x1="24" y1="68" x2="32" y2="58" stroke-width="0.8" opacity="0.4"/>
+            <line x1="12" y1="56" x2="24" y2="48" stroke-width="0.8" opacity="0.4"/>
+            <line x1="12" y1="24" x2="24" y2="32" stroke-width="0.8" opacity="0.4"/>
+          </svg>
+        </div>
+        <h3>Radiant</h3>
+        <p class="gem-shape-style">Đa dạng · Rực rỡ</p>
+        <p>Có tỷ lệ đa dạng từ gần vuông đến chữ nhật. Kết hợp giác cắt bậc thang của emerald với độ rực rỡ của giác cắt brilliant, phù hợp với nhiều phong cách.</p>
+      </div>
+      <!-- Cushion -->
+      <div class="gem-shape-card" data-aos="fade-up" data-aos-delay="400">
+        <div class="gem-shape-icon">
+          <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.2">
+            <rect x="14" y="14" width="52" height="52" rx="12"/>
+            <rect x="24" y="24" width="32" height="32" rx="6" stroke-width="0.6" opacity="0.5"/>
+            <line x1="18" y1="18" x2="27" y2="27" stroke-width="0.8" opacity="0.4"/>
+            <line x1="62" y1="18" x2="53" y2="27" stroke-width="0.8" opacity="0.4"/>
+            <line x1="18" y1="62" x2="27" y2="53" stroke-width="0.8" opacity="0.4"/>
+            <line x1="62" y1="62" x2="53" y2="53" stroke-width="0.8" opacity="0.4"/>
+            <line x1="40" y1="14" x2="40" y2="24" stroke-width="0.8" opacity="0.4"/>
+            <line x1="40" y1="56" x2="40" y2="66" stroke-width="0.8" opacity="0.4"/>
+            <line x1="14" y1="40" x2="24" y2="40" stroke-width="0.8" opacity="0.4"/>
+            <line x1="56" y1="40" x2="66" y2="40" stroke-width="0.8" opacity="0.4"/>
+          </svg>
+        </div>
+        <h3>Cushion</h3>
+        <p class="gem-shape-style">Mềm mại · Lãng mạn</p>
+        <p>Sự kết hợp giữa hình tròn và princess với các góc bo mềm mại. Là lựa chọn đặc biệt phổ biến cho nhẫn halo, mang đến vẻ đẹp lãng mạn và cổ điển.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 2: Metal Types -->
+<section class="instruction-section instruction-section-alt" id="metal-types">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-label">Bước 2</span>
+      <h2 class="section-title">Bạn Thích Loại Kim Loại Nào Nhất?</h2>
+      <p class="section-desc">Kim loại quyết định tông màu và phong cách tổng thể của món trang sức. Hãy chọn loại kim loại phù hợp với tông da và sở thích của bạn.</p>
+    </div>
+
+    <div class="instruction-ref-image" data-aos="fade-up">
+      <img src="/products/instructions/metal.jpeg" alt="So sánh các loại kim loại" class="instruction-full-img">
+    </div>
+
+    <div class="metal-types-grid">
+      <!-- Yellow Gold -->
+      <div class="metal-card" data-aos="fade-up">
+        <div class="metal-color-strip" style="background: linear-gradient(135deg, #FFD700, #DAA520);"></div>
+        <h3>Vàng Vàng (Yellow Gold)</h3>
+        <p class="metal-style-tag">Cổ điển · Ấm áp · Truyền thống</p>
+        <p>Màu vàng ấm áp truyền thống, phù hợp với mọi tông da. Vàng vàng là lựa chọn cổ điển nhất, tông ấm giúp tôn lên vẻ đẹp tự nhiên của da. Số K càng cao, màu vàng càng đậm và rực rỡ.</p>
+        <div class="metal-variants">
+          <span class="metal-variant">10K — Sáng nhẹ</span>
+          <span class="metal-variant">14K — Cân bằng</span>
+          <span class="metal-variant metal-recommended">18K — Đậm, sang trọng ★</span>
+        </div>
+      </div>
+      <!-- White Gold -->
+      <div class="metal-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="metal-color-strip" style="background: linear-gradient(135deg, #E8E8E8, #C0C0C0);"></div>
+        <h3>Vàng Trắng (White Gold)</h3>
+        <p class="metal-style-tag">Hiện đại · Sang trọng · Đa năng</p>
+        <p>Vẻ ngoài sáng bóng tương tự bạch kim nhưng giá cả phải chăng hơn. Thường được mạ rhodium để tăng độ sáng. Phù hợp với tông da lạnh và rất phổ biến cho nhẫn cầu hôn.</p>
+        <div class="metal-variants">
+          <span class="metal-variant metal-recommended">14K — Phổ biến nhất ★</span>
+          <span class="metal-variant">14K Grade 1 — Cao cấp hơn</span>
+        </div>
+      </div>
+      <!-- Platinum -->
+      <div class="metal-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="metal-color-strip" style="background: linear-gradient(135deg, #E5E4E2, #B9B9B9);"></div>
+        <h3>Bạch Kim (Platinum)</h3>
+        <p class="metal-style-tag">Cao cấp · Bền bỉ · Hiếm có</p>
+        <p>Kim loại quý hiếm nhất và bền nhất cho trang sức. Bạch kim có tông trắng tự nhiên không cần mạ, chống ăn mòn và ít gây dị ứng. Lựa chọn hàng đầu cho trang sức đeo suốt đời.</p>
+      </div>
+      <!-- Rose Gold -->
+      <div class="metal-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="metal-color-strip" style="background: linear-gradient(135deg, #E8C4B8, #B76E79);"></div>
+        <h3>Vàng Hồng (Rose Gold)</h3>
+        <p class="metal-style-tag">Lãng mạn · Nữ tính · Hiện đại</p>
+        <p>Tông hồng ấm áp và lãng mạn, được tạo từ hợp kim vàng với đồng. Rose gold rất được yêu thích trong trang sức hiện đại, mang đến vẻ đẹp nữ tính và độc đáo.</p>
+        <div class="metal-variants">
+          <span class="metal-variant">10K — Hồng đậm hơn</span>
+          <span class="metal-variant metal-recommended">14K — Hồng ấm, cân bằng ★</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gold Purity Guide -->
+    <div class="purity-guide" data-aos="fade-up">
+      <h3 class="purity-title">Bảng Độ Tinh Khiết Của Vàng</h3>
+      <p class="purity-desc">Số K (Karat) càng cao, hàm lượng vàng nguyên chất càng lớn. Hãy chọn mức K phù hợp với nhu cầu sử dụng và ngân sách của bạn.</p>
+      <div class="instruction-ref-image">
+        <img src="/products/instructions/percent_metal.jpeg" alt="Bảng độ tinh khiết của vàng" class="instruction-full-img">
+      </div>
+      <div class="purity-grid">
+        <div class="purity-item">
+          <span class="purity-karat">20K</span>
+          <span class="purity-percent">83.3% vàng</span>
+          <span class="purity-note">Rất cao cấp, mềm</span>
+        </div>
+        <div class="purity-item purity-highlight">
+          <span class="purity-karat">18K ★</span>
+          <span class="purity-percent">75.0% vàng</span>
+          <span class="purity-note">Khuyên dùng — Bền & Đẹp</span>
+        </div>
+        <div class="purity-item">
+          <span class="purity-karat">15K</span>
+          <span class="purity-percent">62.5% vàng</span>
+          <span class="purity-note">Ít phổ biến</span>
+        </div>
+        <div class="purity-item">
+          <span class="purity-karat">14K</span>
+          <span class="purity-percent">58.3% vàng</span>
+          <span class="purity-note">Phổ biến, bền hơn</span>
+        </div>
+        <div class="purity-item">
+          <span class="purity-karat">12K</span>
+          <span class="purity-percent">50.0% vàng</span>
+          <span class="purity-note">Cân bằng vàng & hợp kim</span>
+        </div>
+        <div class="purity-item">
+          <span class="purity-karat">10K</span>
+          <span class="purity-percent">41.7% vàng</span>
+          <span class="purity-note">Bền nhất, giá hợp lý</span>
+        </div>
+        <div class="purity-item">
+          <span class="purity-karat">9K</span>
+          <span class="purity-percent">37.5% vàng</span>
+          <span class="purity-note">Tiết kiệm chi phí</span>
+        </div>
+        <div class="purity-item">
+          <span class="purity-karat">8K</span>
+          <span class="purity-percent">33.3% vàng</span>
+          <span class="purity-note">Hàm lượng vàng thấp nhất</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 3: Size Guide -->
+<section class="instruction-section" id="size-guide">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-label">Bước 3</span>
+      <h2 class="section-title">Hướng Dẫn Đo Kích Thước Đúng Cách</h2>
+      <p class="section-desc">Đo kích thước chính xác giúp món trang sức vừa vặn và thoải mái. Bạn hoàn toàn có thể tự đo tại nhà với những dụng cụ đơn giản.</p>
+    </div>
+
+    <div class="size-guides-grid">
+      <!-- Ring Size -->
+      <div class="size-guide-card" data-aos="fade-up">
+        <div class="size-guide-header">
+          <div class="size-guide-icon">💍</div>
+          <h3>Đo Kích Thước Nhẫn</h3>
+        </div>
+        <div class="size-guide-body">
+          <h4>Cách 1: Dùng dây hoặc giấy</h4>
+          <ol class="size-steps">
+            <li>Cắt một đoạn dây hoặc giấy mỏng dài khoảng 10cm</li>
+            <li>Quấn quanh gốc ngón tay muốn đeo nhẫn (chỗ to nhất)</li>
+            <li>Đánh dấu điểm giao nhau bằng bút</li>
+            <li>Duỗi thẳng và đo chiều dài bằng thước (mm)</li>
+            <li>Đối chiếu với bảng kích thước bên dưới</li>
+          </ol>
+          <h4>Cách 2: Dùng nhẫn có sẵn</h4>
+          <ol class="size-steps">
+            <li>Chọn nhẫn vừa vặn với ngón tay muốn đeo</li>
+            <li>Đặt nhẫn lên thước và đo đường kính bên trong (mm)</li>
+            <li>Đối chiếu với bảng kích thước</li>
+          </ol>
+          <div class="size-table-wrap">
+            <table class="size-table">
+              <thead>
+                <tr><th>Size VN</th><th>Chu vi (mm)</th><th>Đường kính (mm)</th><th>Size US</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>6</td><td>46.1</td><td>14.7</td><td>3.5</td></tr>
+                <tr><td>7</td><td>47.8</td><td>15.2</td><td>4</td></tr>
+                <tr><td>8</td><td>49.3</td><td>15.7</td><td>5</td></tr>
+                <tr><td>9</td><td>50.6</td><td>16.1</td><td>5.5</td></tr>
+                <tr><td>10</td><td>51.9</td><td>16.5</td><td>6</td></tr>
+                <tr><td>11</td><td>53.1</td><td>16.9</td><td>6.5</td></tr>
+                <tr><td>12</td><td>54.4</td><td>17.3</td><td>7</td></tr>
+                <tr><td>13</td><td>55.7</td><td>17.7</td><td>7.5</td></tr>
+                <tr><td>14</td><td>57.0</td><td>18.1</td><td>8</td></tr>
+                <tr><td>15</td><td>58.3</td><td>18.5</td><td>8.5</td></tr>
+                <tr><td>16</td><td>59.5</td><td>18.9</td><td>9</td></tr>
+                <tr><td>17</td><td>60.8</td><td>19.4</td><td>9.5</td></tr>
+                <tr><td>18</td><td>62.1</td><td>19.8</td><td>10</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="size-tips">
+            <h4>💡 Mẹo đo chính xác</h4>
+            <ul>
+              <li>Đo vào cuối ngày khi ngón tay hơi nở ra</li>
+              <li>Tránh đo khi tay lạnh hoặc sau khi tập thể dục</li>
+              <li>Đo ít nhất 2-3 lần để có kết quả chính xác</li>
+              <li>Nếu phân vân giữa 2 size, chọn size lớn hơn</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Necklace Size -->
+      <div class="size-guide-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="size-guide-header">
+          <div class="size-guide-icon">📿</div>
+          <h3>Đo Kích Thước Dây Chuyền</h3>
+        </div>
+        <div class="size-guide-body">
+          <h4>Cách đo</h4>
+          <ol class="size-steps">
+            <li>Dùng dây mềm hoặc thước dây quấn quanh cổ</li>
+            <li>Điều chỉnh độ dài theo vị trí bạn muốn dây chuyền rơi xuống</li>
+            <li>Thêm 2-5cm so với chu vi cổ để thoải mái</li>
+            <li>Đối chiếu với bảng bên dưới</li>
+          </ol>
+          <div class="size-table-wrap">
+            <table class="size-table">
+              <thead>
+                <tr><th>Kiểu dáng</th><th>Độ dài</th><th>Vị trí</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Choker</td><td>35-40cm</td><td>Ôm sát cổ</td></tr>
+                <tr><td>Princess</td><td>42-45cm</td><td>Ngay dưới xương quai xanh ★</td></tr>
+                <tr><td>Matinee</td><td>50-55cm</td><td>Giữa ngực</td></tr>
+                <tr><td>Opera</td><td>60-70cm</td><td>Dưới ngực</td></tr>
+                <tr><td>Rope</td><td>75cm+</td><td>Thấp, có thể quấn đôi</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="size-tips">
+            <h4>💡 Lời khuyên</h4>
+            <ul>
+              <li>Độ dài phổ biến nhất là 42-45cm (Princess)</li>
+              <li>Nếu đeo mặt dây chuyền, chọn dài hơn 3-5cm</li>
+              <li>Dây chuyền có thể điều chỉnh là lựa chọn linh hoạt nhất</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bracelet Size -->
+      <div class="size-guide-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="size-guide-header">
+          <div class="size-guide-icon">⌚</div>
+          <h3>Đo Kích Thước Vòng Tay</h3>
+        </div>
+        <div class="size-guide-body">
+          <h4>Cách đo</h4>
+          <ol class="size-steps">
+            <li>Dùng thước dây hoặc dây mềm quấn quanh cổ tay</li>
+            <li>Đo ngay phía trên xương cổ tay (chỗ bạn thường đeo)</li>
+            <li>Ghi lại chu vi cổ tay</li>
+            <li>Thêm 1-2cm cho vòng tay ôm vừa, hoặc 2-3cm cho vòng tay lỏng thoải mái</li>
+          </ol>
+          <div class="size-table-wrap">
+            <table class="size-table">
+              <thead>
+                <tr><th>Size</th><th>Chu vi cổ tay</th><th>Độ dài vòng tay</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>XS</td><td>13-14cm</td><td>15-16cm</td></tr>
+                <tr><td>S</td><td>14-15cm</td><td>16-17cm</td></tr>
+                <tr><td>M</td><td>15-16cm</td><td>17-18cm ★</td></tr>
+                <tr><td>L</td><td>16-17cm</td><td>18-19cm</td></tr>
+                <tr><td>XL</td><td>17-18cm</td><td>19-20cm</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="size-tips">
+            <h4>💡 Mẹo hữu ích</h4>
+            <ul>
+              <li>Vòng tay lý tưởng có thể luồn 1 ngón tay vào giữa</li>
+              <li>Vòng tay tennis nên ôm vừa hơn vòng tay dây</li>
+              <li>Đo tay thuận (thường to hơn tay còn lại)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="instruction-cta-section">
+  <div class="container">
+    <div class="instruction-cta-content" data-aos="fade-up">
+      <img src="/images/laclac-logo.jpg" alt="LacLac Jewelry" class="instruction-cta-logo">
+      <h2>Vẫn Chưa Chắc Chắn?</h2>
+      <p>Đừng lo, chúng tôi luôn sẵn sàng hỗ trợ bạn! Hãy liên hệ để được tư vấn miễn phí về hình dạng đá, loại kim loại và kích thước phù hợp nhất.</p>
+      <div class="instruction-cta-buttons">
+        <a href="https://www.instagram.com/laclac.jewelry/" target="_blank" rel="noopener" class="btn btn-primary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
+          Tư Vấn Qua Instagram
+        </a>
+        <a href="/" class="btn btn-outline">← Quay Lại Trang Chủ</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+`, pageTitle: 'Hướng Dẫn Chọn Sản Phẩm' }) %>

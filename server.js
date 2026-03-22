@@ -38,6 +38,10 @@ app.get('/gemstones', (req, res) => {
   res.render('pages/gemstones', { gemstones, products });
 });
 
+app.get('/instruction', (req, res) => {
+  res.render('pages/instruction');
+});
+
 app.get('/collections', (req, res) => {
   const products = loadProducts();
   res.render('pages/home', { products, featured: products.filter(p => p.featured), collections: [...new Set(products.map(p => p.collection))] });
