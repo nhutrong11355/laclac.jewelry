@@ -15,7 +15,12 @@
       "Kích thước đá": "2.00 - 5.00 carat tổng trọng lượng",
       "Đối tượng": "Phụ nữ yêu thích trang sức thanh lịch, tối giản. Nhân viên văn phòng, có gu thời trang tinh tế. Những ai muốn một món phụ kiện sang trọng để đeo hằng ngày."
     },
-    "images": ["/products/bracelets/tennis_bracelet_1.jpg", "/products/bracelets/tennis_bracelet_2.jpg", "/products/bracelets/tennis_bracelet_3.jpg", "/products/bracelets/tennis_bracelet_4.jpg"],
+    "images": [
+      "/products/bracelets/tennis_bracelet_1.jpg",
+      "/products/bracelets/tennis_bracelet_2.jpg",
+      "/products/bracelets/tennis_bracelet_3.jpg",
+      "/products/bracelets/tennis_bracelet_4.jpg"
+    ],
     "featured": true
   },
   {
@@ -35,7 +40,11 @@
       "Đối tượng": "",
       "Kiểu Đính": "Four Prong Setting - Đá được giữ chắc chắn bằng 4 chấu, giúp viên đá nổi bật và thu hút ánh nhìn từ mọi góc độ."
     },
-    "images": ["/products/rings/oval_de_lumiere_engagement_ring_1.jpg", "/products/rings/oval_de_lumiere_engagement_ring_2.jpg", "/products/rings/oval_de_lumiere_engagement_ring_3.jpg"],
+    "images": [
+      "/products/rings/oval_de_lumiere_engagement_ring_1.jpg",
+      "/products/rings/oval_de_lumiere_engagement_ring_2.jpg",
+      "/products/rings/oval_de_lumiere_engagement_ring_3.jpg"
+    ],
     "featured": false
   },
   {
@@ -55,7 +64,11 @@
       "Đối tượng": "Dành cho các cặp đôi đang tìm kiếm nhẫn cưới với thiết kế tinh tế, sang trọng và ý nghĩa sâu sắc. Phù hợp với những người yêu thích phong cách cổ điển nhưng vẫn muốn có điểm nhấn hiện đại trong thiết kế.",
       "Kiểu Đính": "Channel Setting - Đá được đính sát nhau tạo thành một dải liên tục, mang lại vẻ đẹp liền mạch và sang trọng."
     },
-    "images": ["/products/rings/circle_of_love_wedding_ring_1.jpg", "/products/rings/circle_of_love_wedding_ring_2.jpg", "/products/rings/circle_of_love_wedding_ring_3.jpg"],
+    "images": [
+      "/products/rings/circle_of_love_wedding_ring_1.jpg",
+      "/products/rings/circle_of_love_wedding_ring_2.jpg",
+      "/products/rings/circle_of_love_wedding_ring_3.jpg"
+    ],
     "featured": false
   },
   {
@@ -73,7 +86,11 @@
       "Kích thước đá": "2.00 - 3.00 carat tổng trọng lượng",
       "Đối tượng": "Các cặp đôi (đính hôn, kỷ niệm, quà tặng)"
     },
-    "images": ["/products/rings/emerald_promise_ring_1.jpg", "/products/rings/emerald_promise_ring_2.jpg", "/products/rings/emerald_promise_ring_3.jpg"],
+    "images": [
+      "/products/rings/emerald_promise_ring_1.jpg",
+      "/products/rings/emerald_promise_ring_2.jpg",
+      "/products/rings/emerald_promise_ring_3.jpg"
+    ],
     "featured": false
   },
   {
@@ -92,7 +109,10 @@
       "Kích thước đá": "1.0 - 2.0 carat",
       "Đối tượng": "Phù hợp với nữ giới yêu thích phong cách tối giản nhưng tinh tế."
     },
-    "images": ["/products/earrings/oval_earing_1.jpg", "/products/earrings/oval_earing_2.jpg"],
+    "images": [
+      "/products/earrings/oval_earing_1.jpg",
+      "/products/earrings/oval_earing_2.jpg"
+    ],
     "featured": true
   },
   {
@@ -111,7 +131,11 @@
       "Kích thước đá": "1.0 carat",
       "Đối tượng": "Yêu thích phong cách nhẹ nhàng."
     },
-    "images": ["/products/necklaces/teardrop_double_stone_1.jpg", "/products/necklaces/teardrop_double_stone_2.jpg", "/products/necklaces/teardrop_double_stone_3.jpg"],
+    "images": [
+      "/products/necklaces/teardrop_double_stone_1.jpg",
+      "/products/necklaces/teardrop_double_stone_2.jpg",
+      "/products/necklaces/teardrop_double_stone_3.jpg"
+    ],
     "featured": true
   },
   {
@@ -130,45 +154,11 @@
       "Kích thước đá": "1.0 carat",
       "Đối tượng": "Phụ nữ yêu thích phong cách tối giản, thanh lịch. Phù hợp với người thích những món trang sức nhẹ nhàng, dễ đeo hằng ngày nhưng vẫn tinh tế và có điểm nhấn riêng biệt."
     },
-    "images": ["/products/necklaces/minimalist_one_stone_1.jpg", "/products/necklaces/minimalist_one_stone_2.jpg", "/products/necklaces/minimalist_one_stone_3.jpg"],
+    "images": [
+      "/products/necklaces/minimalist_one_stone_1.jpg",
+      "/products/necklaces/minimalist_one_stone_2.jpg",
+      "/products/necklaces/minimalist_one_stone_3.jpg"
+    ],
     "featured": true
-  },
-  {
-    "id": 8,
-    "slug": "infinity-love-necklace",
-    "name": "Dây Chuyền Infinity Love",
-    "collection": "Dây chuyền",
-    "price": "Liên hệ báo giá",
-    "material": "Vàng 18K",
-    "stone": "Kim Cương Nhân Tạo 0.5ct",
-    "description": "Mặt dây chuyền biểu tượng vô cực tượng trưng cho tình yêu bất tận, nổi bật với viên kim cương nhân tạo rực rỡ ở trung tâm. Món quà ý nghĩa cho người đặc biệt.",
-    "details": "Mặt dây biểu tượng vô cực được chế tác bằng vàng 18K và đính viên kim cương nhân tạo 0.5 carat tại điểm giao nhau. Treo trên sợi dây 50cm có thể điều chỉnh, sản phẩm mang ý nghĩa sâu sắc và tay nghề chế tác xuất sắc.",
-    "specs": {
-      "Đá": "Kim Cương Nhân Tạo, 0.5ct, Độ Trong VS1, Màu E",
-      "Kim Loại": "Vàng Vàng 18K",
-      "Độ Dài Dây": "50cm (có thể điều chỉnh)",
-      "Kích Thước Mặt": "1.8cm x 0.8cm"
-    },
-    "images": ["/images/products/necklace-2.jpg", "/images/products/necklace-2-detail.jpg"],
-    "featured": false
-  },
-  {
-    "id": 9,
-    "slug": "celestial-huggie-earrings",
-    "name": "Bông Tai Celestial Huggie",
-    "collection": "Bông tai",
-    "price": "Liên hệ báo giá",
-    "material": "Bạc Sterling 925",
-    "stone": "Moissanite Phụ",
-    "description": "Bông tai huggie hoop thời thượng với điểm nhấn moissanite lấp lánh. Hoàn hảo cho vẻ thanh lịch hàng ngày.",
-    "details": "Đôi huggie hoop này có đá moissanite đính channel quanh viền ngoài, chế tác bằng bạc sterling 925 mạ rhodium. Khóa bản lề giúp dễ đeo và thoải mái suốt cả ngày.",
-    "specs": {
-      "Đá": "Moissanite Đính Channel",
-      "Kim Loại": "Bạc Sterling 925, Mạ Rhodium",
-      "Đường Kính": "1.2cm",
-      "Khóa": "Bản Lề"
-    },
-    "images": ["/images/products/earring-2.jpg", "/images/products/earring-2-detail.jpg"],
-    "featured": false
   }
-]
+  ]

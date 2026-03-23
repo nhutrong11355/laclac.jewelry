@@ -557,8 +557,51 @@ h1, h2, h3, h4 {
 
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 32px;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 48px;
+}
+.page-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid rgba(201,169,110,0.3);
+  background: var(--white);
+  color: var(--charcoal);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.page-btn:hover:not(.disabled):not(.active) {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: rgba(201,169,110,0.05);
+}
+.page-btn.active {
+  background: var(--gold);
+  color: white;
+  border-color: var(--gold);
+}
+.page-btn.disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+.page-prev, .page-next {
+  font-size: 16px;
 }
 
 .products-grid-4 {
@@ -1838,6 +1881,16 @@ h1, h2, h3, h4 {
 @media (max-width: 480px) {
   .products-grid {
     grid-template-columns: 1fr;
+  }
+
+  .pagination {
+    gap: 4px;
+  }
+  .page-btn {
+    min-width: 34px;
+    height: 34px;
+    font-size: 13px;
+    padding: 0 8px;
   }
 
   .instagram-grid {
