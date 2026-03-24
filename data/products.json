@@ -24,6 +24,30 @@
     "featured": true
   },
   {
+    "id": 8,
+    "slug": "whisper-chain-necklace-3",
+    "name": "Beloved Necklace",
+    "collection": "Dây chuyền",
+    "price": "Liên hệ báo giá",
+    "material": "Vàng 14K | Bạc S925",
+    "stone": "Đá Moissanite",
+    "description": "",
+    "details": "Dây chuyền tinh tế và thanh lịch với mặt chữ cái cá nhân hóa, được đính những viên đá tròn lấp lánh một cách tỉ mỉ. Thiết kế với sợi dây mảnh tông vàng, sản phẩm mang phong cách tối giản nhưng sang trọng, phù hợp để đeo hằng ngày hoặc phối nhiều lớp. Kiểu dáng tinh giản giúp tôn lên vẻ đẹp nhẹ nhàng, là món quà ý nghĩa hoặc kỷ niệm cá nhân thể hiện phong cách riêng biệt của người đeo.",
+    "specs": {
+      "Đá": "Đá Moissanite",
+      "Kim Loại": "Vàng 14K | Bạc S925",
+      "Kích thước đá": "0.5 carat",
+      "Đối tượng": "Phụ nữ yêu thích sự tinh tế và sang trọng trong trang sức. Những ai muốn thể hiện phong cách cá nhân qua từng chi tiết nhỏ. Phù hợp làm quà tặng ý nghĩa cho bản thân hoặc người thân yêu, đặc biệt là những dịp kỷ niệm, sinh nhật hoặc ngày lễ.",
+      "Kiểu Đính": "Bezel Setting - Đá được bao quanh bởi một viền kim loại, tạo nên vẻ đẹp liền mạch và bảo vệ viên đá khỏi va đập, đồng thời mang lại sự sang trọng và hiện đại cho thiết kế."
+    },
+    "images": [
+      "/products/necklaces/beloved_2.png",
+      "/products/necklaces/beloved_1.png",
+      "/products/necklaces/beloved_3.png"
+    ],
+    "featured": false
+  },
+  {
     "id": 2,
     "slug": "rose-petal-ring-1",
     "name": "Oval de Lumière - Engagement Ring",
@@ -37,7 +61,7 @@
       "Đá": "Kim Cương Nhân Tạo",
       "Kim Loại": "Vàng 10K-14K-18K",
       "Kích thước đá": "3.0 carat",
-      "Đối tượng": "",
+      "Đối tượng": "Dành cho những người đang tìm kiếm một chiếc nhẫn cầu hôn độc đáo, mang ý nghĩa sâu sắc và thiết kế tinh tế. Phù hợp với những ai yêu thích phong cách cổ điển nhưng vẫn muốn có điểm nhấn hiện đại trong thiết kế.",
       "Kiểu Đính": "Four Prong Setting - Đá được giữ chắc chắn bằng 4 chấu, giúp viên đá nổi bật và thu hút ánh nhìn từ mọi góc độ."
     },
     "images": [
@@ -116,6 +140,31 @@
     "featured": true
   },
   {
+    "id": 9,
+    "slug": "whisper-chain-necklace-4",
+    "name": "Beloved Custom Necklace",
+    "collection": "Dây chuyền",
+    "price": "Liên hệ báo giá",
+    "material": "Bạc S925 mạ vàng",
+    "stone": "Đá Moissanite",
+    "description": "",
+    "details": "Chiếc dây chuyền cá nhân hoá tinh tế, cho phép bạn khắc tên, chữ cái hoặc ngày đặc biệt theo yêu cầu. Thiết kế chữ mềm mại kết hợp cùng dây mảnh thanh lịch, tạo nên một món trang sức mang dấu ấn riêng và đầy cảm xúc.",
+    "specs": {
+      "Đá": "Đá Moissanite",
+      "Kim Loại": "Bạc S925 mạ vàng",
+        "Kích thước đá": "0 - 1.0 carat",
+      "Đối tượng": "Phù hợp làm quà tặng cho người yêu, bạn bè hoặc chính bản thân – mỗi chiếc vòng là một câu chuyện, một kỷ niệm đáng trân trọng. Phong cách tối giản, dễ phối đồ hằng ngày",
+      "Có thể đặt": "Tên riêng, ngày sinh, ngày kỷ niệm, hoặc bất kỳ chữ cái nào theo yêu cầu của khách hàng."
+    },
+    "images": [
+      "/products/necklaces/beloved_custom_1.jpg",
+      "/products/necklaces/beloved_custom_2.jpg",
+      "/products/necklaces/beloved_custom_3.jpg",
+      "/products/necklaces/beloved_custom_4.jpg"
+    ],
+    "featured": false
+  },
+  {
     "id": 6,
     "slug": "whisper-chain-necklace-1",
     "name": "Teardrop Double Stone Necklace",
@@ -161,4 +210,4 @@
     ],
     "featured": true
   }
-  ]
+]
