@@ -48,6 +48,31 @@
     "featured": false
   },
   {
+    "id": 9,
+    "slug": "whisper-chain-necklace-4",
+    "name": "Beloved Custom Necklace",
+    "collection": "Dây chuyền",
+    "price": "Liên hệ báo giá",
+    "material": "Bạc S925 mạ vàng",
+    "stone": "Đá Moissanite",
+    "description": "",
+    "details": "Chiếc dây chuyền cá nhân hoá tinh tế, cho phép bạn khắc tên, chữ cái hoặc ngày đặc biệt theo yêu cầu. Thiết kế chữ mềm mại kết hợp cùng dây mảnh thanh lịch, tạo nên một món trang sức mang dấu ấn riêng và đầy cảm xúc.",
+    "specs": {
+      "Đá": "Đá Moissanite",
+      "Kim Loại": "Bạc S925 mạ vàng",
+      "Kích thước đá": "0 - 1.0 carat",
+      "Đối tượng": "Phù hợp làm quà tặng cho người yêu, bạn bè hoặc chính bản thân – mỗi chiếc vòng là một câu chuyện, một kỷ niệm đáng trân trọng. Phong cách tối giản, dễ phối đồ hằng ngày",
+      "Có thể đặt": "Tên riêng, ngày sinh, ngày kỷ niệm, hoặc bất kỳ chữ cái nào theo yêu cầu của khách hàng."
+    },
+    "images": [
+      "/products/necklaces/beloved_custom_1.jpg",
+      "/products/necklaces/beloved_custom_2.jpg",
+      "/products/necklaces/beloved_custom_3.jpg",
+      "/products/necklaces/beloved_custom_4.jpg"
+    ],
+    "featured": false
+  },
+  {
     "id": 2,
     "slug": "rose-petal-ring-1",
     "name": "Oval de Lumière - Engagement Ring",
@@ -68,6 +93,30 @@
       "/products/rings/oval_de_lumiere_engagement_ring_1.jpg",
       "/products/rings/oval_de_lumiere_engagement_ring_2.jpg",
       "/products/rings/oval_de_lumiere_engagement_ring_3.jpg"
+    ],
+    "featured": false
+  },
+   {
+    "id": 11,
+    "slug": "rose-petal-ring-5",
+    "name": "Everline Band Ring",
+    "collection": "Nhẫn",
+    "price": "Liên hệ báo giá",
+    "material": "Vàng 10K-14K-18K | Bạc S925",
+    "stone": "Đá Moissanite",
+    "description": "",
+    "details": "Thiết kế thanh khiết làm nổi bật từng tia sáng dịu dàng nhưng đầy cuốn hút. Mỗi chuyển động của bàn tay đều khiến chiếc nhẫn khẽ bừng sáng, biểu tượng cho tình cảm luôn tiếp diễn, không ngắt quãng, không phai nhạt theo thời gian.",
+    "specs": {
+      "Đá": "Đá Moissanite",
+      "Kim Loại": "Vàng 10K-14K-18K | Bạc S925",
+      "Kích thước đá": "1.0 - 3.0 carat",
+      "Đối tượng": "Phụ nữ hiện đại, cá tính, thanh lịch\ncác cặp đôi, quà tặng cho dịp kỉ niệm.",
+      "Kiểu Đính": "Shared Prong Setting - Đá được đính sát nhau và chia sẻ chấu giữa các viên, tạo nên vẻ đẹp liên tục và lấp lánh tối đa, đồng thời giữ cho thiết kế nhẹ nhàng và tinh tế."
+    },
+    "images": [
+      "/products/rings/everline_band_ring_1.jpg",
+      "/products/rings/everline_band_ring_2.jpg",
+      "/products/rings/everline_band_ring_3.jpg"
     ],
     "featured": false
   },
@@ -140,31 +189,6 @@
     "featured": true
   },
   {
-    "id": 9,
-    "slug": "whisper-chain-necklace-4",
-    "name": "Beloved Custom Necklace",
-    "collection": "Dây chuyền",
-    "price": "Liên hệ báo giá",
-    "material": "Bạc S925 mạ vàng",
-    "stone": "Đá Moissanite",
-    "description": "",
-    "details": "Chiếc dây chuyền cá nhân hoá tinh tế, cho phép bạn khắc tên, chữ cái hoặc ngày đặc biệt theo yêu cầu. Thiết kế chữ mềm mại kết hợp cùng dây mảnh thanh lịch, tạo nên một món trang sức mang dấu ấn riêng và đầy cảm xúc.",
-    "specs": {
-      "Đá": "Đá Moissanite",
-      "Kim Loại": "Bạc S925 mạ vàng",
-        "Kích thước đá": "0 - 1.0 carat",
-      "Đối tượng": "Phù hợp làm quà tặng cho người yêu, bạn bè hoặc chính bản thân – mỗi chiếc vòng là một câu chuyện, một kỷ niệm đáng trân trọng. Phong cách tối giản, dễ phối đồ hằng ngày",
-      "Có thể đặt": "Tên riêng, ngày sinh, ngày kỷ niệm, hoặc bất kỳ chữ cái nào theo yêu cầu của khách hàng."
-    },
-    "images": [
-      "/products/necklaces/beloved_custom_1.jpg",
-      "/products/necklaces/beloved_custom_2.jpg",
-      "/products/necklaces/beloved_custom_3.jpg",
-      "/products/necklaces/beloved_custom_4.jpg"
-    ],
-    "featured": false
-  },
-  {
     "id": 6,
     "slug": "whisper-chain-necklace-1",
     "name": "Teardrop Double Stone Necklace",
@@ -188,6 +212,31 @@
     "featured": true
   },
   {
+    "id": 10,
+    "slug": "whisper-chain-necklace-5",
+    "name": "Tennis Necklace",
+    "collection": "Dây chuyền",
+    "price": "Liên hệ báo giá",
+    "material": "Bạc S925",
+    "stone": "Đá Moissanite",
+    "description": "",
+    "details": "Tựa như một dải ngân hà thu nhỏ ôm trọn đường nét thanh tú của người đeo, chiếc tennis necklace này là hiện thân của vẻ đẹp vĩnh cửu và sự tinh xảo đỉnh cao. Từng viên đá được tuyển chọn kỹ lưỡng, xếp nối liền mạch trong một nhịp điệu hoàn hảo, tạo nên dòng chảy ánh sáng lấp lánh, mềm mại và đầy mê hoặc.",
+    "specs": {
+      "Đá": "Đá Moissanite",
+      "Kim Loại": "Bạc S925",
+      "Kích thước đá": "10 - 12 carat",
+      "Đối tượng": "Phù hợp với cô nàng cá tính nhưng vẫn yêu thích sự lấp lánh cổ điển.",
+      "Chiều dài dây" : "42 - 45cm",
+      "Kiểu Đính": "Shared Prong Setting - Đá được đính sát nhau và chia sẻ chấu giữa các viên, tạo nên vẻ đẹp liên tục và lấp lánh tối đa, đồng thời giữ cho thiết kế nhẹ nhàng và tinh tế."
+    },
+    "images": [
+      "/products/necklaces/tennis_1.jpg",
+      "/products/necklaces/tennis_2.jpg",
+      "/products/necklaces/tennis_3.jpg"
+    ],
+    "featured": false
+  },
+  {
     "id": 7,
     "slug": "whisper-chain-necklace-2",
     "name": "Minimalist One Stone Necklace",
@@ -209,5 +258,30 @@
       "/products/necklaces/minimalist_one_stone_3.jpg"
     ],
     "featured": true
+  },
+  {
+    "id": 11,
+    "slug": "rose-petal-ring-4",
+    "name": "Promise Custom Ring",
+    "collection": "Nhẫn",
+    "price": "Liên hệ báo giá",
+    "material": "Vàng 10K-14K-18K | Bạc S925",
+    "stone": "Tất cả loại đá quý theo yêu cầu",
+    "description": "",
+    "details": "Không chỉ là một chiếc nhẫn, Promise Custom Rings là lời hứa được “khắc” thành hình – một dấu ấn riêng biệt dành cho những mối quan hệ trân quý nhất. Mỗi thiết kế đều được cá nhân hóa theo câu chuyện của bạn, từ kiểu dáng, chất liệu đến từng chi tiết nhỏ nhất, tạo nên một món trang sức mang ý nghĩa độc nhất vô nhị. Dù là lời hứa tình yêu, tình bạn hay cam kết cá nhân, Promise Custom Rings sẽ là biểu tượng vĩnh cửu của những giá trị mà bạn trân trọng nhất. Hãy để chúng tôi giúp bạn biến những lời hứa thành hiện thực, với một chiếc nhẫn không chỉ đẹp mắt mà còn chứa đựng cả một câu chuyện đáng nhớ.",
+    "specs": {
+      "Đá": "Tất cả loại đá quý theo yêu cầu",
+      "Kim Loại": "Vàng 10K-14K-18K | Bạc S925",
+      "Kích thước đá": "Kích thước tùy chọn theo yêu cầu",
+      "Đối tượng": "Phù hợp cho nhẫn đôi, nhẫn kỷ niệm, nhẫn lời hứa.",
+      "Kiểu Đính": "Four Prong Setting - Đá được giữ chắc chắn bằng 4 chấu, giúp viên đá nổi bật và thu hút ánh nhìn từ mọi góc độ. Ngoài ra, chúng tôi cũng có thể tùy chỉnh kiểu đính theo yêu cầu của khách hàng để tạo nên một thiết kế độc đáo và phù hợp nhất với câu chuyện của bạn.",
+      "Có thể đặt": "Thiết kế custom theo yêu cầu – độc quyền cho từng khách hàng."
+    },
+    "images": [
+      "/products/rings/promise_custom_ring_1.jpg",
+      "/products/rings/promise_custom_ring_2.jpg",
+      "/products/rings/promise_custom_ring_3.jpg"
+    ],
+    "featured": false
   }
 ]
