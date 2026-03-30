@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
   const products = loadProducts();
   const featured = products.filter(p => p.featured);
   const collections = [...new Set(products.map(p => p.collection))];
-  res.render('pages/home', { products, featured, collections });
+  res.render('pages/home', { products, featured, collections, currentPage: 'home' });
 });
 
 app.get('/product/:slug', (req, res) => {
@@ -29,22 +29,22 @@ app.get('/product/:slug', (req, res) => {
   const product = products.find(p => p.slug === req.params.slug);
   if (!product) return res.status(404).send('Product not found');
   const related = products.filter(p => p.collection === product.collection && p.slug !== product.slug).slice(0, 4);
-  res.render('pages/product', { product, related });
+  res.render('pages/product', { product, related, currentPage: 'product' });
 });
 
 app.get('/gemstones', (req, res) => {
   const products = loadProducts();
   const gemstones = loadGemstones();
-  res.render('pages/gemstones', { gemstones, products });
+  res.render('pages/gemstones', { gemstones, products, currentPage: 'gemstones' });
 });
 
 app.get('/instruction', (req, res) => {
-  res.render('pages/instruction');
+  res.render('pages/instruction', { currentPage: 'instruction' });
 });
 
 app.get('/collections', (req, res) => {
   const products = loadProducts();
-  res.render('pages/home', { products, featured: products.filter(p => p.featured), collections: [...new Set(products.map(p => p.collection))] });
+  res.render('pages/home', { products, featured: products.filter(p => p.featured), collections: [...new Set(products.map(p => p.collection))], currentPage: 'collections' });
 });
 
 if (require.main === module) {

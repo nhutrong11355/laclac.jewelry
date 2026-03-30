@@ -21,7 +21,7 @@
 <!-- Brand Story Section -->
 <section class="story-section" id="story">
   <div class="container">
-    <div class="story-grid">
+    <div class="story-grid" data-aos="fade-up">
       <div class="story-visual" data-aos="fade-right">
         <div class="story-image-frame">
           <div class="story-placeholder">
@@ -64,46 +64,23 @@
   </div>
 </section>
 
-<!-- Materials Banner -->
-<section class="materials-banner">
-  <div class="container">
-    <div class="materials-grid">
-      <div class="material-item" data-aos="fade-up" data-aos-delay="0">
-        <div class="material-icon">💎</div>
-        <h3>Kim Cương Tự Nhiên & Nhân Tạo</h3>
-        <p>Cùng độ sáng, cùng độ cứng — bạn tự do lựa chọn giữa kim cương tự nhiên quý hiếm hoặc kim cương nhân tạo hiện đại theo nhu cầu và ngân sách.</p>
-      </div>
-      <div class="material-item" data-aos="fade-up" data-aos-delay="100">
-        <div class="material-icon">✨</div>
-        <h3>Moissanite</h3>
-        <p>Với độ lấp lánh vượt trội hơn cả kim cương, moissanite mang đến vẻ đẹp rực rỡ phi thường với giá trị tuyệt vời.</p>
-      </div>
-      <div class="material-item" data-aos="fade-up" data-aos-delay="200">
-        <div class="material-icon">🥇</div>
-        <h3>Vàng 10K-18K & Bạc S925</h3>
-        <p>Kim loại cao cấp: vàng vàng, vàng trắng, vàng hồng — cùng bạc sterling S925 mạ rhodium cho vẻ đẹp vượt thời gian.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- Collections Section -->
 <section class="collections-section" id="collections">
-  <div class="container">
-    <div class="section-header" data-aos="fade-up">
+  <div class="container" data-aos="fade-up">
+    <div class="section-header">
       <span class="section-label">Bộ Sưu Tập</span>
       <h2 class="section-title">Khám Phá Sản Phẩm</h2>
       <p class="section-desc">Mỗi sản phẩm được chế tác tỉ mỉ với tình yêu. Xem qua bộ sưu tập hoặc liên hệ để thiết kế riêng.</p>
     </div>
 
-    <div class="collection-filter" data-aos="fade-up">
+    <div class="collection-filter" data-aos="fade-up" data-aos-delay="100">
       <button class="filter-btn active" data-filter="all">Tất Cả</button>
       ${['Nhẫn', 'Dây chuyền', 'Bông tai', 'Vòng tay'].filter(c => collections.includes(c)).map(c => '<button class="filter-btn" data-filter="' + c + '">' + c + '</button>').join('')}
     </div>
 
-    <div class="products-grid" id="productsGrid">
+    <div class="products-grid" id="productsGrid" data-aos="fade-up" data-aos-delay="200">
       ${products.map(p => `
-        <a href="/product/${p.slug}" class="product-card" data-collection="${p.collection}" data-aos="fade-up">
+        <a href="/product/${p.slug}" class="product-card" data-collection="${p.collection}">
           <div class="product-card-image">
             ${p.images && p.images[0] && !p.images[0].startsWith('/images/') ? `
               <img src="${p.images[0]}" alt="${p.name}" class="product-card-real-img">
@@ -136,17 +113,40 @@
   </div>
 </section>
 
+<!-- Materials Banner -->
+<section class="materials-banner">
+  <div class="container" data-aos="fade-up">
+    <div class="materials-grid">
+      <div class="material-item" data-aos="zoom-in" data-aos-delay="100">
+        <div class="material-icon">💎</div>
+        <h3>Kim Cương Tự Nhiên & Nhân Tạo</h3>
+        <p>Cùng độ sáng, cùng độ cứng — bạn tự do lựa chọn giữa kim cương tự nhiên quý hiếm hoặc kim cương nhân tạo hiện đại theo nhu cầu và ngân sách.</p>
+      </div>
+      <div class="material-item" data-aos="zoom-in" data-aos-delay="200">
+        <div class="material-icon">✨</div>
+        <h3>Moissanite</h3>
+        <p>Với độ lấp lánh vượt trội hơn cả kim cương, moissanite mang đến vẻ đẹp rực rỡ phi thường với giá trị tuyệt vời.</p>
+      </div>
+      <div class="material-item" data-aos="zoom-in" data-aos-delay="300">
+        <div class="material-icon">🥇</div>
+        <h3>Vàng 10K-18K & Bạc S925</h3>
+        <p>Kim loại cao cấp: vàng vàng, vàng trắng, vàng hồng — cùng bạc sterling S925 mạ rhodium cho vẻ đẹp vượt thời gian.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Gallery Section -->
 <section class="gallery-section" id="gallery">
   <div class="container">
-    <div class="section-header" data-aos="fade-up">
+    <div class="section-header" data-aos="fade-down">
       <span class="section-label">Thư Viện</span>
       <h2 class="section-title">Khám Phá Thế Giới Của Chúng Tôi</h2>
       <p class="section-desc">Xem qua các bộ sưu tập — từ nhẫn lấp lánh đến đá quý quý hiếm, mỗi danh mục kể một câu chuyện riêng.</p>
     </div>
 
     <!-- Collection Category Cards -->
-    <div class="gallery-categories" data-aos="fade-up">
+    <div class="gallery-categories" data-aos="fade-up" data-aos-delay="100">
       <a href="/#collections" class="gallery-cat-card" data-filter-target="Nhẫn" onclick="filterCollection('Nhẫn')">
         <div class="cat-card-icon">
           <svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="28" stroke="#C9A96E" stroke-width="2" fill="none"/><path d="M40 12L46 24H34L40 12Z" stroke="#C9A96E" stroke-width="1.5" fill="none"/><circle cx="40" cy="40" r="18" stroke="#C9A96E" stroke-width="1" fill="none" opacity="0.4"/></svg>
@@ -190,7 +190,7 @@
     </div>
 
     <!-- Instagram CTA -->
-    <div class="instagram-cta" data-aos="fade-up">
+    <div class="instagram-cta" data-aos="zoom-in">
       <a href="https://www.instagram.com/laclac.jewelry/" target="_blank" rel="noopener" class="btn btn-outline">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
         Follow @laclac.jewelry
@@ -202,7 +202,7 @@
 <!-- Instruction Guide Section -->
 <section class="instruction-promo-section" id="guide">
   <div class="container">
-    <div class="instruction-promo" data-aos="fade-up">
+    <div class="instruction-promo" data-aos="slide-up">
       <div class="instruction-promo-content">
         <span class="section-label">Hướng Dẫn Chọn Sản Phẩm</span>
         <h2 class="section-title">Bạn Chưa Biết Chọn<br>Trang Sức Nào Phù Hợp?</h2>

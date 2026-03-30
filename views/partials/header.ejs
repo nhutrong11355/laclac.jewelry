@@ -9,14 +9,48 @@
     </a>
     <nav class="main-nav" id="mainNav">
       <ul class="nav-links">
-        <li><a href="/#story">Câu Chuyện</a></li>
-        <li><a href="/#collections">Bộ Sưu Tập</a></li>
-        <li><a href="/#gallery">Thư Viện</a></li>
-        <li><a href="/gemstones">Đá Quý</a></li>
-        <li><a href="/instruction">Hướng Dẫn</a></li>
-        <li><a href="/#contact">Liên Hệ</a></li>
+        <li><a href="/#story" data-page="home">Câu Chuyện</a></li>
+        <li><a href="/#collections" data-page="home">Bộ Sưu Tập</a></li>
+        <li><a href="/#gallery" data-page="home">Thư Viện</a></li>
+        <li><a href="/gemstones" data-page="gemstones">Đá Quý</a></li>
+        <li><a href="/instruction" data-page="instruction">Hướng Dẫn</a></li>
+        <li><a href="/#contact" data-page="home">Liên Hệ</a></li>
       </ul>
     </nav>
+    <script>
+      // Set active menu item based on current page
+      (function() {
+        const currentPage = '<%= typeof currentPage !== "undefined" ? currentPage : "home" %>';
+        const navLinks = document.querySelectorAll('.nav-links a');
+        const currentPath = window.location.pathname;
+        const currentHash = window.location.hash;
+        
+        navLinks.forEach(link => {
+          const linkPage = link.getAttribute('data-page');
+          const linkHref = link.getAttribute('href');
+          
+          // Remove active class first
+          link.classList.remove('active');
+          
+          // Check various conditions for active state
+          if (currentPage === 'gemstones' && linkPage === 'gemstones') {
+            link.classList.add('active');
+          } else if (currentPage === 'instruction' && linkPage === 'instruction') {
+            link.classList.add('active');
+          } else if (currentPage === 'home' && linkPage === 'home') {
+            // For home page, check if there's a hash match or no hash
+            if (currentHash && linkHref.includes(currentHash)) {
+              link.classList.add('active');
+            } else if (!currentHash && linkHref === '/#story') {
+              // Default to first menu item when on home without hash
+              link.classList.add('active');
+            }
+          } else if (currentPath === '/' && linkPage === 'home' && !currentHash && linkHref === '/#story') {
+            link.classList.add('active');
+          }
+        });
+      })();
+    </script>
     <div class="header-actions">
       <a href="https://www.instagram.com/laclac.jewelry/" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
