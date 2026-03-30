@@ -239,3 +239,4 @@ function filterCollection(collection) {
     });
   }, 500);
 }
+

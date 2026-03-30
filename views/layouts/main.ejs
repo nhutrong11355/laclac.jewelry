@@ -22,6 +22,37 @@
     <%- body %>
   </main>
   <%- include('../partials/footer') %>
+  <!-- Micromodal.js - Lightweight accessible modal library (3KB) -->
+  <script src="https://cdn.jsdelivr.net/npm/micromodal@0.4.10/dist/micromodal.min.js"></script>
+  <!-- Fuse.js - Fuzzy Search Library -->
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+  <% if (typeof products !== 'undefined' && products) { %>
+  <script>
+    // Embed products data for search functionality
+    window.LACLAC_PRODUCTS = <%- JSON.stringify(products.map(p => ({
+      name: p.name,
+      collection: p.collection,
+      material: p.material,
+      stone: p.stone,
+      slug: p.slug,
+      image: p.images && p.images[0] ? p.images[0] : null,
+      description: p.description || ''
+    }))) %>;
+  </script>
+  <% } %>
+  <% if (typeof gemstones !== 'undefined' && gemstones) { %>
+  <script>
+    // Embed gemstones data for search functionality
+    window.LACLAC_GEMSTONES = <%- JSON.stringify(gemstones.map(g => ({
+      name: g.name,
+      tagline: g.tagline,
+      slug: g.slug,
+      image: g.image,
+      description: g.description || ''
+    }))) %>;
+  </script>
+  <% } %>
   <script src="/js/main.js"></script>
+  <script src="/js/search.js"></script>
 </body>
 </html>

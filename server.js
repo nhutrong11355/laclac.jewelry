@@ -19,32 +19,37 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
   const products = loadProducts();
+  const gemstones = loadGemstones();
   const featured = products.filter(p => p.featured);
   const collections = [...new Set(products.map(p => p.collection))];
-  res.render('pages/home', { products, featured, collections, currentPage: 'home' });
+  res.render('pages/home', { products, gemstones, featured, collections, currentPage: 'home' });
 });
 
 app.get('/product/:slug', (req, res) => {
   const products = loadProducts();
+  const gemstones = loadGemstones();
   const product = products.find(p => p.slug === req.params.slug);
   if (!product) return res.status(404).send('Product not found');
   const related = products.filter(p => p.collection === product.collection && p.slug !== product.slug).slice(0, 4);
-  res.render('pages/product', { product, related, currentPage: 'product' });
+  res.render('pages/product', { product, related, products, gemstones, pageTitle: product.name, currentPage: 'product' });
 });
 
 app.get('/gemstones', (req, res) => {
   const products = loadProducts();
   const gemstones = loadGemstones();
-  res.render('pages/gemstones', { gemstones, products, currentPage: 'gemstones' });
+  res.render('pages/gemstones', { gemstones, products, pageTitle: 'Gemstone Collection', currentPage: 'gemstones' });
 });
 
 app.get('/instruction', (req, res) => {
-  res.render('pages/instruction', { currentPage: 'instruction' });
+  const products = loadProducts();
+  const gemstones = loadGemstones();
+  res.render('pages/instruction', { products, gemstones, pageTitle: 'Hướng Dẫn Chọn Sản Phẩm', currentPage: 'instruction' });
 });
 
 app.get('/collections', (req, res) => {
   const products = loadProducts();
-  res.render('pages/home', { products, featured: products.filter(p => p.featured), collections: [...new Set(products.map(p => p.collection))], currentPage: 'collections' });
+  const gemstones = loadGemstones();
+  res.render('pages/home', { products, gemstones, featured: products.filter(p => p.featured), collections: [...new Set(products.map(p => p.collection))], currentPage: 'collections' });
 });
 
 if (require.main === module) {
