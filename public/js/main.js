@@ -63,25 +63,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- Mobile menu toggle ---
-  const menuBtn = document.getElementById('mobileMenuBtn');
-  const mainNav = document.getElementById('mainNav');
-
-  if (menuBtn && mainNav) {
-    menuBtn.addEventListener('click', () => {
-      menuBtn.classList.toggle('active');
-      mainNav.classList.toggle('active');
-    });
-
-    // Close menu on link click
-    mainNav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        menuBtn.classList.remove('active');
-        mainNav.classList.remove('active');
-      });
-    });
-  }
-
   // --- Scroll animations (lightweight AOS alternative) ---
   const observerOptions = {
     threshold: 0.1,

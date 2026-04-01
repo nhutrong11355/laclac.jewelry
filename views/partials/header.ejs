@@ -1,74 +1,101 @@
 <header class="site-header" id="header">
-  <div class="header-inner container">
-    <a href="/" class="logo">
-      <img src="/images/laclac-logo.jpg" alt="LacLac Jewelry" class="logo-img">
-      <div class="logo-text">
-        <span class="logo-name">LẠC LẠC</span>
-        <span class="logo-tagline">Lab Fine Jewelry</span>
+  <nav class="navbar navbar-expand-lg py-0">
+    <div class="container align-items-center">
+      <a href="/" class="navbar-brand logo d-flex align-items-center gap-3 flex-shrink-0 py-0 me-lg-4">
+        <img src="/images/laclac-logo.jpg" alt="LacLac Jewelry" class="logo-img">
+        <div class="logo-text">
+          <span class="logo-name">LẠC LẠC</span>
+          <span class="logo-tagline">Lab Fine Jewelry</span>
+        </div>
+      </a>
+      
+      <div class="d-flex align-items-center gap-3 ms-auto order-lg-3">
+        <button class="search-icon" data-micromodal-trigger="search-modal" aria-label="Tìm kiếm">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="M21 21l-4.35-4.35"/>
+          </svg>
+        </button>
+        <a href="https://www.instagram.com/laclac.jewelry/" target="_blank" rel="noopener" class="social-icon d-none d-lg-flex" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61579703409647" target="_blank" rel="noopener" class="social-icon d-none d-lg-flex" aria-label="Facebook">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
       </div>
-    </a>
-    <nav class="main-nav" id="mainNav">
-      <ul class="nav-links">
-        <li><a href="/#story" data-page="home">Câu Chuyện</a></li>
-        <li><a href="/#collections" data-page="home">Bộ Sưu Tập</a></li>
-        <li><a href="/#gallery" data-page="home">Thư Viện</a></li>
-        <li><a href="/gemstones" data-page="gemstones">Đá Quý</a></li>
-        <li><a href="/instruction" data-page="instruction">Hướng Dẫn</a></li>
-        <li><a href="/#contact" data-page="home">Liên Hệ</a></li>
-      </ul>
-    </nav>
-    <script>
-      // Set active menu item based on current page
-      (function() {
-        const currentPage = '<%= typeof currentPage !== "undefined" ? currentPage : "home" %>';
-        const navLinks = document.querySelectorAll('.nav-links a');
-        const currentPath = window.location.pathname;
-        const currentHash = window.location.hash;
+
+      <div class="collapse navbar-collapse justify-content-lg-center order-lg-2" id="navbarNav">
+        <ul class="navbar-nav align-items-lg-center text-center mx-lg-auto mb-0 gap-lg-4">
+          <li class="nav-item"><a href="/#story" class="nav-link px-lg-0" data-page="home">Câu Chuyện</a></li>
+          <li class="nav-item"><a href="/#collections" class="nav-link px-lg-0" data-page="home">Bộ Sưu Tập</a></li>
+          <li class="nav-item"><a href="/#gallery" class="nav-link px-lg-0" data-page="home">Thư Viện</a></li>
+          <li class="nav-item"><a href="/gemstones" class="nav-link px-lg-0" data-page="gemstones">Đá Quý</a></li>
+          <li class="nav-item"><a href="/instruction" class="nav-link px-lg-0" data-page="instruction">Hướng Dẫn</a></li>
+          <li class="nav-item"><a href="/#contact" class="nav-link px-lg-0" data-page="home">Liên Hệ</a></li>
+        </ul>
+        <!-- Social icons visible on mobile inside collapsed menu -->
+        <div class="navbar-social d-flex justify-content-center gap-3 pt-2 d-lg-none">
+          <a href="https://www.instagram.com/laclac.jewelry/" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61579703409647" target="_blank" rel="noopener" class="social-icon" aria-label="Facebook">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+  <script>
+    // Set active menu item based on current page
+    (function() {
+      const currentPage = '<%= typeof currentPage !== "undefined" ? currentPage : "home" %>';
+      const navLinks = document.querySelectorAll('#navbarNav .nav-link');
+      const currentPath = window.location.pathname;
+      const currentHash = window.location.hash;
+      
+      navLinks.forEach(link => {
+        const linkPage = link.getAttribute('data-page');
+        const linkHref = link.getAttribute('href');
         
-        navLinks.forEach(link => {
-          const linkPage = link.getAttribute('data-page');
-          const linkHref = link.getAttribute('href');
-          
-          // Remove active class first
-          link.classList.remove('active');
-          
-          // Check various conditions for active state
-          if (currentPage === 'gemstones' && linkPage === 'gemstones') {
+        // Remove active class first
+        link.classList.remove('active');
+        
+        // Check various conditions for active state
+        if (currentPage === 'gemstones' && linkPage === 'gemstones') {
+          link.classList.add('active');
+        } else if (currentPage === 'instruction' && linkPage === 'instruction') {
+          link.classList.add('active');
+        } else if (currentPage === 'home' && linkPage === 'home') {
+          // For home page, check if there's a hash match or no hash
+          if (currentHash && linkHref.includes(currentHash)) {
             link.classList.add('active');
-          } else if (currentPage === 'instruction' && linkPage === 'instruction') {
-            link.classList.add('active');
-          } else if (currentPage === 'home' && linkPage === 'home') {
-            // For home page, check if there's a hash match or no hash
-            if (currentHash && linkHref.includes(currentHash)) {
-              link.classList.add('active');
-            } else if (!currentHash && linkHref === '/#story') {
-              // Default to first menu item when on home without hash
-              link.classList.add('active');
-            }
-          } else if (currentPath === '/' && linkPage === 'home' && !currentHash && linkHref === '/#story') {
+          } else if (!currentHash && linkHref === '/#story') {
+            // Default to first menu item when on home without hash
             link.classList.add('active');
           }
+        } else if (currentPath === '/' && linkPage === 'home' && !currentHash && linkHref === '/#story') {
+          link.classList.add('active');
+        }
+      });
+
+      // Auto-close mobile menu when clicking a link
+      const navbarCollapse = document.getElementById('navbarNav');
+      if (navbarCollapse) {
+        navLinks.forEach(link => {
+          link.addEventListener('click', function() {
+            const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+            if (bsCollapse) {
+              bsCollapse.hide();
+            }
+          });
         });
-      })();
-    </script>
-    <div class="header-actions">
-      <button class="search-icon" data-micromodal-trigger="search-modal" aria-label="Tìm kiếm">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="11" cy="11" r="8"/>
-          <path d="M21 21l-4.35-4.35"/>
-        </svg>
-      </button>
-      <a href="https://www.instagram.com/laclac.jewelry/" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
-      </a>
-      <a href="https://www.facebook.com/profile.php?id=61579703409647" target="_blank" rel="noopener" class="social-icon" aria-label="Facebook">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
-      </a>
-      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
+      }
+    })();
+  </script>
 </header>
 
 <!-- Search Modal - Micromodal Format -->
