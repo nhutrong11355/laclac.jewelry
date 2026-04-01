@@ -52,6 +52,20 @@ app.get('/collections', (req, res) => {
   res.render('pages/home', { products, gemstones, featured: products.filter(p => p.featured), collections: [...new Set(products.map(p => p.collection))], currentPage: 'collections' });
 });
 
+app.get('/compare', (req, res) => {
+  const products = loadProducts();
+  const gemstones = loadGemstones();
+  const compareIds = req.query.ids ? req.query.ids.split(',').map(id => parseInt(id)) : [];
+  const compareProducts = products.filter(p => compareIds.includes(p.id));
+  res.render('pages/compare', { 
+    products, 
+    gemstones, 
+    compareProducts, 
+    pageTitle: 'So sánh sản phẩm', 
+    currentPage: 'compare' 
+  });
+});
+
 if (require.main === module) {
   app.listen(PORT, () => {
     console.log(`LacLac Jewelry running at http://localhost:${PORT}`);

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= pageTitle || 'So sánh sản phẩm' %> | LacLac Jewelry</title>
+  <meta name="description" content="So sánh các sản phẩm trang sức để tìm lựa chọn phù hợp nhất cho bạn.">
+  <link rel="icon" href="/images/laclac-logo.jpg" type="image/jpeg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#C9A96E">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/compare.css">
+</head>
+<body>
+  <%- include('../partials/header', { currentPage: 'compare', products: products || [], gemstones: gemstones || [] }) %>
+
+  <main class="compare-page">
+    <div class="compare-container">
+      <div class="compare-header">
+        <h1>So sánh sản phẩm</h1>
+        <p>So sánh chi tiết các sản phẩm để tìm lựa chọn hoàn hảo</p>
+      </div>
+
+      <% if (!compareProducts || compareProducts.length === 0) { %>
+        <div class="compare-empty">
+          <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin: 0 auto 1rem;">
+            <circle cx="60" cy="60" r="50" fill="#F5E6E0"/>
+            <path d="M40 50L50 60L40 70" stroke="#C9A96E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M80 50L70 60L80 70" stroke="#C9A96E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="60" cy="60" r="8" fill="#C9A96E"/>
+          </svg>
+          <h2>Chưa có sản phẩm nào để so sánh</h2>
+          <p>Hãy chọn 2-3 sản phẩm từ danh sách để bắt đầu so sánh</p>
+          <a href="/#collections" class="btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            Khám phá sản phẩm
+          </a>
+        </div>
+      <% } else if (compareProducts.length === 1) { %>
+        <div class="compare-empty">
+          <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin: 0 auto 1rem;">
+            <circle cx="60" cy="60" r="50" fill="#F5E6E0"/>
+            <circle cx="60" cy="60" r="20" fill="#C9A96E"/>
+            <path d="M50 75Q60 85 70 75" stroke="#C9A96E" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+          <h2>Chọn thêm sản phẩm để so sánh</h2>
+          <p>Bạn cần chọn ít nhất 2 sản phẩm để thực hiện so sánh</p>
+          <a href="/#collections" class="btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="5" x2="12" y2="19"/>
+              <line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+            Thêm sản phẩm
+          </a>
+        </div>
+      <% } else { %>
+        <div class="compare-table-wrapper">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>Thông tin</th>
+                <% compareProducts.forEach(product => { %>
+                  <th>
+                    <div class="compare-product-header">
+                      <div class="compare-product-image-wrapper">
+                        <% if (product.images && product.images[0]) { %>
+                          <img src="<%= product.images[0] %>" alt="<%= product.name %>" class="compare-product-image">
+                        <% } else { %>
+                          <div style="width: 100%; height: 100%; background: #F5E6E0; display: flex; align-items: center; justify-content: center;">
+                            <svg width="40" height="40" viewBox="0 0 100 100" fill="none">
+                              <path d="M50 25L58 42H42L50 25Z" stroke="#C9A96E" stroke-width="2"/>
+                              <circle cx="50" cy="55" r="15" stroke="#C9A96E" stroke-width="2"/>
+                            </svg>
+                          </div>
+                        <% } %>
+                      </div>
+                      <div>
+                        <div class="compare-product-name"><%= product.name %></div>
+                        <div class="compare-product-collection"><%= product.collection %></div>
+                      </div>
+                    </div>
+                  </th>
+                <% }); %>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>Giá</th>
+                <% compareProducts.forEach(product => { %>
+                  <td>
+                    <div class="compare-product-price"><%= product.price %></div>
+                  </td>
+                <% }); %>
+              </tr>
+              
+              <tr>
+                <th>Chất liệu</th>
+                <% compareProducts.forEach(product => { %>
+                  <td><%= product.material %></td>
+                <% }); %>
+              </tr>
+              
+              <tr>
+                <th>Đá</th>
+                <% compareProducts.forEach(product => { %>
+                  <td><%= product.stone %></td>
+                <% }); %>
+              </tr>
+              
+              <tr>
+                <th>Bộ sưu tập</th>
+                <% compareProducts.forEach(product => { %>
+                  <td><%= product.collection %></td>
+                <% }); %>
+              </tr>
+              
+              <tr>
+                <th>Mô tả</th>
+                <% compareProducts.forEach(product => { %>
+                  <td>
+                    <div class="compare-product-details">
+                      <%= product.details || product.description || 'Chưa có thông tin' %>
+                    </div>
+                  </td>
+                <% }); %>
+              </tr>
+              
+              <% if (compareProducts.some(p => p.specs && p.specs['Kích thước đá'])) { %>
+              <tr>
+                <th>Kích thước đá</th>
+                <% compareProducts.forEach(product => { %>
+                  <td><%= (product.specs && product.specs['Kích thước đá']) || '-' %></td>
+                <% }); %>
+              </tr>
+              <% } %>
+              
+              <% if (compareProducts.some(p => p.specs && p.specs['Đối tượng'])) { %>
+              <tr>
+                <th>Đối tượng</th>
+                <% compareProducts.forEach(product => { %>
+                  <td>
+                    <div class="compare-product-specs">
+                      <%= (product.specs && product.specs['Đối tượng']) || '-' %>
+                    </div>
+                  </td>
+                <% }); %>
+              </tr>
+              <% } %>
+              
+              <% if (compareProducts.some(p => p.specs && p.specs['Kiểu Đính'])) { %>
+              <tr>
+                <th>Kiểu đính</th>
+                <% compareProducts.forEach(product => { %>
+                  <td>
+                    <div class="compare-product-specs">
+                      <%= (product.specs && product.specs['Kiểu Đính']) || '-' %>
+                    </div>
+                  </td>
+                <% }); %>
+              </tr>
+              <% } %>
+              
+              <tr>
+                <th>Xem chi tiết</th>
+                <% compareProducts.forEach(product => { %>
+                  <td>
+                    <a href="/product/<%= product.slug %>" class="compare-product-view-btn">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                        <circle cx="12" cy="12" r="3"/>
+                      </svg>
+                      Xem sản phẩm
+                    </a>
+                  </td>
+                <% }); %>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      <% } %>
+    </div>
+  </main>
+
+  <%- include('../partials/footer') %>
+
+  <script src="/js/main.js"></script>
+  <script src="/js/search.js"></script>
+  <script src="/js/compare.js"></script>
+</body>
+</html>
