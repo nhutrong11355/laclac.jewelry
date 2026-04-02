@@ -103,10 +103,44 @@
       <p class="section-desc">Mỗi sản phẩm được chế tác tỉ mỉ với tình yêu. Xem qua bộ sưu tập hoặc liên hệ để thiết kế riêng.</p>
     </div>
 
-    <!-- Filter Buttons -->
-    <div class="d-flex flex-wrap justify-content-center gap-2 gap-md-3 mb-5" data-aos="fade-up" data-aos-delay="100">
-      <button class="btn btn-outline-dark btn-sm rounded-pill px-3 px-md-4 py-2 filter-btn active" data-filter="all">Tất Cả</button>
-      ${['Nhẫn', 'Dây chuyền', 'Bông tai', 'Vòng tay'].filter(c => collections.includes(c)).map(c => '<button class="btn btn-outline-dark btn-sm rounded-pill px-3 px-md-4 py-2 filter-btn" data-filter="' + c + '">' + c + '</button>').join('')}
+    <!-- Filter: Dropdown for Mobile, Button Group for Desktop -->
+    <!-- Remove data-aos to avoid stacking context issues with dropdown -->
+    <div>
+      <!-- Mobile Dropdown (hidden on desktop) -->
+      <div class="d-md-none px-3 mb-4">
+        <div class="dropdown w-100">
+          <button class="btn btn-filter-dropdown w-100 d-flex justify-content-between align-items-center" type="button" id="dropdownFilterButton" data-bs-toggle="dropdown" aria-expanded="false">
+            <span id="selectedFilterText">Tất Cả Sản Phẩm</span>
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 8L2 4h8z" fill="currentColor"/>
+            </svg>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-filter w-100" aria-labelledby="dropdownFilterButton">
+            <li><a class="dropdown-item filter-dropdown-item active" href="#" data-filter="all">Tất Cả Sản Phẩm</a></li>
+            ${['Nhẫn', 'Dây chuyền', 'Bông tai', 'Vòng tay']
+              .filter(c => collections.includes(c))
+              .map(c => '<li><a class="dropdown-item filter-dropdown-item" href="#" data-filter="' + c + '">' + c + '</a></li>')
+              .join('\n            ')}
+          </ul>
+        </div>
+      </div>
+
+      <!-- Desktop Button Group (hidden on mobile) -->
+      <div class="d-none d-md-flex justify-content-center mb-5">
+        <div class="btn-group btn-group-filter flex-wrap" role="group" aria-label="Bộ lọc sản phẩm">
+          <input type="radio" class="btn-check" name="productFilter" id="filter-all" value="all" autocomplete="off" checked>
+          <label class="btn btn-outline-dark rounded-pill-start filter-btn" for="filter-all" data-filter="all">Tất Cả</label>
+          
+          ${['Nhẫn', 'Dây chuyền', 'Bông tai', 'Vòng tay']
+            .filter(c => collections.includes(c))
+            .map((c, idx, arr) => {
+              const normalized = c.toLowerCase().replace(/\s+/g, '-');
+              const roundedClass = idx === arr.length - 1 ? 'rounded-pill-end' : '';
+              return '<input type="radio" class="btn-check" name="productFilter" id="filter-' + normalized + '" value="' + c + '" autocomplete="off">' +
+                     '<label class="btn btn-outline-dark ' + roundedClass + ' filter-btn" for="filter-' + normalized + '" data-filter="' + c + '">' + c + '</label>';
+            }).join('\n          ')}
+        </div>
+      </div>
     </div>
 
     <!-- Products Grid -->

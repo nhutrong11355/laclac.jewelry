@@ -88,6 +88,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Collection filter + Load More ---
   const filterBtns = document.querySelectorAll('.filter-btn');
+  const filterInputs = document.querySelectorAll('input[name="productFilter"]');
+  const dropdownItems = document.querySelectorAll('.filter-dropdown-item');
+  const selectedFilterText = document.getElementById('selectedFilterText');
   const allProductCards = Array.from(document.querySelectorAll('.product-item[data-collection]'));
   const loadMoreBtn = document.getElementById('loadMoreBtn');
   const ITEMS_PER_BATCH = 6;
@@ -126,10 +129,42 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Mobile dropdown filter items
+  dropdownItems.forEach(item => {
+    item.addEventListener('click', (e) => {
+      e.preventDefault();
+      
+      // Update active state
+      dropdownItems.forEach(i => i.classList.remove('active'));
+      item.classList.add('active');
+      
+      // Update button text
+      if (selectedFilterText) {
+        selectedFilterText.textContent = item.textContent;
+      }
+      
+      // Update filter
+      currentFilter = item.getAttribute('data-filter');
+      visibleCount = INITIAL_ITEMS;
+      renderProducts();
+    });
+  });
+
+  // Listen to radio button changes for filter (desktop)
+  filterInputs.forEach(input => {
+    input.addEventListener('change', (e) => {
+      if (e.target.checked) {
+        const filterLabel = document.querySelector(`label[for="${e.target.id}"]`);
+        currentFilter = filterLabel ? filterLabel.getAttribute('data-filter') : 'all';
+        visibleCount = INITIAL_ITEMS;
+        renderProducts();
+      }
+    });
+  });
+
+  // Also listen to label clicks directly (backup for better UX)
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
       currentFilter = btn.getAttribute('data-filter');
       visibleCount = INITIAL_ITEMS;
       renderProducts();
@@ -202,14 +237,34 @@ document.addEventListener('DOMContentLoaded', () => {
 // Global function for gallery category cards to filter collections
 function filterCollection(collection) {
   setTimeout(() => {
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const productCards = document.querySelectorAll('.product-item[data-collection]');
-    filterBtns.forEach(btn => {
-      btn.classList.remove('active');
-      if (btn.getAttribute('data-filter') === collection) {
-        btn.classList.add('active');
+    // Update mobile dropdown
+    const dropdownItems = document.querySelectorAll('.filter-dropdown-item');
+    const selectedFilterText = document.getElementById('selectedFilterText');
+    
+    dropdownItems.forEach(item => {
+      if (item.getAttribute('data-filter') === collection) {
+        item.classList.add('active');
+        if (selectedFilterText) {
+          selectedFilterText.textContent = item.textContent;
+        }
+      } else {
+        item.classList.remove('active');
       }
     });
+    
+    // Find and check the corresponding radio button (desktop)
+    const filterInputs = document.querySelectorAll('input[name="productFilter"]');
+    const productCards = document.querySelectorAll('.product-item[data-collection]');
+    
+    // Find the corresponding radio and check it
+    filterInputs.forEach(input => {
+      const label = document.querySelector(`label[for="${input.id}"]`);
+      if (label && label.getAttribute('data-filter') === collection) {
+        input.checked = true;
+      }
+    });
+    
+    // Filter products
     productCards.forEach(card => {
       if (card.getAttribute('data-collection') === collection) {
         card.style.display = '';

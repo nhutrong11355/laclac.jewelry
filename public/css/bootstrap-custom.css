@@ -366,6 +366,172 @@ nav ol {
   }
 }
 
+/* ============================================
+   FILTER BUTTONS (Bootstrap Button Group)
+   ============================================ */
+
+/* Mobile Dropdown Filter - Bootstrap Dropdown Style */
+.btn-filter-dropdown {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  padding: 0.625rem 1rem;
+  border: 1px solid rgba(44, 44, 44, 0.2);
+  border-radius: 8px;
+  background-color: var(--white);
+  color: var(--charcoal);
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  text-align: left;
+}
+
+.btn-filter-dropdown:hover,
+.btn-filter-dropdown:focus {
+  border-color: var(--charcoal);
+  background-color: var(--white);
+  color: var(--charcoal);
+  box-shadow: 0 0 0 3px rgba(44, 44, 44, 0.1);
+}
+
+.btn-filter-dropdown:active {
+  background-color: var(--white) !important;
+  border-color: var(--charcoal) !important;
+  color: var(--charcoal) !important;
+}
+
+.btn-filter-dropdown svg {
+  transition: transform 0.2s ease;
+}
+
+.btn-filter-dropdown[aria-expanded="true"] svg {
+  transform: rotate(180deg);
+}
+
+/* Dropdown menu styling */
+.dropdown-menu-filter {
+  border: 1px solid rgba(44, 44, 44, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 0.5rem 0;
+  margin-top: 0.5rem;
+}
+
+.filter-dropdown-item {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  padding: 0.5rem 1rem;
+  color: var(--charcoal);
+  transition: all 0.15s ease;
+}
+
+.filter-dropdown-item:hover {
+  background-color: var(--cream);
+  color: var(--charcoal);
+}
+
+.filter-dropdown-item.active {
+  background-color: var(--charcoal);
+  color: var(--white);
+  font-weight: 500;
+}
+
+.filter-dropdown-item:active {
+  background-color: var(--charcoal);
+  color: var(--white);
+}
+
+/* Filter button group container */
+.btn-group-filter {
+  gap: 0.5rem;
+  padding: 0.25rem;
+  position: relative;
+}
+
+/* Hide default radio inputs */
+.btn-group-filter .btn-check {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  pointer-events: none;
+}
+
+/* Filter button base styles */
+.btn-group-filter .filter-btn {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  text-transform: capitalize;
+  padding: 0.5rem 1.25rem;
+  border: 1px solid rgba(44, 44, 44, 0.15);
+  color: var(--charcoal-light);
+  background: var(--white);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* Rounded pill styles */
+.btn-group-filter .rounded-pill-start {
+  border-radius: 50px 0 0 50px !important;
+}
+
+.btn-group-filter .rounded-pill-end {
+  border-radius: 0 50px 50px 0 !important;
+}
+
+/* First button gets full rounded left */
+.btn-group-filter .filter-btn:first-of-type {
+  border-radius: 50px 0 0 50px !important;
+}
+
+/* Last button gets full rounded right */
+.btn-group-filter .filter-btn:last-of-type {
+  border-radius: 0 50px 50px 0 !important;
+}
+
+/* Middle buttons have no border radius */
+.btn-group-filter .filter-btn:not(:first-of-type):not(:last-of-type) {
+  border-radius: 0 !important;
+}
+
+/* Hover state */
+.btn-group-filter .filter-btn:hover {
+  border-color: var(--gold-light);
+  color: var(--charcoal);
+}
+
+/* Active state (checked radio) */
+.btn-group-filter .btn-check:checked + .filter-btn {
+  background: var(--charcoal);
+  border-color: var(--charcoal);
+  color: var(--white);
+  font-weight: 500;
+}
+
+/* Active hover state */
+.btn-group-filter .btn-check:checked + .filter-btn:hover {
+  background: var(--black);
+  border-color: var(--black);
+}
+
+/* Focus state for accessibility */
+.btn-group-filter .btn-check:focus + .filter-btn {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+/* Responsive: Tablet view */
+@media (min-width: 768px) and (max-width: 991px) {
+  .btn-group-filter .filter-btn {
+    padding: 0.5rem 1.125rem;
+    font-size: 12px;
+    letter-spacing: 0.4px;
+  }
+}
+
 @keyframes compareSelectedPop {
   0% {
     transform: scale(1);
@@ -396,16 +562,9 @@ button:focus-visible {
   outline-offset: 4px;
 }
 
-/* --- Print Styles --- */
-@media print {
-  .no-print {
-    display: none !important;
-  }
-  
-  .site-header .search-icon,
-  .site-header .social-icon,
-  .navbar-toggler,
-  .back-to-top {
+/* --- Print Styles -.125rem;
+    font-size: 12px;
+    letter-spacing: 0.4
     display: none !important;
   }
 }
