@@ -6,6 +6,7 @@ class ProductCompare {
   constructor() {
     this.maxProducts = 3;
     this.compareProducts = this.loadFromStorage();
+    this.pendingAnimation = null;
     this.init();
   }
 
@@ -21,16 +22,14 @@ class ProductCompare {
   setupEventListeners() {
     // Listen for compare button clicks
     document.addEventListener('click', (e) => {
-      const compareBtn = e.target.closest('.product-compare-btn');
+      const compareBtn = e.target.closest('.product-compare-btn, .btn-icon[data-product-id]');
       if (compareBtn) {
-        console.log('Compare button clicked!', compareBtn);
         e.preventDefault();
         e.stopPropagation();
         const productId = parseInt(compareBtn.dataset.productId);
         const productSlug = compareBtn.dataset.productSlug;
         const productName = compareBtn.dataset.productName;
         const productImage = compareBtn.dataset.productImage;
-        console.log('Product data:', { productId, productSlug, productName, productImage });
         this.toggleProduct({
           id: productId,
           slug: productSlug,
@@ -110,6 +109,7 @@ class ProductCompare {
   }
 
   addProduct(product) {
+    this.pendingAnimation = { type: 'add', addedId: product.id };
     this.compareProducts.push(product);
     this.saveToStorage();
     this.renderCompareBar();
@@ -119,6 +119,7 @@ class ProductCompare {
   }
 
   removeProduct(productId) {
+    this.pendingAnimation = null;
     this.compareProducts = this.compareProducts.filter(p => p.id !== productId);
     this.saveToStorage();
     this.renderCompareBar();
@@ -131,6 +132,7 @@ class ProductCompare {
     if (this.compareProducts.length === 0) return;
     
     // Clear all products directly
+    this.pendingAnimation = null;
     this.compareProducts = [];
     this.saveToStorage();
     this.renderCompareBar();
@@ -148,30 +150,65 @@ class ProductCompare {
       document.body.appendChild(compareBar);
     }
 
-    const itemsHTML = this.compareProducts.map(product => `
-      <div class="compare-bar-item">
-        <img src="${product.image}" alt="${product.name}">
-        <div class="compare-bar-item-info">
-          <p class="compare-bar-item-name">${product.name}</p>
-        </div>
-        <button class="compare-bar-item-remove" data-product-id="${product.id}">&times;</button>
-      </div>
-    `).join('');
+    const itemColsClass = this.compareProducts.length <= 1
+      ? 'row-cols-1'
+      : this.compareProducts.length === 2
+        ? 'row-cols-2'
+        : 'row-cols-3';
+    const canCompareNow = this.compareProducts.length >= 2;
 
-    compareBar.innerHTML = `
-      <div class="compare-bar-content">
-        <h3 class="compare-bar-title">So sánh sản phẩm (${this.compareProducts.length}/${this.maxProducts})</h3>
-        <div class="compare-bar-items">
-          ${itemsHTML}
-        </div>
-        <div class="compare-bar-actions">
-          <button class="compare-clear-btn">Xóa tất cả</button>
-          <button class="compare-btn" ${this.compareProducts.length < 2 ? 'disabled' : ''}>
-            So sánh ngay
-          </button>
+    const isAddAnimation = this.pendingAnimation && this.pendingAnimation.type === 'add';
+    const addedId = isAddAnimation ? this.pendingAnimation.addedId : null;
+
+    const itemsHTML = this.compareProducts.map((product, index) => {
+      let motionClass = '';
+      let delay = 0;
+
+      if (isAddAnimation) {
+        if (this.compareProducts.length > 1) {
+          if (product.id === addedId) {
+            motionClass = 'compare-enter-rtl';
+            delay = 120;
+          } else {
+            // Animate existing items from right to left.
+            motionClass = 'compare-shrink-rtl';
+            delay = (this.compareProducts.length - 2 - index) * 85;
+          }
+        } else if (product.id === addedId) {
+          motionClass = 'compare-enter-rtl';
+        }
+      }
+
+      return `
+      <div class="col">
+        <div class="compare-bar-item ${motionClass} d-flex align-items-center gap-2 bg-white bg-opacity-10 rounded-3 border border-warning-subtle px-2 py-2 h-100 w-100" style="--compare-delay: ${delay}ms;">
+          <img src="${product.image}" alt="${product.name}" class="rounded-2 flex-shrink-0" width="40" height="40" style="object-fit: cover;">
+          <div class="flex-grow-1 min-w-0">
+            <p class="compare-bar-item-name text-white small fw-medium mb-0">${product.name}</p>
+          </div>
+          <button type="button" class="compare-bar-item-remove btn btn-link text-white p-0 lh-1 flex-shrink-0" data-product-id="${product.id}" aria-label="Xóa ${product.name} khỏi so sánh">&times;</button>
         </div>
       </div>
     `;
+    }).join('');
+
+    compareBar.innerHTML = `
+      <div class="compare-bar-inner container-fluid container-xl py-3 position-relative">
+        <button type="button" class="compare-clear-btn" aria-label="Đóng thanh so sánh" title="Đóng">&times;</button>
+        <div class="d-flex flex-column align-items-center gap-3">
+          <div>
+            ${canCompareNow
+              ? `<button type="button" class="compare-summary-btn compare-summary-ready compare-btn">So sánh sản phẩm (${this.compareProducts.length}/${this.maxProducts})</button>`
+              : `<div class="compare-summary-btn compare-summary-idle">So sánh sản phẩm (${this.compareProducts.length}/${this.maxProducts})</div>`}
+          </div>
+          <div class="compare-bar-items row ${itemColsClass} g-2 m-0 justify-content-center w-100">
+            ${itemsHTML}
+          </div>
+        </div>
+      </div>
+    `;
+
+    this.pendingAnimation = null;
   }
 
   toggleCompareBar() {
@@ -186,17 +223,44 @@ class ProductCompare {
   }
 
   updateCompareButtons() {
-    const buttons = document.querySelectorAll('.product-compare-btn');
+    const isTouchDevice = window.matchMedia('(hover: none), (pointer: coarse)').matches;
+    const buttons = document.querySelectorAll('.product-compare-btn, .btn-icon[data-product-id]');
     buttons.forEach(btn => {
       const productId = parseInt(btn.dataset.productId);
       const isInCompare = this.compareProducts.some(p => p.id === productId);
+      const productName = btn.dataset.productName || 'sản phẩm';
+      const card = btn.closest('.card');
+      const cardBody = card ? card.querySelector('.card-body') : null;
       
       if (isInCompare) {
-        btn.classList.add('active');
+        btn.classList.remove('btn-light', 'text-dark');
+        btn.classList.add('is-active-compare', 'text-white');
         btn.title = 'Xóa khỏi so sánh';
+        btn.setAttribute('aria-pressed', 'true');
+        btn.setAttribute('aria-label', `Xóa ${productName} khỏi so sánh`);
+
+        // Mobile selected state: highlight card using Bootstrap utilities only.
+        if (isTouchDevice && card) {
+          card.classList.remove('shadow-sm', 'border-0');
+          card.classList.add('shadow', 'border', 'border-warning-subtle', 'compare-selected');
+        }
+        if (isTouchDevice && cardBody) {
+          cardBody.classList.add('bg-warning-subtle');
+        }
       } else {
-        btn.classList.remove('active');
+        btn.classList.remove('is-active-compare', 'text-white');
+        btn.classList.add('btn-light', 'text-dark');
         btn.title = 'Thêm vào so sánh';
+        btn.setAttribute('aria-pressed', 'false');
+        btn.setAttribute('aria-label', `Thêm ${productName} vào so sánh`);
+
+        if (isTouchDevice && card) {
+          card.classList.remove('shadow', 'border', 'border-warning-subtle', 'compare-selected');
+          card.classList.add('shadow-sm', 'border-0');
+        }
+        if (isTouchDevice && cardBody) {
+          cardBody.classList.remove('bg-warning-subtle');
+        }
       }
     });
   }
@@ -220,6 +284,12 @@ class ProductCompare {
   }
 
   showNotification(message, type = 'info') {
+    // Skip toast on mobile/touch devices per UX request.
+    const isTouchDevice = window.matchMedia('(hover: none), (pointer: coarse)').matches;
+    if (isTouchDevice) {
+      return;
+    }
+
     // Remove existing notification
     const existing = document.querySelector('.compare-notification');
     if (existing) {
@@ -291,7 +361,5 @@ document.head.appendChild(style);
 
 // Initialize on DOM ready
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('Compare.js loaded - initializing ProductCompare...');
   window.productCompare = new ProductCompare();
-  console.log('ProductCompare initialized:', window.productCompare);
 });

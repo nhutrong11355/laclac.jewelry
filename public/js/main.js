@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Collection filter + Load More ---
   const filterBtns = document.querySelectorAll('.filter-btn');
-  const allProductCards = Array.from(document.querySelectorAll('.product-card[data-collection]'));
+  const allProductCards = Array.from(document.querySelectorAll('.product-item[data-collection]'));
   const loadMoreBtn = document.getElementById('loadMoreBtn');
   const ITEMS_PER_BATCH = 6;
   const INITIAL_ITEMS = 9;
@@ -203,7 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function filterCollection(collection) {
   setTimeout(() => {
     const filterBtns = document.querySelectorAll('.filter-btn');
-    const productCards = document.querySelectorAll('.product-card[data-collection]');
+    const productCards = document.querySelectorAll('.product-item[data-collection]');
     filterBtns.forEach(btn => {
       btn.classList.remove('active');
       if (btn.getAttribute('data-filter') === collection) {

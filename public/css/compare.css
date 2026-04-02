@@ -8,196 +8,230 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(135deg, #2C2C2C 0%, #1A1A1A 100%);
-  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
-  padding: 1rem 2rem;
+  background: rgba(26, 26, 26, 0.94);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-lg);
   transform: translateY(100%);
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: 999;
-  border-top: 3px solid #C9A96E;
+  transition: transform 0.42s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 1060;
+  border-top: 1px solid rgba(201, 169, 110, 0.45);
 }
 
 .compare-bar.active {
   transform: translateY(0);
 }
 
-.compare-bar-content {
-  max-width: 1400px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.compare-bar-title {
-  color: #fff;
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  margin: 0;
-}
-
 .compare-bar-items {
-  display: flex;
-  gap: 1rem;
-  flex: 1;
-  max-width: 600px;
-  overflow-x: auto;
+  width: 100%;
 }
 
-.compare-bar-item {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  min-width: 150px;
-  border: 1px solid rgba(201, 169, 110, 0.3);
+.compare-bar-inner {
+  position: relative;
+  padding-left: 45px;
+  padding-right: 45px;
 }
 
-.compare-bar-item img {
-  width: 40px;
-  height: 40px;
-  object-fit: cover;
-  border-radius: 4px;
-}
-
-.compare-bar-item-info {
-  flex: 1;
-  min-width: 0;
+@media (min-width: 768px) {
+  .compare-bar-inner {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
 }
 
 .compare-bar-item-name {
-  color: #fff;
-  font-size: 0.875rem;
-  font-weight: 500;
-  white-space: nowrap;
+  line-height: 1.2;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
   overflow: hidden;
-  text-overflow: ellipsis;
+  word-break: break-word;
   margin: 0;
 }
 
-.compare-bar-item-remove {
-  background: transparent;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  padding: 0.25rem;
-  font-size: 1.25rem;
-  line-height: 1;
-  opacity: 0.7;
-  transition: opacity 0.3s ease;
+.compare-bar-item {
+  min-width: 0;
+  will-change: transform;
+  animation-duration: 0.68s;
+  animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+  animation-fill-mode: both;
+  animation-delay: var(--compare-delay, 0ms);
+  backface-visibility: hidden;
+  border-radius: var(--radius-lg);
 }
 
-.compare-bar-item-remove:hover {
-  opacity: 1;
+.compare-bar.active .compare-shrink-rtl {
+  transform-origin: left center;
+  animation-name: compareShrinkRightToLeft;
 }
 
-.compare-bar-actions {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
+.compare-bar.active .compare-enter-rtl {
+  transform-origin: right center;
+  animation-name: compareEnterFromRightToLeft;
 }
 
-.compare-btn {
-  background: linear-gradient(135deg, #C9A96E 0%, #B8935E 100%);
-  color: #fff;
-  border: none;
-  padding: 0.75rem 2rem;
-  border-radius: 25px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(201, 169, 110, 0.3);
-  white-space: nowrap;
+@keyframes compareShrinkRightToLeft {
+  0% {
+    transform: translateX(0) scaleX(1);
+  }
+  45% {
+    transform: translateX(-6px) scaleX(0.86);
+  }
+  75% {
+    transform: translateX(1px) scaleX(1.02);
+  }
+  100% {
+    transform: translateX(0) scaleX(1);
+  }
 }
 
-.compare-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(201, 169, 110, 0.4);
+@keyframes compareEnterFromRightToLeft {
+  0% {
+    transform: translateX(18px) scale(0.94);
+  }
+  62% {
+    transform: translateX(-2px) scale(1.015);
+  }
+  100% {
+    transform: translateX(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .compare-bar-item {
+    animation: none !important;
+    transform: none !important;
+  }
 }
 
 .compare-btn:disabled {
-  opacity: 0.5;
+  opacity: 0.55;
   cursor: not-allowed;
-  transform: none;
 }
 
-.compare-clear-btn {
-  background: transparent;
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 0.75rem 1.5rem;
-  border-radius: 25px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s ease;
+.compare-theme-btn {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+  border: 1px solid var(--gold-dark);
+  color: var(--white);
+}
+
+.compare-theme-btn:hover,
+.compare-theme-btn:focus-visible {
+  background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 100%);
+  border-color: var(--gold-dark);
+  color: var(--white);
+}
+
+.compare-theme-btn:disabled,
+.compare-theme-btn.disabled {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+  border-color: var(--gold-dark);
+  color: var(--white);
+}
+
+.compare-summary-btn {
+  font-family: var(--font-body);
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.2px;
+  border-radius: 999px;
+  min-height: 40px;
+  padding: 0.5rem 1rem !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.5 !important;
   white-space: nowrap;
 }
 
-.compare-clear-btn:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.5);
+.compare-summary-idle {
+  color: var(--white);
+  background: transparent;
+  border: 1px solid transparent;
 }
 
-/* Add to Compare Button on Product Cards */
-.product-compare-btn {
+.compare-summary-ready {
+  border: 1px solid var(--gold) !important;
+  background: transparent !important;
+  color: var(--white) !important;
+  cursor: pointer;
+  /* Reset button defaults */
+  margin: 0;
+  text-decoration: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  box-sizing: border-box;
+}
+
+.compare-summary-ready:hover,
+.compare-summary-ready:focus-visible {
+  border-color: var(--gold-dark) !important;
+  background: rgba(201, 169, 110, 0.1) !important;
+}
+
+.compare-clear-btn {
   position: absolute;
-  top: 0.75rem;
-  right: 0.75rem;
-  background: rgba(255, 255, 255, 0.95);
-  border: none;
-  width: 40px;
-  height: 40px;
+  top: 8px;
+  right: 8px;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  font-size: 1.25rem;
+  line-height: 1;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
   border-radius: 50%;
+  color: var(--white);
+  opacity: 0.8;
+  cursor: pointer;
+  transition: all 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  z-index: 10;
-  opacity: 0;
 }
 
-.product-card:hover .product-compare-btn {
+.compare-clear-btn:hover,
+.compare-clear-btn:focus-visible {
   opacity: 1;
-}
-
-.product-compare-btn svg {
-  width: 20px;
-  height: 20px;
-  stroke: #2C2C2C;
-  transition: all 0.3s ease;
-}
-
-.product-compare-btn:hover {
-  background: #C9A96E;
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
   transform: scale(1.1);
 }
 
-.product-compare-btn:hover svg {
-  stroke: #fff;
+@media (min-width: 768px) {
+  .compare-clear-btn {
+    top: 12px;
+    right: 12px;
+  }
 }
 
-.product-compare-btn.active {
-  background: #C9A96E;
+.compare-clear-btn:hover,
+.compare-clear-btn:focus-visible {
   opacity: 1;
+  background: transparent !important;
+  border: none !important;
+  color: var(--white);
 }
 
-.product-compare-btn.active svg {
-  stroke: #fff;
+.product-compare-btn.is-active-compare {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+  border-color: var(--gold-dark) !important;
+  color: var(--white) !important;
+}
+
+.product-compare-btn.is-active-compare:hover,
+.product-compare-btn.is-active-compare:focus-visible {
+  background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 100%);
+  border-color: var(--gold-dark) !important;
 }
 
 /* Comparison Page */
 .compare-page {
   padding: 2rem 2rem 4rem;
   min-height: 100vh;
-  background: linear-gradient(to bottom, #FAF7F5 0%, #fff 100%);
+  background: linear-gradient(to bottom, var(--cream) 0%, var(--white) 100%);
 }
 
 .compare-container {
@@ -212,39 +246,39 @@
 
 .compare-header h1 {
   font-size: 2.5rem;
-  color: #2C2C2C;
+  color: var(--charcoal);
   margin-bottom: 0.5rem;
   font-weight: 400;
 }
 
 .compare-header p {
-  color: #7F8C8D;
+  color: var(--charcoal-light);
   font-size: 1.1rem;
 }
 
 .compare-empty {
   text-align: center;
   padding: 4rem 2rem;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
 }
 
 .compare-empty h2 {
-  color: #2C2C2C;
+  color: var(--charcoal);
   margin-bottom: 1rem;
   font-size: 1.8rem;
 }
 
 .compare-empty p {
-  color: #7F8C8D;
+  color: var(--charcoal-light);
   margin-bottom: 2rem;
   font-size: 1.1rem;
 }
 
 .compare-empty .btn {
-  background: linear-gradient(135deg, #C9A96E 0%, #B8935E 100%);
-  color: white;
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+  color: var(--white);
   padding: 1rem 2.5rem;
   border-radius: 25px;
   text-decoration: none;
@@ -252,7 +286,7 @@
   align-items: center;
   gap: 0.5rem;
   font-weight: 600;
-  transition: all 0.3s ease;
+  transition: var(--transition);
 }
 
 .compare-empty .btn:hover {
@@ -261,10 +295,10 @@
 }
 
 .compare-table-wrapper {
-  background: white;
-  border-radius: 12px;
+  background: var(--white);
+  border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow-md);
 }
 
 .compare-table {
@@ -274,8 +308,8 @@
 }
 
 .compare-table thead th {
-  background: linear-gradient(135deg, #C9A96E 0%, #A8894E 100%);
-  color: white;
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+  color: var(--white);
   padding: 1.5rem;
   font-weight: 600;
   text-align: center;
@@ -330,12 +364,12 @@
   margin-top: 0.5rem;
   background: rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  color: white;
+  color: var(--white);
   padding: 0.4rem 1rem;
   border-radius: 20px;
   font-size: 0.8rem;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: var(--transition);
 }
 
 .compare-remove-product:hover {
@@ -343,12 +377,12 @@
 }
 
 .compare-table tbody tr:nth-child(even) {
-  background: #FAF7F5;
+  background: var(--cream);
 }
 
 .compare-table tbody th {
   background: #F8F9FA;
-  color: #2C2C2C;
+  color: var(--charcoal);
   padding: 1.25rem 1.5rem;
   text-align: left;
   font-weight: 600;
@@ -372,7 +406,7 @@
 
 .compare-product-price {
   font-weight: 600;
-  color: #C9A96E;
+  color: var(--gold);
   font-size: 1.1rem;
 }
 
@@ -387,7 +421,7 @@
 }
 
 .compare-product-specs strong {
-  color: #2C2C2C;
+  color: var(--charcoal);
   display: block;
   margin-bottom: 0.25rem;
 }
@@ -396,13 +430,13 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: linear-gradient(135deg, #C9A96E 0%, #B8935E 100%);
-  color: white;
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+  color: var(--white);
   padding: 0.75rem 1.5rem;
   border-radius: 25px;
   text-decoration: none;
   font-weight: 600;
-  transition: all 0.3s ease;
+  transition: var(--transition);
   margin-top: 0.5rem;
 }
 
@@ -417,72 +451,39 @@
     padding: 0.75rem 0.5rem;
   }
 
-  .compare-bar-content {
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
   .compare-bar-title {
     font-size: 0.85rem;
-    text-align: center;
   }
 
-  .compare-bar-items {
-    max-width: 100%;
-    width: 100%;
-    gap: 0.5rem;
-    overflow-x: auto;
-    padding: 0.25rem 0;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(201, 169, 110, 0.5) transparent;
-  }
-  
-  .compare-bar-items::-webkit-scrollbar {
-    height: 4px;
-  }
-  
-  .compare-bar-items::-webkit-scrollbar-track {
-    background: transparent;
-  }
-  
-  .compare-bar-items::-webkit-scrollbar-thumb {
-    background: rgba(201, 169, 110, 0.5);
-    border-radius: 2px;
-  }
-  
   .compare-bar-item {
-    min-width: 110px;
-    padding: 0.4rem 0.6rem;
-    gap: 0.5rem;
-    flex-shrink: 0;
-  }
-  
-  .compare-bar-item img {
-    width: 32px;
-    height: 32px;
-  }
-  
-  .compare-bar-item-name {
-    font-size: 0.75rem;
-    max-width: 50px;
-  }
-  
-  .compare-bar-item-remove {
-    font-size: 1rem;
-    padding: 0.15rem;
+    padding: 0.45rem 0.5rem;
+    gap: 0.45rem;
   }
 
-  .compare-bar-actions {
-    width: 100%;
-    justify-content: space-between;
-    gap: 0.5rem;
+  .compare-bar-item img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .compare-bar-item-name {
+    font-size: 0.68rem;
+  }
+
+  .compare-bar-item-remove {
+    font-size: 0.9rem;
   }
 
   .compare-btn,
   .compare-clear-btn {
-    padding: 0.6rem 1rem;
-    font-size: 0.8rem;
-    flex: 1;
+    font-size: 0.78rem;
+  }
+
+  .compare-summary-btn {
+    width: 100%;
+  }
+
+  .compare-bar-inner {
+    padding-right: 50px;
   }
 
   .compare-page {
@@ -592,16 +593,6 @@
     margin-top: 0.25rem;
   }
 
-  .product-compare-btn {
-    width: 36px;
-    height: 36px;
-    opacity: 1;
-  }
-
-  .product-compare-btn svg {
-    width: 18px;
-    height: 18px;
-  }
 }
 
 /* Extra Small Mobile - iPhone SE, etc. */
@@ -615,9 +606,8 @@
   }
   
   .compare-bar-item {
-    min-width: 95px;
-    padding: 0.35rem 0.5rem;
-    gap: 0.4rem;
+    padding: 0.35rem 0.4rem;
+    gap: 0.35rem;
   }
   
   .compare-bar-item img {
@@ -626,8 +616,7 @@
   }
   
   .compare-bar-item-name {
-    font-size: 0.7rem;
-    max-width: 40px;
+    font-size: 0.62rem;
   }
   
   .compare-bar-item-remove {
@@ -636,8 +625,17 @@
   
   .compare-btn,
   .compare-clear-btn {
-    padding: 0.5rem 0.8rem;
-    font-size: 0.75rem;
+    padding: 0.45rem 0.6rem;
+    font-size: 0.7rem;
+  }
+
+  .compare-clear-btn {
+    width: 34px;
+    height: 34px;
+    font-size: 1.3rem;
+    padding: 0;
+    top: 8px;
+    right: 8px;
   }
   
   .compare-header h1 {
