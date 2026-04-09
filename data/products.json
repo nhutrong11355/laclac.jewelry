@@ -24,7 +24,7 @@
     "featured": true
   },
   {
-    "id": 8,
+    "id": 2,
     "slug": "whisper-chain-necklace-3",
     "name": "Beloved Necklace",
     "collection": "Dây chuyền",
@@ -48,7 +48,7 @@
     "featured": false
   },
   {
-    "id": 9,
+    "id": 3,
     "slug": "whisper-chain-necklace-4",
     "name": "Beloved Custom Necklace",
     "collection": "Dây chuyền",
@@ -73,7 +73,7 @@
     "featured": false
   },
   {
-    "id": 2,
+    "id": 4,
     "slug": "rose-petal-ring-1",
     "name": "Oval de Lumière - Engagement Ring",
     "collection": "Nhẫn",
@@ -97,7 +97,7 @@
     "featured": false
   },
    {
-    "id": 11,
+    "id": 5,
     "slug": "rose-petal-ring-5",
     "name": "Everline Band Ring",
     "collection": "Nhẫn",
@@ -121,7 +121,7 @@
     "featured": false
   },
   {
-    "id": 3,
+    "id": 6,
     "slug": "rose-petal-ring-2",
     "name": "Circle Of Love - Wedding Ring",
     "collection": "Nhẫn",
@@ -145,7 +145,7 @@
     "featured": false
   },
   {
-    "id": 4,
+    "id": 7,
     "slug": "rose-petal-ring-3",
     "name": "Emerald Promise Ring",
     "collection": "Nhẫn",
@@ -167,7 +167,7 @@
     "featured": false
   },
   {
-    "id": 5,
+    "id": 8,
     "slug": "starlight-drop-earrings",
     "name": "Drop Earrings",
     "collection": "Bông tai",
@@ -189,7 +189,7 @@
     "featured": true
   },
   {
-    "id": 6,
+    "id": 9,
     "slug": "whisper-chain-necklace-1",
     "name": "Teardrop Double Stone Necklace",
     "collection": "Dây chuyền",
@@ -237,7 +237,7 @@
     "featured": false
   },
   {
-    "id": 7,
+    "id": 11,
     "slug": "whisper-chain-necklace-2",
     "name": "Minimalist One Stone Necklace",
     "collection": "Dây chuyền",
@@ -260,7 +260,7 @@
     "featured": true
   },
   {
-    "id": 11,
+    "id": 12,
     "slug": "rose-petal-ring-4",
     "name": "Promise Custom Ring",
     "collection": "Nhẫn",
