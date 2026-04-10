@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Active menu item on scroll (for hash sections) ---
   const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-links a');
+  const navLinks = document.querySelectorAll('#navbarNav .nav-link');
   
   function updateActiveMenu() {
     let current = '';
@@ -206,9 +206,14 @@ document.addEventListener('DOMContentLoaded', () => {
     navLinks.forEach(link => {
       link.classList.remove('active');
       const href = link.getAttribute('href');
-      if (href.includes('#' + current) || 
-          (current === '' && href === '/') ||
-          (window.location.pathname !== '/' && href === window.location.pathname)) {
+      const linkPage = link.getAttribute('data-page');
+      
+      // Check if link matches current section hash
+      if (current && href.includes('#' + current)) {
+        link.classList.add('active');
+      }
+      // Check if on non-home page (gemstones, instruction)
+      else if (window.location.pathname !== '/' && linkPage && window.location.pathname.includes(linkPage)) {
         link.classList.add('active');
       }
     });
