@@ -3,46 +3,42 @@
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', function() {
-  // Check if MicroModal is loaded
-  if (typeof MicroModal === 'undefined') {
-    console.warn('MicroModal not loaded');
+  // Check if Bootstrap is loaded
+  if (typeof bootstrap === 'undefined') {
+    console.warn('Bootstrap not loaded');
     return;
   }
 
   const searchInput = document.getElementById('searchInput');
   const searchClearBtn = document.getElementById('searchClearBtn');
   const searchResults = document.getElementById('searchResults');
+  const searchModalElement = document.getElementById('searchModal');
 
-  if (!searchInput || !searchResults) {
+  if (!searchInput || !searchResults || !searchModalElement) {
     console.warn('Search elements not found');
     return;
   }
 
-  // Initialize Micromodal
-  MicroModal.init({
-    onShow: modal => {
-      // Focus input when modal opens
-      setTimeout(() => {
-        searchInput.focus();
-      }, 100);
-      
-      // Initialize Fuse.js
-      initializeFuse();
-    },
-    onClose: modal => {
-      // Clear search when closing
-      searchInput.value = '';
-      searchClearBtn.classList.remove('show');
-      renderSuggestions();
-    },
-    openTrigger: 'data-micromodal-trigger',
-    closeTrigger: 'data-micromodal-close',
-    openClass: 'is-open',
-    disableScroll: true,
-    disableFocus: false,
-    awaitOpenAnimation: true,
-    awaitCloseAnimation: true,
-    debugMode: false
+  // Initialize Bootstrap modal instance
+  const searchModal = new bootstrap.Modal(searchModalElement);
+
+  // Handle modal shown event
+  searchModalElement.addEventListener('shown.bs.modal', function() {
+    // Focus input when modal opens
+    setTimeout(() => {
+      searchInput.focus();
+    }, 100);
+    
+    // Initialize Fuse.js
+    initializeFuse();
+  });
+
+  // Handle modal hidden event
+  searchModalElement.addEventListener('hidden.bs.modal', function() {
+    // Clear search when closing
+    searchInput.value = '';
+    searchClearBtn.classList.remove('show');
+    renderSuggestions();
   });
 
   // Optimize scroll performance
@@ -130,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function() {
     searchResults.innerHTML = `
       <div class="search-suggestions">
         <div class="search-suggestions-title">Gợi ý tìm kiếm</div>
-        <div class="search-suggestions-list">
+        <div class="d-flex flex-wrap gap-2">
           <a href="/#collections" class="search-suggestion-item">Nhẫn kim cương</a>
           <a href="/#collections" class="search-suggestion-item">Dây chuyền moissanite</a>
           <a href="/#collections" class="search-suggestion-item">Bông tai vàng</a>
@@ -159,24 +155,32 @@ document.addEventListener('DOMContentLoaded', function() {
   // Helper function to render search results
   function renderResults(results) {
     const resultsHTML = `
-      <div class="search-suggestions-title">Tìm thấy ${results.length} kết quả${results.length > 0 && results[0].score ? ' (sắp xếp theo độ liên quan)' : ''}</div>
-      <div class="search-results-grid">
-        ${results.map(item => `
-          <a href="${item.url}" class="search-result-card" data-score="${item.score || 0}">
-            ${item.image ? `
-              <img src="${item.image}" alt="${item.name}" class="search-result-image" loading="lazy" decoding="async">
-            ` : `
-              <div class="search-result-image" style="display: flex; align-items: center; justify-content: center; background: var(--blush);">
-                <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="50" cy="50" r="20" stroke="#C9A96E" stroke-width="2" fill="none"/>
-                </svg>
+      <div class="search-suggestions-title mb-3">Tìm thấy ${results.length} kết quả${results.length > 0 && results[0].score ? ' (sắp xếp theo độ liên quan)' : ''}</div>
+      <div class="row g-3 g-lg-4">
+        ${results.map((item, index) => `
+          <div class="col-6 col-md-4 col-lg-3" style="animation: fadeInUp 0.4s ease ${index * 0.05}s both;">
+            <a href="${item.url}" class="search-result-card d-block h-100" data-score="${item.score || 0}">
+              ${item.image ? `
+                <div class="search-result-image-wrapper">
+                  <img src="${item.image}" alt="${item.name}" class="search-result-image img-fluid" loading="lazy" decoding="async">
+                </div>
+              ` : `
+                <div class="search-result-image-wrapper">
+                  <div class="search-result-placeholder d-flex align-items-center justify-content-center h-100">
+                    <svg width="48" height="48" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="50" cy="50" r="30" stroke="#C9A96E" stroke-width="1.5" fill="none" opacity="0.3"/>
+                      <circle cx="50" cy="50" r="20" stroke="#C9A96E" stroke-width="2" fill="none"/>
+                      <circle cx="50" cy="50" r="5" fill="#C9A96E" opacity="0.5"/>
+                    </svg>
+                  </div>
+                </div>
+              `}
+              <div class="search-result-info">
+                <div class="search-result-collection">${item.collection}</div>
+                <div class="search-result-name">${item.name}</div>
               </div>
-            `}
-            <div class="search-result-info">
-              <div class="search-result-name">${item.name}</div>
-              <div class="search-result-collection">${item.collection}</div>
-            </div>
-          </a>
+            </a>
+          </div>
         `).join('')}
       </div>
     `;
