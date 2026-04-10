@@ -17,29 +17,56 @@ document.addEventListener('DOMContentLoaded', () => {
     lastScroll = scrollY;
   });
 
-  // --- Mobile menu toggle ---
-  const menuBtn = document.getElementById('mobileMenuBtn');
-  const mainNav = document.getElementById('mainNav');
-
-  if (menuBtn && mainNav) {
-    menuBtn.addEventListener('click', () => {
-      menuBtn.classList.toggle('active');
-      mainNav.classList.toggle('active');
+  // --- Back to top button ---
+  const backToTopBtn = document.getElementById('backToTop');
+  
+  if (backToTopBtn) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        backToTopBtn.classList.add('show');
+      } else {
+        backToTopBtn.classList.remove('show');
+      }
     });
 
-    // Close menu on link click
-    mainNav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        menuBtn.classList.remove('active');
-        mainNav.classList.remove('active');
-      });
+    backToTopBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      
+      // Add click animation to button
+      backToTopBtn.classList.add('clicked');
+      setTimeout(() => {
+        backToTopBtn.classList.remove('clicked');
+      }, 600);
+      
+      // Smooth scroll animation using requestAnimationFrame
+      const startPosition = window.scrollY;
+      const duration = 1000; // 1 second
+      const startTime = performance.now();
+      
+      function easeInOutCubic(t) {
+        return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+      }
+      
+      function scrollAnimation(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const easeProgress = easeInOutCubic(progress);
+        
+        window.scrollTo(0, startPosition * (1 - easeProgress));
+        
+        if (progress < 1) {
+          requestAnimationFrame(scrollAnimation);
+        }
+      }
+      
+      requestAnimationFrame(scrollAnimation);
     });
   }
 
   // --- Scroll animations (lightweight AOS alternative) ---
   const observerOptions = {
-    threshold: 0.15,
-    rootMargin: '0px 0px -50px 0px'
+    threshold: 0.1,
+    rootMargin: '0px 0px -80px 0px'
   };
 
   const observer = new IntersectionObserver((entries) => {
@@ -49,6 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
           entry.target.classList.add('aos-animate');
         }, parseInt(delay));
+        // Don't unobserve to allow re-animation on scroll back (optional)
         observer.unobserve(entry.target);
       }
     });
@@ -60,7 +88,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Collection filter + Load More ---
   const filterBtns = document.querySelectorAll('.filter-btn');
-  const allProductCards = Array.from(document.querySelectorAll('.product-card[data-collection]'));
+  const filterInputs = document.querySelectorAll('input[name="productFilter"]');
+  const dropdownItems = document.querySelectorAll('.filter-dropdown-item');
+  const selectedFilterText = document.getElementById('selectedFilterText');
+  const allProductCards = Array.from(document.querySelectorAll('.product-item[data-collection]'));
   const loadMoreBtn = document.getElementById('loadMoreBtn');
   const ITEMS_PER_BATCH = 6;
   const INITIAL_ITEMS = 9;
@@ -98,10 +129,42 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Mobile dropdown filter items
+  dropdownItems.forEach(item => {
+    item.addEventListener('click', (e) => {
+      e.preventDefault();
+      
+      // Update active state
+      dropdownItems.forEach(i => i.classList.remove('active'));
+      item.classList.add('active');
+      
+      // Update button text
+      if (selectedFilterText) {
+        selectedFilterText.textContent = item.textContent;
+      }
+      
+      // Update filter
+      currentFilter = item.getAttribute('data-filter');
+      visibleCount = INITIAL_ITEMS;
+      renderProducts();
+    });
+  });
+
+  // Listen to radio button changes for filter (desktop)
+  filterInputs.forEach(input => {
+    input.addEventListener('change', (e) => {
+      if (e.target.checked) {
+        const filterLabel = document.querySelector(`label[for="${e.target.id}"]`);
+        currentFilter = filterLabel ? filterLabel.getAttribute('data-filter') : 'all';
+        visibleCount = INITIAL_ITEMS;
+        renderProducts();
+      }
+    });
+  });
+
+  // Also listen to label clicks directly (backup for better UX)
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
       currentFilter = btn.getAttribute('data-filter');
       visibleCount = INITIAL_ITEMS;
       renderProducts();
@@ -124,6 +187,48 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // --- Active menu item on scroll (for hash sections) ---
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('#navbarNav .nav-link');
+  
+  function updateActiveMenu() {
+    let current = '';
+    const scrollPos = window.scrollY + 100;
+    
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+      if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+        current = section.getAttribute('id');
+      }
+    });
+    
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      const href = link.getAttribute('href');
+      const linkPage = link.getAttribute('data-page');
+      
+      // Check if link matches current section hash
+      if (current && href.includes('#' + current)) {
+        link.classList.add('active');
+      }
+      // Check if on non-home page (gemstones, instruction)
+      else if (window.location.pathname !== '/' && linkPage && window.location.pathname.includes(linkPage)) {
+        link.classList.add('active');
+      }
+    });
+  }
+  
+  // Update on scroll (debounced)
+  let scrollTimeout;
+  window.addEventListener('scroll', () => {
+    if (scrollTimeout) clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(updateActiveMenu, 100);
+  });
+  
+  // Initial update
+  updateActiveMenu();
+
   // --- Product thumbnail click (product page) ---
   const thumbs = document.querySelectorAll('.product-thumb');
   thumbs.forEach(thumb => {
@@ -137,14 +242,34 @@ document.addEventListener('DOMContentLoaded', () => {
 // Global function for gallery category cards to filter collections
 function filterCollection(collection) {
   setTimeout(() => {
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const productCards = document.querySelectorAll('.product-card[data-collection]');
-    filterBtns.forEach(btn => {
-      btn.classList.remove('active');
-      if (btn.getAttribute('data-filter') === collection) {
-        btn.classList.add('active');
+    // Update mobile dropdown
+    const dropdownItems = document.querySelectorAll('.filter-dropdown-item');
+    const selectedFilterText = document.getElementById('selectedFilterText');
+    
+    dropdownItems.forEach(item => {
+      if (item.getAttribute('data-filter') === collection) {
+        item.classList.add('active');
+        if (selectedFilterText) {
+          selectedFilterText.textContent = item.textContent;
+        }
+      } else {
+        item.classList.remove('active');
       }
     });
+    
+    // Find and check the corresponding radio button (desktop)
+    const filterInputs = document.querySelectorAll('input[name="productFilter"]');
+    const productCards = document.querySelectorAll('.product-item[data-collection]');
+    
+    // Find the corresponding radio and check it
+    filterInputs.forEach(input => {
+      const label = document.querySelector(`label[for="${input.id}"]`);
+      if (label && label.getAttribute('data-filter') === collection) {
+        input.checked = true;
+      }
+    });
+    
+    // Filter products
     productCards.forEach(card => {
       if (card.getAttribute('data-collection') === collection) {
         card.style.display = '';
@@ -155,3 +280,4 @@ function filterCollection(collection) {
     });
   }, 500);
 }
+

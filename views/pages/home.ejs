@@ -3,150 +3,412 @@
 <!-- Hero Section -->
 <section class="hero">
   <div class="hero-bg"></div>
-  <div class="hero-content container">
-    <div class="hero-badge">✦ Chế tác thủ công tại Sài Gòn ✦</div>
-    <h1 class="hero-title">Mỗi Viên Đá<br>Kể <em>Câu Chuyện</em> Riêng</h1>
-    <p class="hero-subtitle">Trang sức kim cương nhân tạo & moissanite theo yêu cầu, được chế tác tỉ mỉ và trau chuốt. Mỗi sản phẩm đều độc đáo như chính người sở hữu nó.</p>
-    <div class="hero-actions">
-      <a href="#collections" class="btn btn-primary">Khám Phá Bộ Sưu Tập</a>
-      <a href="#contact" class="btn btn-outline">Liên Hệ Ngay</a>
+  
+  <!-- Decorative Elements -->
+  <div class="hero-decorations">
+    <div class="hero-circle hero-circle-1"></div>
+    <div class="hero-circle hero-circle-2"></div>
+    <div class="hero-circle hero-circle-3"></div>
+    <div class="hero-circle hero-circle-4"></div>
+    <div class="hero-circle hero-circle-5"></div>
+    <div class="hero-circle hero-circle-6"></div>
+    <div class="hero-diamond hero-diamond-1">
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1">
+        <path d="M20 2L6 14L20 38L34 14Z"/>
+        <line x1="6" y1="14" x2="34" y2="14"/>
+        <line x1="20" y1="2" x2="20" y2="38"/>
+      </svg>
+    </div>
+    <div class="hero-diamond hero-diamond-2">
+      <svg width="30" height="30" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1">
+        <path d="M20 2L6 14L20 38L34 14Z"/>
+        <line x1="6" y1="14" x2="34" y2="14"/>
+        <line x1="20" y1="2" x2="20" y2="38"/>
+      </svg>
+    </div>
+    <div class="hero-diamond hero-diamond-3">
+      <svg width="25" height="25" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1">
+        <circle cx="20" cy="20" r="18"/>
+        <circle cx="20" cy="20" r="12"/>
+      </svg>
+    </div>
+    <div class="hero-diamond hero-diamond-4">
+      <svg width="35" height="35" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1">
+        <path d="M20 2L6 14L20 38L34 14Z"/>
+        <line x1="6" y1="14" x2="34" y2="14"/>
+        <line x1="20" y1="2" x2="20" y2="38"/>
+      </svg>
+    </div>
+    <div class="hero-diamond hero-diamond-5">
+      <svg width="28" height="28" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1">
+        <circle cx="20" cy="20" r="18"/>
+        <circle cx="20" cy="20" r="12"/>
+      </svg>
+    </div>
+    <div class="hero-sparkle hero-sparkle-1">✦</div>
+    <div class="hero-sparkle hero-sparkle-2">✧</div>
+    <div class="hero-sparkle hero-sparkle-3">✦</div>
+    <div class="hero-sparkle hero-sparkle-4">✧</div>
+    <div class="hero-sparkle hero-sparkle-5">✦</div>
+    <div class="hero-sparkle hero-sparkle-6">✧</div>
+    <div class="hero-sparkle hero-sparkle-7">✦</div>
+    <div class="hero-sparkle hero-sparkle-8">✧</div>
+    <div class="hero-sparkle hero-sparkle-9">✦</div>
+    <div class="hero-sparkle hero-sparkle-10">✧</div>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-inner">
+      <div class="hero-badge">
+        <span class="badge-ornament">◆</span>
+        <span class="brand-name">Trang Sức Lạc Lạc</span>
+        <span class="badge-ornament">◆</span>
+      </div>
+
+      <h1 class="hero-title">
+        Mỗi Viên Đá<br>
+        Kể <em>Câu Chuyện</em> Riêng
+      </h1>
+
+      <p class="hero-subtitle">
+        Trang sức kim cương nhân tạo & moissanite theo yêu cầu, được chế tác tỉ mỉ và trau chuốt. Mỗi sản phẩm đều độc đáo như chính người sở hữu nó.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#collections" class="btn btn-dark text-nowrap">Khám Phá Bộ Sưu Tập</a>
+        <a href="#contact" class="btn btn-outline-dark">Liên Hệ Ngay</a>
+      </div>
     </div>
   </div>
+
   <div class="hero-scroll">
     <span>Scroll</span>
     <div class="scroll-line"></div>
   </div>
 </section>
 
+<script>
+// Random positions for hero decorations - sparkles reposition after each animation
+document.addEventListener('DOMContentLoaded', function() {
+  const circles = document.querySelectorAll('.hero-circle');
+  const diamonds = document.querySelectorAll('.hero-diamond');
+  const sparkles = document.querySelectorAll('.hero-sparkle');
+  
+  // Check if position is in center area (where text is)
+  function isInCenterArea(top, left) {
+    // Badge zone at top: 20-80% horizontally, 8-28% vertically (expanded)
+    const inBadgeArea = (top >= 8 && top <= 28 && left >= 20 && left <= 80);
+    
+    // Center zone for main content: 20-80% horizontally, 28-72% vertically
+    const inMainContent = (top >= 28 && top <= 72 && left >= 20 && left <= 80);
+    
+    // Button area: 25-75% horizontally, 68-80% vertically
+    const inButtonArea = (top >= 68 && top <= 80 && left >= 25 && left <= 75);
+    
+    // Scroll indicator at bottom: 35-65% horizontally, 82-100% vertically
+    const inScrollArea = (top >= 82 && top <= 100 && left >= 35 && left <= 65);
+    
+    return inBadgeArea || inMainContent || inButtonArea || inScrollArea;
+  }
+  
+  // Get random position avoiding center
+  function getRandomPositionAvoidCenter() {
+    let top, left;
+    let attempts = 0;
+    const maxAttempts = 50;
+    
+    do {
+      top = Math.random() * 95 + 2.5; // 2.5-97.5%
+      left = Math.random() * 95 + 2.5; // 2.5-97.5%
+      attempts++;
+    } while (isInCenterArea(top, left) && attempts < maxAttempts);
+    
+    return { top, left };
+  }
+  
+  // Set initial positions for circles and diamonds (static)
+  circles.forEach((element) => {
+    const pos = getRandomPositionAvoidCenter();
+    element.style.top = pos.top + '%';
+    element.style.left = pos.left + '%';
+  });
+  
+  diamonds.forEach((element) => {
+    const pos = getRandomPositionAvoidCenter();
+    element.style.top = pos.top + '%';
+    element.style.left = pos.left + '%';
+  });
+  
+  // Set initial positions for sparkles and reposition after each animation
+  sparkles.forEach((sparkle) => {
+    // Set initial position
+    const pos = getRandomPositionAvoidCenter();
+    sparkle.style.top = pos.top + '%';
+    sparkle.style.left = pos.left + '%';
+    
+    // Listen for animation iteration (when animation completes one cycle)
+    sparkle.addEventListener('animationiteration', function() {
+      const newPos = getRandomPositionAvoidCenter();
+      sparkle.style.top = newPos.top + '%';
+      sparkle.style.left = newPos.left + '%';
+    });
+  });
+});
+</script>
+
 <!-- Brand Story Section -->
 <section class="story-section" id="story">
-  <div class="container">
-    <div class="story-grid">
-      <div class="story-visual" data-aos="fade-right">
-        <div class="story-image-frame">
-          <div class="story-placeholder">
-            <img src="/images/laclac-logo.jpg" alt="LacLac Jewelry Craftsmanship" class="story-logo-img">
-          </div>
-        </div>
-        <div class="story-accent"></div>
-      </div>
-      <div class="story-content" data-aos="fade-left">
-        <span class="section-label">Câu Chuyện Của Chúng Tôi</span>
-        <h2 class="section-title">Bắt Đầu Từ Tình Yêu<br>Với Sự Lấp Lánh</h2>
-        <p class="story-text">LẠC LẠC Jewelry bắt đầu từ một cô gái yêu thích sự lấp lánh. Trong hành trình tìm tòi và học hỏi, cô dần nhận ra ý nghĩa sâu sắc mà trang sức mang lại cho phụ nữ — không chỉ là vẻ đẹp bên ngoài, mà còn là sự tự tin, phong cách và câu chuyện riêng của mỗi người. Từ đó, một ước mơ nhen nhóm: mang đến mọi người những món trang sức vừa đẹp, vừa ý nghĩa, phù hợp với từng cá tính và có giá thành hợp lý nhất.</p>
-        <p class="story-text">Từ niềm say mê với những đường nét tinh xảo của một chiếc nhẫn, từng ánh sáng lung linh của viên đá, LẠC LẠC Jewelry ra đời — nơi mỗi món trang sức được chế tác với tâm huyết để kể câu chuyện của chính bạn. Chúng tôi tin rằng mọi phụ nữ đều xứng đáng được toả sáng theo cách riêng — dù trong khoảnh khắc bình dị thường ngày hay những dấu mốc đặc biệt nhất cuộc đời.</p>
-        <p class="story-text">Với kim cương tự nhiên, kim cương nhân tạo, moissanite cùng vàng 10K-18K và bạc S925, chúng tôi mong muốn trở thành điểm đến yêu thích — nơi mọi phụ nữ đều tìm thấy món trang sức phù hợp với phong cách, cá tính và ngân sách của mình.</p>
-        <div class="story-values">
-          <div class="value-item">
-            <div class="value-icon">◇</div>
-            <div>
-              <h4>Đẹp & Hợp Lý</h4>
-              <p>Trang sức chất lượng với giá thành phải chăng</p>
+  <div class="story-background-pattern"></div>
+  <div class="container position-relative">
+    <div class="row g-4 g-lg-5 align-items-center">
+
+      <!-- Visual Column -->
+      <div class="col-12 col-lg-5 story-visual" data-aos="fade-right" data-aos-duration="800">
+        <div class="story-img-wrap">
+          <div class="story-decorative-circle"></div>
+          <div class="story-image-frame">
+            <div class="story-placeholder">
+              <img src="/images/laclac-logo.jpg" alt="LacLac Jewelry Craftsmanship" class="story-logo-img">
+              <div class="story-shimmer"></div>
             </div>
           </div>
-          <div class="value-item">
-            <div class="value-icon">✧</div>
-            <div>
-              <h4>Thiết Kế Riêng</h4>
-              <p>Mỗi sản phẩm được tạo theo ý tưởng của bạn</p>
+          <div class="story-accent story-accent-1"></div>
+          <div class="story-accent story-accent-2"></div>
+          <div class="story-float-badge">
+            <div class="story-badge-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+              </svg>
             </div>
-          </div>
-          <div class="value-item">
-            <div class="value-icon">♡</div>
-            <div>
-              <h4>Chế Tác Với Tình Yêu</h4>
-              <p>Thủ công tại Sài Gòn với sự tận tâm</p>
+            <div class="story-badge-content">
+              <span class="story-badge-title">Chế Tác Thủ Công</span>
+              <span class="story-badge-subtitle">Tại Sài Gòn</span>
             </div>
           </div>
         </div>
       </div>
+
+      <!-- Content Column -->
+      <div class="col-12 col-lg-7" data-aos="fade-left" data-aos-duration="800">
+        <div class="story-content">
+          <div class="story-header">
+            <span class="section-label">
+              <span class="label-ornament">✦</span>
+              Câu Chuyện Của Chúng Tôi
+              <span class="label-ornament">✦</span>
+            </span>
+            <h2 class="section-title story-title">
+              Bắt Đầu Từ <span class="highlight-text">Tình Yêu</span><br>
+              Với Sự <em class="italic-gold">Lấp Lánh</em>
+            </h2>
+            <div class="story-divider">
+              <span class="divider-ornament"></span>
+            </div>
+          </div>
+
+          <div class="story-paragraphs">
+            <p class="story-text story-text-intro">
+              LẠC LẠC Jewelry bắt đầu từ một cô gái yêu thích sự lấp lánh. Trong hành trình tìm tòi và học hỏi, cô dần nhận ra ý nghĩa sâu sắc mà trang sức mang lại cho phụ nữ — không chỉ là vẻ đẹp bên ngoài, mà còn là sự tự tin, phong cách và câu chuyện riêng của mỗi người.
+            </p>
+            <p class="story-text">
+              Từ niềm say mê với những đường nét tinh xảo của một chiếc nhẫn, từng ánh sáng lung linh của viên đá, LẠC LẠC Jewelry ra đời — nơi mỗi món trang sức được chế tác với tâm huyết để kể câu chuyện của chính bản thân. Chúng tôi tin rằng mỗi phụ nữ đều xứng đáng được toả sáng theo cách riêng — dù trong khoảnh khắc bình dị thường ngày hay những dấu mốc đặc biệt nhất cuộc đời.
+            </p>
+            <p class="story-text">
+              Với kim cương tự nhiên, kim cương nhân tạo, moissanite cùng vàng 10K-18K và bạc S925, chúng tôi mong muốn trở thành điểm đến yêu thích — nơi mỗi phụ nữ đều tìm thấy món trang sức phù hợp với phong cách, cá tính và ngân sách của mình.
+            </p>
+          </div>
+
+          <!-- Value Propositions -->
+          <div class="story-values">
+            <div class="row g-3 g-md-4">
+              <div class="col-4">
+                <div class="value-card" data-aos="zoom-in" data-aos-delay="100">
+                  <div class="value-icon-wrapper">
+                    <div class="value-icon">
+                      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 6v6l4 2"/>
+                      </svg>
+                    </div>
+                    <div class="value-icon-bg"></div>
+                  </div>
+                  <h4 class="value-title">Đẹp & Hợp Lý</h4>
+                  <p class="value-desc">Chất lượng với giá phải chăng</p>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="value-card" data-aos="zoom-in" data-aos-delay="200">
+                  <div class="value-icon-wrapper">
+                    <div class="value-icon">
+                      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                      </svg>
+                    </div>
+                    <div class="value-icon-bg"></div>
+                  </div>
+                  <h4 class="value-title">Thiết Kế Riêng</h4>
+                  <p class="value-desc">Theo ý tưởng của bạn</p>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="value-card" data-aos="zoom-in" data-aos-delay="300">
+                  <div class="value-icon-wrapper">
+                    <div class="value-icon">
+                      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                      </svg>
+                    </div>
+                    <div class="value-icon-bg"></div>
+                  </div>
+                  <h4 class="value-title">Tận Tâm</h4>
+                  <p class="value-desc">Thủ công tại Sài Gòn</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- Materials Banner -->
+<!-- Collections Section -->
+<section class="py-5 bg-light" id="collections">
+  <div class="container" data-aos="fade-up">
+    <div class="text-center mb-5">
+      <span class="section-label">Bộ Sưu Tập</span>
+      <h2 class="section-title">Khám Phá Sản Phẩm</h2>
+      <p class="section-desc">Mỗi sản phẩm được chế tác tỉ mỉ với tình yêu. Xem qua bộ sưu tập hoặc liên hệ để thiết kế riêng.</p>
+    </div>
+
+    <!-- Filter: Dropdown for Mobile, Button Group for Desktop -->
+    <!-- Remove data-aos to avoid stacking context issues with dropdown -->
+    <div>
+      <!-- Mobile Dropdown (hidden on desktop) -->
+      <div class="d-md-none px-3 mb-4">
+        <div class="dropdown w-100">
+          <button class="btn btn-filter-dropdown w-100 d-flex justify-content-between align-items-center" type="button" id="dropdownFilterButton" data-bs-toggle="dropdown" aria-expanded="false">
+            <span id="selectedFilterText">Tất Cả Sản Phẩm</span>
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 8L2 4h8z" fill="currentColor"/>
+            </svg>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-filter w-100" aria-labelledby="dropdownFilterButton">
+            <li><a class="dropdown-item filter-dropdown-item active" href="#" data-filter="all">Tất Cả Sản Phẩm</a></li>
+            ${['Nhẫn', 'Dây chuyền', 'Bông tai', 'Vòng tay']
+              .filter(c => collections.includes(c))
+              .map(c => '<li><a class="dropdown-item filter-dropdown-item" href="#" data-filter="' + c + '">' + c + '</a></li>')
+              .join('\n            ')}
+          </ul>
+        </div>
+      </div>
+
+      <!-- Desktop Button Group (hidden on mobile) -->
+      <div class="d-none d-md-flex justify-content-center mb-5">
+        <div class="btn-group btn-group-filter flex-wrap" role="group" aria-label="Bộ lọc sản phẩm">
+          <input type="radio" class="btn-check" name="productFilter" id="filter-all" value="all" autocomplete="off" checked>
+          <label class="btn btn-outline-dark rounded-pill-start filter-btn" for="filter-all" data-filter="all">Tất Cả</label>
+          
+          ${['Nhẫn', 'Dây chuyền', 'Bông tai', 'Vòng tay']
+            .filter(c => collections.includes(c))
+            .map((c, idx, arr) => {
+              const normalized = c.toLowerCase().replace(/\s+/g, '-');
+              const roundedClass = idx === arr.length - 1 ? 'rounded-pill-end' : '';
+              return '<input type="radio" class="btn-check" name="productFilter" id="filter-' + normalized + '" value="' + c + '" autocomplete="off">' +
+                     '<label class="btn btn-outline-dark ' + roundedClass + ' filter-btn" for="filter-' + normalized + '" data-filter="' + c + '">' + c + '</label>';
+            }).join('\n          ')}
+        </div>
+      </div>
+    </div>
+
+    <!-- Products Grid -->
+    <div class="row g-3 g-md-4" id="productsGrid" data-aos="fade-up" data-aos-delay="200">
+      ${products.map(p => `
+        <div class="col-6 col-md-6 col-lg-4 product-item" data-collection="${p.collection}">
+          <a href="/product/${p.slug}" class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden text-decoration-none text-dark">
+            <div class="ratio ratio-1x1 position-relative bg-white">
+              ${p.images && p.images[0] && !p.images[0].startsWith('/images/') ? `
+                <img src="${p.images[0]}" alt="${p.name}" class="position-absolute top-0 start-0 w-100 h-100" style="object-fit: cover;">
+              ` : `
+                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column align-items-center justify-content-center bg-body-tertiary">
+                  <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="100" height="100" fill="#F5E6E0"/>
+                    <path d="M50 25L58 42H42L50 25Z" stroke="#D4A843" stroke-width="1.5" fill="none"/>
+                    <circle cx="50" cy="55" r="15" stroke="#D4A843" stroke-width="1.5" fill="none"/>
+                  </svg>
+                  <span class="position-absolute bottom-0 start-50 translate-middle-x mb-3 px-2 text-center fst-italic small text-secondary">${p.name}</span>
+                </div>
+              `}
+                    <button type="button" class="product-compare-btn btn btn-light text-dark border rounded-circle shadow-sm position-absolute top-0 end-0 m-2 p-0 d-inline-flex align-items-center justify-content-center"
+                      data-product-id="${p.id}"
+                      data-product-slug="${p.slug}"
+                      data-product-name="${p.name}"
+                      data-product-image="${p.images && p.images[0] || '/images/placeholder.jpg'}"
+                      aria-label="Thêm ${p.name} vào so sánh"
+                      aria-pressed="false"
+                      title="Thêm vào so sánh"
+                      style="width: 40px; height: 40px;">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 4L5 8L9 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M15 4L19 8L15 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="12" cy="16" r="2" fill="currentColor"/>
+                </svg>
+              </button>
+            </div>
+            <div class="card-body p-3 p-md-4 d-flex flex-column justify-content-between">
+              <div>
+                <span class="d-block mb-2 text-uppercase small fw-semibold text-secondary">${p.collection}</span>
+                <h3 class="h6 mb-0 lh-sm">${p.name}</h3>
+              </div>
+              <p class="small text-body-secondary mb-0 mt-2">${p.material} · ${p.stone}</p>
+            </div>
+          </a>
+        </div>
+      `).join('')}
+    </div>
+
+    <div class="d-flex justify-content-center mt-5">
+      <button class="btn btn-outline-dark" id="loadMoreBtn">Xem Thêm Sản Phẩm</button>
+    </div>
+  </div>
+</section>
+
+<!-- Materials Banner
 <section class="materials-banner">
-  <div class="container">
+  <div class="container" data-aos="fade-up">
     <div class="materials-grid">
-      <div class="material-item" data-aos="fade-up" data-aos-delay="0">
+      <div class="material-item" data-aos="zoom-in" data-aos-delay="100">
         <div class="material-icon">💎</div>
         <h3>Kim Cương Tự Nhiên & Nhân Tạo</h3>
         <p>Cùng độ sáng, cùng độ cứng — bạn tự do lựa chọn giữa kim cương tự nhiên quý hiếm hoặc kim cương nhân tạo hiện đại theo nhu cầu và ngân sách.</p>
       </div>
-      <div class="material-item" data-aos="fade-up" data-aos-delay="100">
+      <div class="material-item" data-aos="zoom-in" data-aos-delay="200">
         <div class="material-icon">✨</div>
         <h3>Moissanite</h3>
         <p>Với độ lấp lánh vượt trội hơn cả kim cương, moissanite mang đến vẻ đẹp rực rỡ phi thường với giá trị tuyệt vời.</p>
       </div>
-      <div class="material-item" data-aos="fade-up" data-aos-delay="200">
+      <div class="material-item" data-aos="zoom-in" data-aos-delay="300">
         <div class="material-icon">🥇</div>
         <h3>Vàng 10K-18K & Bạc S925</h3>
         <p>Kim loại cao cấp: vàng vàng, vàng trắng, vàng hồng — cùng bạc sterling S925 mạ rhodium cho vẻ đẹp vượt thời gian.</p>
       </div>
     </div>
   </div>
-</section>
-
-<!-- Collections Section -->
-<section class="collections-section" id="collections">
-  <div class="container">
-    <div class="section-header" data-aos="fade-up">
-      <span class="section-label">Bộ Sưu Tập</span>
-      <h2 class="section-title">Khám Phá Sản Phẩm</h2>
-      <p class="section-desc">Mỗi sản phẩm được chế tác tỉ mỉ với tình yêu. Xem qua bộ sưu tập hoặc liên hệ để thiết kế riêng.</p>
-    </div>
-
-    <div class="collection-filter" data-aos="fade-up">
-      <button class="filter-btn active" data-filter="all">Tất Cả</button>
-      ${['Nhẫn', 'Dây chuyền', 'Bông tai', 'Vòng tay'].filter(c => collections.includes(c)).map(c => '<button class="filter-btn" data-filter="' + c + '">' + c + '</button>').join('')}
-    </div>
-
-    <div class="products-grid" id="productsGrid">
-      ${products.map(p => `
-        <a href="/product/${p.slug}" class="product-card" data-collection="${p.collection}" data-aos="fade-up">
-          <div class="product-card-image">
-            ${p.images && p.images[0] && !p.images[0].startsWith('/images/') ? `
-              <img src="${p.images[0]}" alt="${p.name}" class="product-card-real-img">
-            ` : `
-              <div class="product-placeholder">
-                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect width="100" height="100" fill="#F5E6E0"/>
-                  <path d="M50 25L58 42H42L50 25Z" stroke="#D4A843" stroke-width="1.5" fill="none"/>
-                  <circle cx="50" cy="55" r="15" stroke="#D4A843" stroke-width="1.5" fill="none"/>
-                </svg>
-                <span class="placeholder-text">${p.name}</span>
-              </div>
-            `}
-            <div class="product-card-overlay">
-              <span>Xem Chi Tiết</span>
-            </div>
-          </div>
-          <div class="product-card-info">
-            <span class="product-card-collection">${p.collection}</span>
-            <h3 class="product-card-name">${p.name}</h3>
-            <p class="product-card-material">${p.material} · ${p.stone}</p>
-          </div>
-        </a>
-      `).join('')}
-    </div>
-
-    <div class="load-more-wrap">
-      <button class="btn btn-outline load-more-btn" id="loadMoreBtn">Xem Thêm Sản Phẩm</button>
-    </div>
-  </div>
-</section>
+</section> -->
 
 <!-- Gallery Section -->
 <section class="gallery-section" id="gallery">
   <div class="container">
-    <div class="section-header" data-aos="fade-up">
+    <div class="section-header" data-aos="fade-down">
       <span class="section-label">Thư Viện</span>
       <h2 class="section-title">Khám Phá Thế Giới Của Chúng Tôi</h2>
       <p class="section-desc">Xem qua các bộ sưu tập — từ nhẫn lấp lánh đến đá quý quý hiếm, mỗi danh mục kể một câu chuyện riêng.</p>
     </div>
 
     <!-- Collection Category Cards -->
-    <div class="gallery-categories" data-aos="fade-up">
+    <div class="gallery-categories" data-aos="fade-up" data-aos-delay="100">
       <a href="/#collections" class="gallery-cat-card" data-filter-target="Nhẫn" onclick="filterCollection('Nhẫn')">
         <div class="cat-card-icon">
           <svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="28" stroke="#C9A96E" stroke-width="2" fill="none"/><path d="M40 12L46 24H34L40 12Z" stroke="#C9A96E" stroke-width="1.5" fill="none"/><circle cx="40" cy="40" r="18" stroke="#C9A96E" stroke-width="1" fill="none" opacity="0.4"/></svg>
@@ -188,26 +450,17 @@
         <span class="cat-card-count">Khám Phá →</span>
       </a>
     </div>
-
-    <!-- Instagram CTA -->
-    <div class="instagram-cta" data-aos="fade-up">
-      <a href="https://www.instagram.com/laclac.jewelry/" target="_blank" rel="noopener" class="btn btn-outline">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
-        Follow @laclac.jewelry
-      </a>
-    </div>
-  </div>
 </section>
 
 <!-- Instruction Guide Section -->
 <section class="instruction-promo-section" id="guide">
   <div class="container">
-    <div class="instruction-promo" data-aos="fade-up">
+    <div class="instruction-promo" data-aos="slide-up">
       <div class="instruction-promo-content">
         <span class="section-label">Hướng Dẫn Chọn Sản Phẩm</span>
         <h2 class="section-title">Bạn Chưa Biết Chọn<br>Trang Sức Nào Phù Hợp?</h2>
         <p>Từ hình dạng đá quý, loại kim loại đến cách đo kích thước — chúng tôi sẽ hướng dẫn bạn từng bước để tìm được món trang sức hoàn hảo nhất.</p>
-        <a href="/instruction" class="btn btn-primary">Khám Phá Hướng Dẫn →</a>
+        <a href="/instruction" class="btn btn-outline-light">Khám Phá Hướng Dẫn →</a>
       </div>
       <div class="instruction-promo-visual">
         <div class="promo-icons">
@@ -268,11 +521,11 @@
         <p>Bạn muốn thiết kế món trang sức trong mơ? Có câu hỏi về bộ sưu tập? Chúng tôi rất vui được lắng nghe bạn.</p>
         <p>Liên hệ qua Instagram hoặc Facebook — chúng tôi phản hồi trong vòng 24 giờ.</p>
         <div class="contact-buttons">
-          <a href="https://www.instagram.com/laclac.jewelry/" target="_blank" rel="noopener" class="btn btn-primary btn-contact">
+          <a href="https://www.instagram.com/laclac.jewelry/" target="_blank" rel="noopener" class="btn btn-dark btn-contact">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
             Nhắn Tin Qua Instagram
           </a>
-          <a href="https://www.facebook.com/profile.php?id=61579703409647" target="_blank" rel="noopener" class="btn btn-outline btn-contact">
+          <a href="https://www.facebook.com/profile.php?id=61579703409647" target="_blank" rel="noopener" class="btn btn-outline-dark btn-contact">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
             Nhắn Tin Qua Facebook
           </a>

@@ -19,32 +19,51 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
   const products = loadProducts();
+  const gemstones = loadGemstones();
   const featured = products.filter(p => p.featured);
   const collections = [...new Set(products.map(p => p.collection))];
-  res.render('pages/home', { products, featured, collections });
+  res.render('pages/home', { products, gemstones, featured, collections, currentPage: 'home' });
 });
 
 app.get('/product/:slug', (req, res) => {
   const products = loadProducts();
+  const gemstones = loadGemstones();
   const product = products.find(p => p.slug === req.params.slug);
   if (!product) return res.status(404).send('Product not found');
   const related = products.filter(p => p.collection === product.collection && p.slug !== product.slug).slice(0, 4);
-  res.render('pages/product', { product, related });
+  res.render('pages/product', { product, related, products, gemstones, pageTitle: product.name, currentPage: 'product' });
 });
 
 app.get('/gemstones', (req, res) => {
   const products = loadProducts();
   const gemstones = loadGemstones();
-  res.render('pages/gemstones', { gemstones, products });
+  res.render('pages/gemstones', { gemstones, products, pageTitle: 'Gemstone Collection', currentPage: 'gemstones' });
 });
 
 app.get('/instruction', (req, res) => {
-  res.render('pages/instruction');
+  const products = loadProducts();
+  const gemstones = loadGemstones();
+  res.render('pages/instruction', { products, gemstones, pageTitle: 'Hướng Dẫn Chọn Sản Phẩm', currentPage: 'instruction' });
 });
 
 app.get('/collections', (req, res) => {
   const products = loadProducts();
-  res.render('pages/home', { products, featured: products.filter(p => p.featured), collections: [...new Set(products.map(p => p.collection))] });
+  const gemstones = loadGemstones();
+  res.render('pages/home', { products, gemstones, featured: products.filter(p => p.featured), collections: [...new Set(products.map(p => p.collection))], currentPage: 'collections' });
+});
+
+app.get('/compare', (req, res) => {
+  const products = loadProducts();
+  const gemstones = loadGemstones();
+  const compareIds = req.query.ids ? req.query.ids.split(',').map(id => parseInt(id)) : [];
+  const compareProducts = products.filter(p => compareIds.includes(p.id));
+  res.render('pages/compare', { 
+    products, 
+    gemstones, 
+    compareProducts, 
+    pageTitle: 'So sánh sản phẩm', 
+    currentPage: 'compare' 
+  });
 });
 
 if (require.main === module) {

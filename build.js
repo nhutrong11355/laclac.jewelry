@@ -47,7 +47,7 @@ async function build() {
   const collections = [...new Set(products.map(p => p.collection))];
   const homeHtml = renderTemplate(
     path.join(VIEWS, 'pages', 'home.ejs'),
-    { products, featured, collections }
+    { products, gemstones, featured, collections, currentPage: 'home' }
   );
   fs.writeFileSync(path.join(DIST, 'index.html'), homeHtml);
   console.log('  ✓ Built index.html');
@@ -62,7 +62,7 @@ async function build() {
       .slice(0, 4);
     const html = renderTemplate(
       path.join(VIEWS, 'pages', 'product.ejs'),
-      { product, related, pageTitle: product.name }
+      { product, related, products, gemstones, pageTitle: product.name, currentPage: 'product' }
     );
     const productPageDir = path.join(productDir, product.slug);
     fs.mkdirSync(productPageDir, { recursive: true });
@@ -75,7 +75,7 @@ async function build() {
   fs.mkdirSync(gemstonesDir, { recursive: true });
   const gemstonesHtml = renderTemplate(
     path.join(VIEWS, 'pages', 'gemstones.ejs'),
-    { gemstones, products, pageTitle: 'Gemstone Collection' }
+    { gemstones, products, pageTitle: 'Gemstone Collection', currentPage: 'gemstones' }
   );
   fs.writeFileSync(path.join(gemstonesDir, 'index.html'), gemstonesHtml);
   console.log('  ✓ Built gemstones/index.html');
@@ -85,7 +85,7 @@ async function build() {
   fs.mkdirSync(instructionDir, { recursive: true });
   const instructionHtml = renderTemplate(
     path.join(VIEWS, 'pages', 'instruction.ejs'),
-    { pageTitle: 'Hướng Dẫn Chọn Sản Phẩm' }
+    { products, gemstones, pageTitle: 'Hướng Dẫn Chọn Sản Phẩm', currentPage: 'instruction' }
   );
   fs.writeFileSync(path.join(instructionDir, 'index.html'), instructionHtml);
   console.log('  ✓ Built instruction/index.html');

@@ -1,6 +1,7 @@
 {
-  "name": "LacLac Jewelry",
+  "name": "LacLac Jewelry - Trang Sức Cao Cấp",
   "short_name": "LacLac",
+  "description": "Kim cương tự nhiên, Kim cương nhân tạo, Moissanite, Vàng & Bạc theo yêu cầu",
   "icons": [
     {
       "src": "/images/android-chrome-192x192.png",
@@ -13,7 +14,9 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#D4A843",
+  "theme_color": "#C9A96E",
   "background_color": "#FAF8F5",
-  "display": "standalone"
+  "display": "standalone",
+  "start_url": "/",
+  "scope": "/"
 }
